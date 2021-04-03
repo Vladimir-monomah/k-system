@@ -41,6 +41,7 @@
             this.buttonCancel = new System.Windows.Forms.Button();
             this.btn_cancel = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,7 +55,7 @@
             this.masterFilterTextBox.MaxLength = 30;
             this.masterFilterTextBox.Multiline = true;
             this.masterFilterTextBox.Name = "masterFilterTextBox";
-            this.masterFilterTextBox.Size = new System.Drawing.Size(1451, 46);
+            this.masterFilterTextBox.Size = new System.Drawing.Size(1619, 46);
             this.masterFilterTextBox.TabIndex = 18;
             // 
             // labelSortingCustomers
@@ -77,7 +78,7 @@
             this.dataGridView.Location = new System.Drawing.Point(13, 140);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowTemplate.Height = 24;
-            this.dataGridView.Size = new System.Drawing.Size(1452, 561);
+            this.dataGridView.Size = new System.Drawing.Size(1620, 561);
             this.dataGridView.TabIndex = 27;
             // 
             // AddOrder
@@ -94,7 +95,7 @@
             // Email
             // 
             this.Email.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Email.Location = new System.Drawing.Point(182, 85);
+            this.Email.Location = new System.Drawing.Point(351, 85);
             this.Email.Name = "Email";
             this.Email.Size = new System.Drawing.Size(163, 49);
             this.Email.TabIndex = 30;
@@ -104,7 +105,7 @@
             // СhangeUser
             // 
             this.СhangeUser.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.СhangeUser.Location = new System.Drawing.Point(1292, 85);
+            this.СhangeUser.Location = new System.Drawing.Point(1461, 85);
             this.СhangeUser.Name = "СhangeUser";
             this.СhangeUser.Size = new System.Drawing.Size(170, 49);
             this.СhangeUser.TabIndex = 36;
@@ -114,7 +115,7 @@
             // RestoreDB
             // 
             this.RestoreDB.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.RestoreDB.Location = new System.Drawing.Point(1143, 85);
+            this.RestoreDB.Location = new System.Drawing.Point(1312, 85);
             this.RestoreDB.Name = "RestoreDB";
             this.RestoreDB.Size = new System.Drawing.Size(143, 49);
             this.RestoreDB.TabIndex = 35;
@@ -124,7 +125,7 @@
             // SaveDB
             // 
             this.SaveDB.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SaveDB.Location = new System.Drawing.Point(994, 85);
+            this.SaveDB.Location = new System.Drawing.Point(1163, 85);
             this.SaveDB.Name = "SaveDB";
             this.SaveDB.Size = new System.Drawing.Size(143, 49);
             this.SaveDB.TabIndex = 34;
@@ -134,7 +135,7 @@
             // Save
             // 
             this.Save.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Save.Location = new System.Drawing.Point(845, 85);
+            this.Save.Location = new System.Drawing.Point(1014, 85);
             this.Save.Name = "Save";
             this.Save.Size = new System.Drawing.Size(143, 49);
             this.Save.TabIndex = 33;
@@ -144,7 +145,7 @@
             // buttonCancel
             // 
             this.buttonCancel.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonCancel.Location = new System.Drawing.Point(689, 85);
+            this.buttonCancel.Location = new System.Drawing.Point(858, 85);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(150, 49);
             this.buttonCancel.TabIndex = 32;
@@ -154,7 +155,7 @@
             // btn_cancel
             // 
             this.btn_cancel.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn_cancel.Location = new System.Drawing.Point(520, 85);
+            this.btn_cancel.Location = new System.Drawing.Point(689, 85);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(163, 49);
             this.btn_cancel.TabIndex = 31;
@@ -164,18 +165,30 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(351, 85);
+            this.button1.Location = new System.Drawing.Point(520, 85);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(163, 49);
             this.button1.TabIndex = 37;
             this.button1.Text = "Отчётность";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(182, 85);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(163, 49);
+            this.button2.TabIndex = 38;
+            this.button2.Text = "Добавить услугу";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // Администратор
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1477, 713);
+            this.ClientSize = new System.Drawing.Size(1645, 713);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.СhangeUser);
             this.Controls.Add(this.RestoreDB);
@@ -216,5 +229,6 @@
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button btn_cancel;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
