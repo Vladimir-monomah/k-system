@@ -36,8 +36,12 @@
     <ApplicationIcon>system-windows_26863.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.52">
+      <HintPath>..\..\..\MobExpress\MobExpress\bin\Debug\Bunifu_UI_v1.52.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -60,6 +64,12 @@
     </Compile>
     <Compile Include="Админка\Администратор.Designer.cs">
       <DependentUpon>Администратор.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Загрузочный файл.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Загрузочный файл.Designer.cs">
+      <DependentUpon>Загрузочный файл.cs</DependentUpon>
     </Compile>
     <Compile Include="Пользовательская форма\Клиент.cs">
       <SubType>Form</SubType>
@@ -89,9 +99,13 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Админка\Администратор.resx">
       <DependentUpon>Администратор.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Загрузочный файл.resx">
+      <DependentUpon>Загрузочный файл.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Пользовательская форма\Клиент.resx">
       <DependentUpon>Клиент.cs</DependentUpon>
@@ -128,6 +142,9 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="Resources\mail_22591.ico" />
+    <None Include="Resources\box_delivery_order_icon_148914.ico" />
+    <None Include="Resources\employee_2_icon-icons.com_76980.ico" />
     <Content Include="system-windows_26863.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
