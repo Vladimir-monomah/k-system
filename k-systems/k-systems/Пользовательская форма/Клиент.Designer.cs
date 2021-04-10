@@ -43,18 +43,18 @@
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.priceListFilterTextBox = new System.Windows.Forms.TextBox();
-            this.labelSortingCustomers = new System.Windows.Forms.Label();
-            this._k_systemsDataSet = new k_systems._k_systemsDataSet();
-            this.ценыРаботДляКлиентаBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.цены_работ_для_клиентаTableAdapter = new k_systems._k_systemsDataSetTableAdapters.Цены_работ_для_клиентаTableAdapter();
             this.видРаботыDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.типРемонтаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ценаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ценыРаботДляКлиентаBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this._k_systemsDataSet = new k_systems._k_systemsDataSet();
+            this.priceListFilterTextBox = new System.Windows.Forms.TextBox();
+            this.labelSortingCustomers = new System.Windows.Forms.Label();
+            this.цены_работ_для_клиентаTableAdapter = new k_systems._k_systemsDataSetTableAdapters.Цены_работ_для_клиентаTableAdapter();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._k_systemsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ценыРаботДляКлиентаBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._k_systemsDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -175,41 +175,6 @@
             this.dataGridView.Size = new System.Drawing.Size(1140, 528);
             this.dataGridView.TabIndex = 1;
             // 
-            // priceListFilterTextBox
-            // 
-            this.priceListFilterTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.priceListFilterTextBox.Location = new System.Drawing.Point(13, 69);
-            this.priceListFilterTextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.priceListFilterTextBox.Multiline = true;
-            this.priceListFilterTextBox.Name = "priceListFilterTextBox";
-            this.priceListFilterTextBox.Size = new System.Drawing.Size(1140, 32);
-            this.priceListFilterTextBox.TabIndex = 4;
-            // 
-            // labelSortingCustomers
-            // 
-            this.labelSortingCustomers.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelSortingCustomers.Location = new System.Drawing.Point(10, 37);
-            this.labelSortingCustomers.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelSortingCustomers.Name = "labelSortingCustomers";
-            this.labelSortingCustomers.Size = new System.Drawing.Size(246, 28);
-            this.labelSortingCustomers.TabIndex = 20;
-            this.labelSortingCustomers.Text = "Поиск цены за услуги";
-            // 
-            // _k_systemsDataSet
-            // 
-            this._k_systemsDataSet.DataSetName = "_k_systemsDataSet";
-            this._k_systemsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // ценыРаботДляКлиентаBindingSource
-            // 
-            this.ценыРаботДляКлиентаBindingSource.DataMember = "Цены работ для клиента";
-            this.ценыРаботДляКлиентаBindingSource.DataSource = this._k_systemsDataSet;
-            // 
-            // цены_работ_для_клиентаTableAdapter
-            // 
-            this.цены_работ_для_клиентаTableAdapter.ClearBeforeFill = true;
-            // 
             // видРаботыDataGridViewTextBoxColumn
             // 
             this.видРаботыDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -234,6 +199,42 @@
             this.ценаDataGridViewTextBoxColumn.Name = "ценаDataGridViewTextBoxColumn";
             this.ценаDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // ценыРаботДляКлиентаBindingSource
+            // 
+            this.ценыРаботДляКлиентаBindingSource.DataMember = "Цены работ для клиента";
+            this.ценыРаботДляКлиентаBindingSource.DataSource = this._k_systemsDataSet;
+            // 
+            // _k_systemsDataSet
+            // 
+            this._k_systemsDataSet.DataSetName = "_k_systemsDataSet";
+            this._k_systemsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // priceListFilterTextBox
+            // 
+            this.priceListFilterTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.priceListFilterTextBox.Location = new System.Drawing.Point(13, 69);
+            this.priceListFilterTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.priceListFilterTextBox.Multiline = true;
+            this.priceListFilterTextBox.Name = "priceListFilterTextBox";
+            this.priceListFilterTextBox.Size = new System.Drawing.Size(1140, 32);
+            this.priceListFilterTextBox.TabIndex = 4;
+            this.priceListFilterTextBox.TextChanged += new System.EventHandler(this.priceListFilterTextBox_TextChanged);
+            // 
+            // labelSortingCustomers
+            // 
+            this.labelSortingCustomers.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelSortingCustomers.Location = new System.Drawing.Point(10, 37);
+            this.labelSortingCustomers.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelSortingCustomers.Name = "labelSortingCustomers";
+            this.labelSortingCustomers.Size = new System.Drawing.Size(246, 28);
+            this.labelSortingCustomers.TabIndex = 20;
+            this.labelSortingCustomers.Text = "Поиск цены за услуги";
+            // 
+            // цены_работ_для_клиентаTableAdapter
+            // 
+            this.цены_работ_для_клиентаTableAdapter.ClearBeforeFill = true;
+            // 
             // Клиент
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -257,8 +258,8 @@
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._k_systemsDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ценыРаботДляКлиентаBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._k_systemsDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

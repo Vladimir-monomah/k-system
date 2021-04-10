@@ -41,5 +41,14 @@ namespace k_systems.Пользовательская_форма
             }
             else Application.Exit();
         }
+
+        private void priceListFilterTextBox_TextChanged(object sender, EventArgs e)
+        {
+            var findFields = new[] { "[Вид работы]", "[Тип ремонта]" };
+            var filterString =
+                EntityManager.GetFilterStringByFields(findFields, this.priceListFilterTextBox.Text).Trim();
+
+            this.ценыРаботДляКлиентаBindingSource.Filter = filterString;
+        }
     }
 }
