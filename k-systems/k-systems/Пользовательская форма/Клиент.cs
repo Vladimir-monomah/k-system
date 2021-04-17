@@ -50,5 +50,11 @@ namespace k_systems.Пользовательская_форма
 
             this.ценыРаботДляКлиентаBindingSource.Filter = filterString;
         }
+
+        private void заказыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var открыть = new Заказы();
+            открыть.ShowDialog();
+        }
     }
 }

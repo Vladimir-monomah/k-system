@@ -81,6 +81,28 @@ namespace k_systems
         }
 
         /// <summary>
+        /// Объединяет условия фильтрации заданным логическим оператором
+        /// </summary>
+        /// <param name="leftPart"></param>
+        /// <param name="rightPart"></param>
+        /// <param name="operator"></param>
+        /// <returns></returns>
+        public static string UnionFilter(string leftPart, string rightPart, string @operator = "AND")
+        {
+            if (string.IsNullOrEmpty(leftPart))
+            {
+                return rightPart;
+            }
+
+            if (string.IsNullOrEmpty(rightPart))
+            {
+                return leftPart;
+            }
+
+            return $"({leftPart}) {@operator} ({rightPart})";
+        }
+
+        /// <summary>
         /// Заполняет таблицу по фильтрующей команде выбора строк
         /// </summary>
         /// <param name="adapter"></param>

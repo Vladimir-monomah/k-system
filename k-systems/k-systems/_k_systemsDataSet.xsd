@@ -2,7 +2,7 @@
 <xs:schema id="_k_systemsDataSet" targetNamespace="http://tempuri.org/_k_systemsDataSet.xsd" xmlns:mstns="http://tempuri.org/_k_systemsDataSet.xsd" xmlns="http://tempuri.org/_k_systemsDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" GeneratorFunctionsComponentClassName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" UserFunctionsComponentName="QueriesTableAdapter" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="k_systemsConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="k_systemsConnectionString (Settings)" PropertyReference="ApplicationSettings.k_systems.Properties.Settings.GlobalReference.Default.k_systemsConnectionString" Provider="System.Data.OleDb" />
         </Connections>
@@ -318,7 +318,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Цены работ для клиентаTableAdapter" GeneratorDataComponentClassName="Цены_работ_для_клиентаTableAdapter" Name="Цены работ для клиента" UserDataComponentName="Цены работ для клиентаTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="k_systemsConnectionString (Settings)" DbObjectName="Цены работ для клиента" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="k_systemsConnectionString (Settings)" DbObjectName="Цены работ для клиента" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT Идентификатор, [Вид работы], [Тип ремонта], Цена
@@ -338,7 +338,7 @@ FROM     [Цены работ для клиента]</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Пользователи для заказовTableAdapter" GeneratorDataComponentClassName="Пользователи_для_заказовTableAdapter" Name="Пользователи для заказов" UserDataComponentName="Пользователи для заказовTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="k_systemsConnectionString (Settings)" DbObjectName="Пользователи для заказов" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="k_systemsConnectionString (Settings)" DbObjectName="Пользователи для заказов" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>INSERT INTO `Пользователи` DEFAULT VALUES</CommandText>
@@ -357,6 +357,49 @@ FROM     [Пользователи для заказов]</CommandText>
             <Mappings>
               <Mapping SourceColumn="Id" DataSetColumn="Id" />
               <Mapping SourceColumn="ФИО" DataSetColumn="ФИО" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Заказы с клиентамиTableAdapter" GeneratorDataComponentClassName="Заказы_с_клиентамиTableAdapter" Name="Заказы с клиентами" UserDataComponentName="Заказы с клиентамиTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="k_systemsConnectionString (Settings)" DbObjectName="Заказы с клиентами" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT [Номер заказа], [Номер клиента], ФИО, [Вид работы], [Тип ремонта], Цена, [Заказ готов] FROM [Заказы с клиентами]</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Номер заказа" DataSetColumn="Номер заказа" />
+              <Mapping SourceColumn="Номер клиента" DataSetColumn="Номер клиента" />
+              <Mapping SourceColumn="ФИО" DataSetColumn="ФИО" />
+              <Mapping SourceColumn="Вид работы" DataSetColumn="Вид работы" />
+              <Mapping SourceColumn="Тип ремонта" DataSetColumn="Тип ремонта" />
+              <Mapping SourceColumn="Цена" DataSetColumn="Цена" />
+              <Mapping SourceColumn="Заказ готов" DataSetColumn="Заказ готов" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Заказы для клиентаTableAdapter" GeneratorDataComponentClassName="Заказы_для_клиентаTableAdapter" Name="Заказы для клиента" UserDataComponentName="Заказы для клиентаTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="k_systemsConnectionString (Settings)" DbObjectName="Заказы для клиента" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT [Номер заказа], [Номер клиента], [Вид работы], [Тип ремонта], Цена, [Заказ готов] FROM [Заказы для клиента]</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Номер заказа" DataSetColumn="Номер заказа" />
+              <Mapping SourceColumn="Номер клиента" DataSetColumn="Номер клиента" />
+              <Mapping SourceColumn="Вид работы" DataSetColumn="Вид работы" />
+              <Mapping SourceColumn="Тип ремонта" DataSetColumn="Тип ремонта" />
+              <Mapping SourceColumn="Цена" DataSetColumn="Цена" />
+              <Mapping SourceColumn="Заказ готов" DataSetColumn="Заказ готов" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -511,6 +554,61 @@ FROM     [Пользователи для заказов]</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="Заказы_x0020_с_x0020_клиентами" msprop:Generator_TableClassName="Заказы_с_клиентамиDataTable" msprop:Generator_TableVarName="tableЗаказы_с_клиентами" msprop:Generator_RowChangedName="Заказы_с_клиентамиRowChanged" msprop:Generator_TablePropName="Заказы_с_клиентами" msprop:Generator_RowDeletingName="Заказы_с_клиентамиRowDeleting" msprop:Generator_RowChangingName="Заказы_с_клиентамиRowChanging" msprop:Generator_RowEvHandlerName="Заказы_с_клиентамиRowChangeEventHandler" msprop:Generator_RowDeletedName="Заказы_с_клиентамиRowDeleted" msprop:Generator_RowClassName="Заказы_с_клиентамиRow" msprop:Generator_UserTableName="Заказы с клиентами" msprop:Generator_RowEvArgName="Заказы_с_клиентамиRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Номер_x0020_заказа" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnНомер_заказа" msprop:Generator_ColumnPropNameInRow="Номер_заказа" msprop:Generator_ColumnPropNameInTable="Номер_заказаColumn" msprop:Generator_UserColumnName="Номер заказа" type="xs:int" minOccurs="0" />
+              <xs:element name="Номер_x0020_клиента" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnНомер_клиента" msprop:Generator_ColumnPropNameInRow="Номер_клиента" msprop:Generator_ColumnPropNameInTable="Номер_клиентаColumn" msprop:Generator_UserColumnName="Номер клиента" type="xs:int" minOccurs="0" />
+              <xs:element name="ФИО" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnФИО" msprop:Generator_ColumnPropNameInRow="ФИО" msprop:Generator_ColumnPropNameInTable="ФИОColumn" msprop:Generator_UserColumnName="ФИО" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Вид_x0020_работы" msprop:Generator_ColumnVarNameInTable="columnВид_работы" msprop:Generator_ColumnPropNameInRow="Вид_работы" msprop:Generator_ColumnPropNameInTable="Вид_работыColumn" msprop:Generator_UserColumnName="Вид работы" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Тип_x0020_ремонта" msprop:Generator_ColumnVarNameInTable="columnТип_ремонта" msprop:Generator_ColumnPropNameInRow="Тип_ремонта" msprop:Generator_ColumnPropNameInTable="Тип_ремонтаColumn" msprop:Generator_UserColumnName="Тип ремонта" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Цена" msprop:Generator_ColumnVarNameInTable="columnЦена" msprop:Generator_ColumnPropNameInRow="Цена" msprop:Generator_ColumnPropNameInTable="ЦенаColumn" msprop:Generator_UserColumnName="Цена" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Заказ_x0020_готов" msprop:Generator_ColumnVarNameInTable="columnЗаказ_готов" msprop:Generator_ColumnPropNameInRow="Заказ_готов" msprop:Generator_ColumnPropNameInTable="Заказ_готовColumn" msprop:Generator_UserColumnName="Заказ готов" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Заказы_x0020_для_x0020_клиента" msprop:Generator_TableClassName="Заказы_для_клиентаDataTable" msprop:Generator_TableVarName="tableЗаказы_для_клиента" msprop:Generator_TablePropName="Заказы_для_клиента" msprop:Generator_RowDeletingName="Заказы_для_клиентаRowDeleting" msprop:Generator_RowChangingName="Заказы_для_клиентаRowChanging" msprop:Generator_RowEvHandlerName="Заказы_для_клиентаRowChangeEventHandler" msprop:Generator_RowDeletedName="Заказы_для_клиентаRowDeleted" msprop:Generator_UserTableName="Заказы для клиента" msprop:Generator_RowChangedName="Заказы_для_клиентаRowChanged" msprop:Generator_RowEvArgName="Заказы_для_клиентаRowChangeEvent" msprop:Generator_RowClassName="Заказы_для_клиентаRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Номер_x0020_заказа" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnНомер_заказа" msprop:Generator_ColumnPropNameInRow="Номер_заказа" msprop:Generator_ColumnPropNameInTable="Номер_заказаColumn" msprop:Generator_UserColumnName="Номер заказа" type="xs:int" minOccurs="0" />
+              <xs:element name="Номер_x0020_клиента" msprop:Generator_ColumnVarNameInTable="columnНомер_клиента" msprop:Generator_ColumnPropNameInRow="Номер_клиента" msprop:Generator_ColumnPropNameInTable="Номер_клиентаColumn" msprop:Generator_UserColumnName="Номер клиента" type="xs:int" minOccurs="0" />
+              <xs:element name="Вид_x0020_работы" msprop:Generator_ColumnVarNameInTable="columnВид_работы" msprop:Generator_ColumnPropNameInRow="Вид_работы" msprop:Generator_ColumnPropNameInTable="Вид_работыColumn" msprop:Generator_UserColumnName="Вид работы" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Тип_x0020_ремонта" msprop:Generator_ColumnVarNameInTable="columnТип_ремонта" msprop:Generator_ColumnPropNameInRow="Тип_ремонта" msprop:Generator_ColumnPropNameInTable="Тип_ремонтаColumn" msprop:Generator_UserColumnName="Тип ремонта" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Цена" msprop:Generator_ColumnVarNameInTable="columnЦена" msprop:Generator_ColumnPropNameInRow="Цена" msprop:Generator_ColumnPropNameInTable="ЦенаColumn" msprop:Generator_UserColumnName="Цена" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Заказ_x0020_готов" msprop:Generator_ColumnVarNameInTable="columnЗаказ_готов" msprop:Generator_ColumnPropNameInRow="Заказ_готов" msprop:Generator_ColumnPropNameInTable="Заказ_готовColumn" msprop:Generator_UserColumnName="Заказ готов" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -544,6 +642,7 @@ FROM     [Пользователи для заказов]</CommandText>
       <msdata:Relationship name="Вид_x0020_работЦены_x0020_работ" msdata:parent="Вид_x0020_работ" msdata:child="Цены_x0020_работ" msdata:parentkey="Идентификатор" msdata:childkey="Вид_x0020_работы" msprop:Generator_UserChildTable="Цены работ" msprop:Generator_ChildPropName="GetЦены_работRows" msprop:Generator_UserRelationName="Вид работЦены работ" msprop:Generator_RelationVarName="relationВид_работЦены_работ" msprop:Generator_UserParentTable="Вид работ" msprop:Generator_ParentPropName="Вид_работRow" />
       <msdata:Relationship name="ПользователиЗаказы" msdata:parent="Пользователи" msdata:child="Заказы" msdata:parentkey="Id" msdata:childkey="Номер_x0020_клиента" msprop:Generator_UserChildTable="Заказы" msprop:Generator_ChildPropName="GetЗаказыRows" msprop:Generator_UserRelationName="ПользователиЗаказы" msprop:Generator_ParentPropName="ПользователиRow" msprop:Generator_RelationVarName="relationПользователиЗаказы" msprop:Generator_UserParentTable="Пользователи" />
       <msdata:Relationship name="Тип_x0020_одеждыЦены_x0020_работ" msdata:parent="Тип_x0020_ремонта" msdata:child="Цены_x0020_работ" msdata:parentkey="Идентификатор" msdata:childkey="Тип_x0020_ремонта" msprop:Generator_UserChildTable="Цены работ" msprop:Generator_ChildPropName="GetЦены_работRows" msprop:Generator_UserRelationName="Тип одеждыЦены работ" msprop:Generator_RelationVarName="relationТип_одеждыЦены_работ" msprop:Generator_UserParentTable="Тип ремонта" msprop:Generator_ParentPropName="Тип_ремонтаRow" />
+      <msdata:Relationship name="Тип_x0020_одеждыЗаказы" msdata:parent="Тип_x0020_ремонта" msdata:child="Заказы" msdata:parentkey="Идентификатор" msdata:childkey="Тип_x0020_ремонта" msprop:Generator_UserChildTable="Заказы" msprop:Generator_ChildPropName="GetЗаказыRows" msprop:Generator_UserRelationName="Тип одеждыЗаказы" msprop:Generator_ParentPropName="Тип_ремонтаRow" msprop:Generator_RelationVarName="relationТип_одеждыЗаказы" msprop:Generator_UserParentTable="Тип ремонта" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

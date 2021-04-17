@@ -71,6 +71,12 @@
     <Compile Include="Загрузочный файл.Designer.cs">
       <DependentUpon>Загрузочный файл.cs</DependentUpon>
     </Compile>
+    <Compile Include="Пользовательская форма\Заказы.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Пользовательская форма\Заказы.Designer.cs">
+      <DependentUpon>Заказы.cs</DependentUpon>
+    </Compile>
     <Compile Include="Пользовательская форма\Клиент.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Загрузочный файл.resx">
       <DependentUpon>Загрузочный файл.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Пользовательская форма\Заказы.resx">
+      <DependentUpon>Заказы.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Пользовательская форма\Клиент.resx">
       <DependentUpon>Клиент.cs</DependentUpon>

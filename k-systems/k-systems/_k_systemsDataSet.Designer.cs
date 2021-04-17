@@ -38,6 +38,10 @@ namespace k_systems {
         
         private Пользователи_для_заказовDataTable tableПользователи_для_заказов;
         
+        private Заказы_с_клиентамиDataTable tableЗаказы_с_клиентами;
+        
+        private Заказы_для_клиентаDataTable tableЗаказы_для_клиента;
+        
         private global::System.Data.DataRelation relationВид_работЗаказы;
         
         private global::System.Data.DataRelation relationВид_работЦены_работ;
@@ -45,6 +49,8 @@ namespace k_systems {
         private global::System.Data.DataRelation relationПользователиЗаказы;
         
         private global::System.Data.DataRelation relationТип_одеждыЦены_работ;
+        
+        private global::System.Data.DataRelation relationТип_одеждыЗаказы;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -94,6 +100,12 @@ namespace k_systems {
                 }
                 if ((ds.Tables["Пользователи для заказов"] != null)) {
                     base.Tables.Add(new Пользователи_для_заказовDataTable(ds.Tables["Пользователи для заказов"]));
+                }
+                if ((ds.Tables["Заказы с клиентами"] != null)) {
+                    base.Tables.Add(new Заказы_с_клиентамиDataTable(ds.Tables["Заказы с клиентами"]));
+                }
+                if ((ds.Tables["Заказы для клиента"] != null)) {
+                    base.Tables.Add(new Заказы_для_клиентаDataTable(ds.Tables["Заказы для клиента"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -185,6 +197,26 @@ namespace k_systems {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public Заказы_с_клиентамиDataTable Заказы_с_клиентами {
+            get {
+                return this.tableЗаказы_с_клиентами;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public Заказы_для_клиентаDataTable Заказы_для_клиента {
+            get {
+                return this.tableЗаказы_для_клиента;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -271,6 +303,12 @@ namespace k_systems {
                 if ((ds.Tables["Пользователи для заказов"] != null)) {
                     base.Tables.Add(new Пользователи_для_заказовDataTable(ds.Tables["Пользователи для заказов"]));
                 }
+                if ((ds.Tables["Заказы с клиентами"] != null)) {
+                    base.Tables.Add(new Заказы_с_клиентамиDataTable(ds.Tables["Заказы с клиентами"]));
+                }
+                if ((ds.Tables["Заказы для клиента"] != null)) {
+                    base.Tables.Add(new Заказы_для_клиентаDataTable(ds.Tables["Заказы для клиента"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -346,10 +384,23 @@ namespace k_systems {
                     this.tableПользователи_для_заказов.InitVars();
                 }
             }
+            this.tableЗаказы_с_клиентами = ((Заказы_с_клиентамиDataTable)(base.Tables["Заказы с клиентами"]));
+            if ((initTable == true)) {
+                if ((this.tableЗаказы_с_клиентами != null)) {
+                    this.tableЗаказы_с_клиентами.InitVars();
+                }
+            }
+            this.tableЗаказы_для_клиента = ((Заказы_для_клиентаDataTable)(base.Tables["Заказы для клиента"]));
+            if ((initTable == true)) {
+                if ((this.tableЗаказы_для_клиента != null)) {
+                    this.tableЗаказы_для_клиента.InitVars();
+                }
+            }
             this.relationВид_работЗаказы = this.Relations["Вид работЗаказы"];
             this.relationВид_работЦены_работ = this.Relations["Вид работЦены работ"];
             this.relationПользователиЗаказы = this.Relations["ПользователиЗаказы"];
             this.relationТип_одеждыЦены_работ = this.Relations["Тип одеждыЦены работ"];
+            this.relationТип_одеждыЗаказы = this.Relations["Тип одеждыЗаказы"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -374,6 +425,10 @@ namespace k_systems {
             base.Tables.Add(this.tableЦены_работ_для_клиента);
             this.tableПользователи_для_заказов = new Пользователи_для_заказовDataTable();
             base.Tables.Add(this.tableПользователи_для_заказов);
+            this.tableЗаказы_с_клиентами = new Заказы_с_клиентамиDataTable();
+            base.Tables.Add(this.tableЗаказы_с_клиентами);
+            this.tableЗаказы_для_клиента = new Заказы_для_клиентаDataTable();
+            base.Tables.Add(this.tableЗаказы_для_клиента);
             this.relationВид_работЗаказы = new global::System.Data.DataRelation("Вид работЗаказы", new global::System.Data.DataColumn[] {
                         this.tableВид_работ.ИдентификаторColumn}, new global::System.Data.DataColumn[] {
                         this.tableЗаказы.Вид_работыColumn}, false);
@@ -390,6 +445,10 @@ namespace k_systems {
                         this.tableТип_ремонта.ИдентификаторColumn}, new global::System.Data.DataColumn[] {
                         this.tableЦены_работ.Тип_ремонтаColumn}, false);
             this.Relations.Add(this.relationТип_одеждыЦены_работ);
+            this.relationТип_одеждыЗаказы = new global::System.Data.DataRelation("Тип одеждыЗаказы", new global::System.Data.DataColumn[] {
+                        this.tableТип_ремонта.ИдентификаторColumn}, new global::System.Data.DataColumn[] {
+                        this.tableЗаказы.Тип_ремонтаColumn}, false);
+            this.Relations.Add(this.relationТип_одеждыЗаказы);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -431,6 +490,18 @@ namespace k_systems {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private bool ShouldSerializeПользователи_для_заказов() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private bool ShouldSerializeЗаказы_с_клиентами() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private bool ShouldSerializeЗаказы_для_клиента() {
             return false;
         }
         
@@ -509,6 +580,12 @@ namespace k_systems {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public delegate void Пользователи_для_заказовRowChangeEventHandler(object sender, Пользователи_для_заказовRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public delegate void Заказы_с_клиентамиRowChangeEventHandler(object sender, Заказы_с_клиентамиRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public delegate void Заказы_для_клиентаRowChangeEventHandler(object sender, Заказы_для_клиентаRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -923,7 +1000,7 @@ namespace k_systems {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ЗаказыRow AddЗаказыRow(ПользователиRow parentПользователиRowByПользователиЗаказы, Вид_работRow parentВид_работRowByВид_работЗаказы, decimal Цена, bool заказ_готов, int Тип_ремонта) {
+            public ЗаказыRow AddЗаказыRow(ПользователиRow parentПользователиRowByПользователиЗаказы, Вид_работRow parentВид_работRowByВид_работЗаказы, decimal Цена, bool заказ_готов, Тип_ремонтаRow parentТип_ремонтаRowByТип_одеждыЗаказы) {
                 ЗаказыRow rowЗаказыRow = ((ЗаказыRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -931,12 +1008,15 @@ namespace k_systems {
                         null,
                         Цена,
                         заказ_готов,
-                        Тип_ремонта};
+                        null};
                 if ((parentПользователиRowByПользователиЗаказы != null)) {
                     columnValuesArray[1] = parentПользователиRowByПользователиЗаказы[8];
                 }
                 if ((parentВид_работRowByВид_работЗаказы != null)) {
                     columnValuesArray[2] = parentВид_работRowByВид_работЗаказы[0];
+                }
+                if ((parentТип_ремонтаRowByТип_одеждыЗаказы != null)) {
+                    columnValuesArray[5] = parentТип_ремонтаRowByТип_одеждыЗаказы[0];
                 }
                 rowЗаказыRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowЗаказыRow);
@@ -2662,6 +2742,669 @@ namespace k_systems {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class Заказы_с_клиентамиDataTable : global::System.Data.TypedTableBase<Заказы_с_клиентамиRow> {
+            
+            private global::System.Data.DataColumn columnНомер_заказа;
+            
+            private global::System.Data.DataColumn columnНомер_клиента;
+            
+            private global::System.Data.DataColumn columnФИО;
+            
+            private global::System.Data.DataColumn columnВид_работы;
+            
+            private global::System.Data.DataColumn columnТип_ремонта;
+            
+            private global::System.Data.DataColumn columnЦена;
+            
+            private global::System.Data.DataColumn columnЗаказ_готов;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public Заказы_с_клиентамиDataTable() {
+                this.TableName = "Заказы с клиентами";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal Заказы_с_клиентамиDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected Заказы_с_клиентамиDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Номер_заказаColumn {
+                get {
+                    return this.columnНомер_заказа;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Номер_клиентаColumn {
+                get {
+                    return this.columnНомер_клиента;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ФИОColumn {
+                get {
+                    return this.columnФИО;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Вид_работыColumn {
+                get {
+                    return this.columnВид_работы;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Тип_ремонтаColumn {
+                get {
+                    return this.columnТип_ремонта;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ЦенаColumn {
+                get {
+                    return this.columnЦена;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Заказ_готовColumn {
+                get {
+                    return this.columnЗаказ_готов;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public Заказы_с_клиентамиRow this[int index] {
+                get {
+                    return ((Заказы_с_клиентамиRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event Заказы_с_клиентамиRowChangeEventHandler Заказы_с_клиентамиRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event Заказы_с_клиентамиRowChangeEventHandler Заказы_с_клиентамиRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event Заказы_с_клиентамиRowChangeEventHandler Заказы_с_клиентамиRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event Заказы_с_клиентамиRowChangeEventHandler Заказы_с_клиентамиRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void AddЗаказы_с_клиентамиRow(Заказы_с_клиентамиRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public Заказы_с_клиентамиRow AddЗаказы_с_клиентамиRow(string ФИО, string Вид_работы, string Тип_ремонта, decimal Цена, bool Заказ_готов) {
+                Заказы_с_клиентамиRow rowЗаказы_с_клиентамиRow = ((Заказы_с_клиентамиRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        null,
+                        ФИО,
+                        Вид_работы,
+                        Тип_ремонта,
+                        Цена,
+                        Заказ_готов};
+                rowЗаказы_с_клиентамиRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowЗаказы_с_клиентамиRow);
+                return rowЗаказы_с_клиентамиRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                Заказы_с_клиентамиDataTable cln = ((Заказы_с_клиентамиDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new Заказы_с_клиентамиDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal void InitVars() {
+                this.columnНомер_заказа = base.Columns["Номер заказа"];
+                this.columnНомер_клиента = base.Columns["Номер клиента"];
+                this.columnФИО = base.Columns["ФИО"];
+                this.columnВид_работы = base.Columns["Вид работы"];
+                this.columnТип_ремонта = base.Columns["Тип ремонта"];
+                this.columnЦена = base.Columns["Цена"];
+                this.columnЗаказ_готов = base.Columns["Заказ готов"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            private void InitClass() {
+                this.columnНомер_заказа = new global::System.Data.DataColumn("Номер заказа", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnНомер_заказа);
+                this.columnНомер_клиента = new global::System.Data.DataColumn("Номер клиента", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnНомер_клиента);
+                this.columnФИО = new global::System.Data.DataColumn("ФИО", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnФИО);
+                this.columnВид_работы = new global::System.Data.DataColumn("Вид работы", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnВид_работы);
+                this.columnТип_ремонта = new global::System.Data.DataColumn("Тип ремонта", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnТип_ремонта);
+                this.columnЦена = new global::System.Data.DataColumn("Цена", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnЦена);
+                this.columnЗаказ_готов = new global::System.Data.DataColumn("Заказ готов", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnЗаказ_готов);
+                this.columnНомер_заказа.AutoIncrement = true;
+                this.columnНомер_заказа.AutoIncrementSeed = -1;
+                this.columnНомер_заказа.AutoIncrementStep = -1;
+                this.columnНомер_клиента.AutoIncrement = true;
+                this.columnНомер_клиента.AutoIncrementSeed = -1;
+                this.columnНомер_клиента.AutoIncrementStep = -1;
+                this.columnФИО.ReadOnly = true;
+                this.columnФИО.MaxLength = 255;
+                this.columnВид_работы.MaxLength = 255;
+                this.columnТип_ремонта.MaxLength = 255;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public Заказы_с_клиентамиRow NewЗаказы_с_клиентамиRow() {
+                return ((Заказы_с_клиентамиRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new Заказы_с_клиентамиRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(Заказы_с_клиентамиRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.Заказы_с_клиентамиRowChanged != null)) {
+                    this.Заказы_с_клиентамиRowChanged(this, new Заказы_с_клиентамиRowChangeEvent(((Заказы_с_клиентамиRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.Заказы_с_клиентамиRowChanging != null)) {
+                    this.Заказы_с_клиентамиRowChanging(this, new Заказы_с_клиентамиRowChangeEvent(((Заказы_с_клиентамиRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.Заказы_с_клиентамиRowDeleted != null)) {
+                    this.Заказы_с_клиентамиRowDeleted(this, new Заказы_с_клиентамиRowChangeEvent(((Заказы_с_клиентамиRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.Заказы_с_клиентамиRowDeleting != null)) {
+                    this.Заказы_с_клиентамиRowDeleting(this, new Заказы_с_клиентамиRowChangeEvent(((Заказы_с_клиентамиRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void RemoveЗаказы_с_клиентамиRow(Заказы_с_клиентамиRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                _k_systemsDataSet ds = new _k_systemsDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "Заказы_с_клиентамиDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class Заказы_для_клиентаDataTable : global::System.Data.TypedTableBase<Заказы_для_клиентаRow> {
+            
+            private global::System.Data.DataColumn columnНомер_заказа;
+            
+            private global::System.Data.DataColumn columnНомер_клиента;
+            
+            private global::System.Data.DataColumn columnВид_работы;
+            
+            private global::System.Data.DataColumn columnТип_ремонта;
+            
+            private global::System.Data.DataColumn columnЦена;
+            
+            private global::System.Data.DataColumn columnЗаказ_готов;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public Заказы_для_клиентаDataTable() {
+                this.TableName = "Заказы для клиента";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal Заказы_для_клиентаDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected Заказы_для_клиентаDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Номер_заказаColumn {
+                get {
+                    return this.columnНомер_заказа;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Номер_клиентаColumn {
+                get {
+                    return this.columnНомер_клиента;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Вид_работыColumn {
+                get {
+                    return this.columnВид_работы;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Тип_ремонтаColumn {
+                get {
+                    return this.columnТип_ремонта;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ЦенаColumn {
+                get {
+                    return this.columnЦена;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Заказ_готовColumn {
+                get {
+                    return this.columnЗаказ_готов;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public Заказы_для_клиентаRow this[int index] {
+                get {
+                    return ((Заказы_для_клиентаRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event Заказы_для_клиентаRowChangeEventHandler Заказы_для_клиентаRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event Заказы_для_клиентаRowChangeEventHandler Заказы_для_клиентаRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event Заказы_для_клиентаRowChangeEventHandler Заказы_для_клиентаRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event Заказы_для_клиентаRowChangeEventHandler Заказы_для_клиентаRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void AddЗаказы_для_клиентаRow(Заказы_для_клиентаRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public Заказы_для_клиентаRow AddЗаказы_для_клиентаRow(int Номер_клиента, string Вид_работы, string Тип_ремонта, decimal Цена, bool Заказ_готов) {
+                Заказы_для_клиентаRow rowЗаказы_для_клиентаRow = ((Заказы_для_клиентаRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        Номер_клиента,
+                        Вид_работы,
+                        Тип_ремонта,
+                        Цена,
+                        Заказ_готов};
+                rowЗаказы_для_клиентаRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowЗаказы_для_клиентаRow);
+                return rowЗаказы_для_клиентаRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                Заказы_для_клиентаDataTable cln = ((Заказы_для_клиентаDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new Заказы_для_клиентаDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal void InitVars() {
+                this.columnНомер_заказа = base.Columns["Номер заказа"];
+                this.columnНомер_клиента = base.Columns["Номер клиента"];
+                this.columnВид_работы = base.Columns["Вид работы"];
+                this.columnТип_ремонта = base.Columns["Тип ремонта"];
+                this.columnЦена = base.Columns["Цена"];
+                this.columnЗаказ_готов = base.Columns["Заказ готов"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            private void InitClass() {
+                this.columnНомер_заказа = new global::System.Data.DataColumn("Номер заказа", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnНомер_заказа);
+                this.columnНомер_клиента = new global::System.Data.DataColumn("Номер клиента", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnНомер_клиента);
+                this.columnВид_работы = new global::System.Data.DataColumn("Вид работы", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnВид_работы);
+                this.columnТип_ремонта = new global::System.Data.DataColumn("Тип ремонта", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnТип_ремонта);
+                this.columnЦена = new global::System.Data.DataColumn("Цена", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnЦена);
+                this.columnЗаказ_готов = new global::System.Data.DataColumn("Заказ готов", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnЗаказ_готов);
+                this.columnНомер_заказа.AutoIncrement = true;
+                this.columnНомер_заказа.AutoIncrementSeed = -1;
+                this.columnНомер_заказа.AutoIncrementStep = -1;
+                this.columnВид_работы.MaxLength = 255;
+                this.columnТип_ремонта.MaxLength = 255;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public Заказы_для_клиентаRow NewЗаказы_для_клиентаRow() {
+                return ((Заказы_для_клиентаRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new Заказы_для_клиентаRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(Заказы_для_клиентаRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.Заказы_для_клиентаRowChanged != null)) {
+                    this.Заказы_для_клиентаRowChanged(this, new Заказы_для_клиентаRowChangeEvent(((Заказы_для_клиентаRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.Заказы_для_клиентаRowChanging != null)) {
+                    this.Заказы_для_клиентаRowChanging(this, new Заказы_для_клиентаRowChangeEvent(((Заказы_для_клиентаRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.Заказы_для_клиентаRowDeleted != null)) {
+                    this.Заказы_для_клиентаRowDeleted(this, new Заказы_для_клиентаRowChangeEvent(((Заказы_для_клиентаRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.Заказы_для_клиентаRowDeleting != null)) {
+                    this.Заказы_для_клиентаRowDeleting(this, new Заказы_для_клиентаRowChangeEvent(((Заказы_для_клиентаRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void RemoveЗаказы_для_клиентаRow(Заказы_для_клиентаRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                _k_systemsDataSet ds = new _k_systemsDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "Заказы_для_клиентаDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class Вид_работRow : global::System.Data.DataRow {
@@ -2861,6 +3604,17 @@ namespace k_systems {
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["ПользователиЗаказы"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public Тип_ремонтаRow Тип_ремонтаRow {
+                get {
+                    return ((Тип_ремонтаRow)(this.GetParentRow(this.Table.ParentRelations["Тип одеждыЗаказы"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["Тип одеждыЗаказы"]);
                 }
             }
             
@@ -3382,6 +4136,17 @@ namespace k_systems {
                     return ((Цены_работRow[])(base.GetChildRows(this.Table.ChildRelations["Тип одеждыЦены работ"])));
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public ЗаказыRow[] GetЗаказыRows() {
+                if ((this.Table.ChildRelations["Тип одеждыЗаказы"] == null)) {
+                    return new ЗаказыRow[0];
+                }
+                else {
+                    return ((ЗаказыRow[])(base.GetChildRows(this.Table.ChildRelations["Тип одеждыЗаказы"])));
+                }
+            }
         }
         
         /// <summary>
@@ -3565,6 +4330,402 @@ namespace k_systems {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetФИОNull() {
                 this[this.tableПользователи_для_заказов.ФИОColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class Заказы_с_клиентамиRow : global::System.Data.DataRow {
+            
+            private Заказы_с_клиентамиDataTable tableЗаказы_с_клиентами;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal Заказы_с_клиентамиRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableЗаказы_с_клиентами = ((Заказы_с_клиентамиDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int Номер_заказа {
+                get {
+                    try {
+                        return ((int)(this[this.tableЗаказы_с_клиентами.Номер_заказаColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Номер заказа\' в таблице \'Заказы с клиентами\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableЗаказы_с_клиентами.Номер_заказаColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int Номер_клиента {
+                get {
+                    try {
+                        return ((int)(this[this.tableЗаказы_с_клиентами.Номер_клиентаColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Номер клиента\' в таблице \'Заказы с клиентами\' равно DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableЗаказы_с_клиентами.Номер_клиентаColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string ФИО {
+                get {
+                    try {
+                        return ((string)(this[this.tableЗаказы_с_клиентами.ФИОColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'ФИО\' в таблице \'Заказы с клиентами\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableЗаказы_с_клиентами.ФИОColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Вид_работы {
+                get {
+                    try {
+                        return ((string)(this[this.tableЗаказы_с_клиентами.Вид_работыColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Вид работы\' в таблице \'Заказы с клиентами\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableЗаказы_с_клиентами.Вид_работыColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Тип_ремонта {
+                get {
+                    try {
+                        return ((string)(this[this.tableЗаказы_с_клиентами.Тип_ремонтаColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Тип ремонта\' в таблице \'Заказы с клиентами\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableЗаказы_с_клиентами.Тип_ремонтаColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal Цена {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableЗаказы_с_клиентами.ЦенаColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Цена\' в таблице \'Заказы с клиентами\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableЗаказы_с_клиентами.ЦенаColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Заказ_готов {
+                get {
+                    try {
+                        return ((bool)(this[this.tableЗаказы_с_клиентами.Заказ_готовColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Заказ готов\' в таблице \'Заказы с клиентами\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableЗаказы_с_клиентами.Заказ_готовColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsНомер_заказаNull() {
+                return this.IsNull(this.tableЗаказы_с_клиентами.Номер_заказаColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetНомер_заказаNull() {
+                this[this.tableЗаказы_с_клиентами.Номер_заказаColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsНомер_клиентаNull() {
+                return this.IsNull(this.tableЗаказы_с_клиентами.Номер_клиентаColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetНомер_клиентаNull() {
+                this[this.tableЗаказы_с_клиентами.Номер_клиентаColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsФИОNull() {
+                return this.IsNull(this.tableЗаказы_с_клиентами.ФИОColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetФИОNull() {
+                this[this.tableЗаказы_с_клиентами.ФИОColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsВид_работыNull() {
+                return this.IsNull(this.tableЗаказы_с_клиентами.Вид_работыColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetВид_работыNull() {
+                this[this.tableЗаказы_с_клиентами.Вид_работыColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsТип_ремонтаNull() {
+                return this.IsNull(this.tableЗаказы_с_клиентами.Тип_ремонтаColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetТип_ремонтаNull() {
+                this[this.tableЗаказы_с_клиентами.Тип_ремонтаColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsЦенаNull() {
+                return this.IsNull(this.tableЗаказы_с_клиентами.ЦенаColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetЦенаNull() {
+                this[this.tableЗаказы_с_клиентами.ЦенаColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsЗаказ_готовNull() {
+                return this.IsNull(this.tableЗаказы_с_клиентами.Заказ_готовColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetЗаказ_готовNull() {
+                this[this.tableЗаказы_с_клиентами.Заказ_готовColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class Заказы_для_клиентаRow : global::System.Data.DataRow {
+            
+            private Заказы_для_клиентаDataTable tableЗаказы_для_клиента;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal Заказы_для_клиентаRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableЗаказы_для_клиента = ((Заказы_для_клиентаDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int Номер_заказа {
+                get {
+                    try {
+                        return ((int)(this[this.tableЗаказы_для_клиента.Номер_заказаColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Номер заказа\' в таблице \'Заказы для клиента\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableЗаказы_для_клиента.Номер_заказаColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int Номер_клиента {
+                get {
+                    try {
+                        return ((int)(this[this.tableЗаказы_для_клиента.Номер_клиентаColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Номер клиента\' в таблице \'Заказы для клиента\' равно DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableЗаказы_для_клиента.Номер_клиентаColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Вид_работы {
+                get {
+                    try {
+                        return ((string)(this[this.tableЗаказы_для_клиента.Вид_работыColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Вид работы\' в таблице \'Заказы для клиента\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableЗаказы_для_клиента.Вид_работыColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Тип_ремонта {
+                get {
+                    try {
+                        return ((string)(this[this.tableЗаказы_для_клиента.Тип_ремонтаColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Тип ремонта\' в таблице \'Заказы для клиента\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableЗаказы_для_клиента.Тип_ремонтаColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal Цена {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableЗаказы_для_клиента.ЦенаColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Цена\' в таблице \'Заказы для клиента\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableЗаказы_для_клиента.ЦенаColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Заказ_готов {
+                get {
+                    try {
+                        return ((bool)(this[this.tableЗаказы_для_клиента.Заказ_готовColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Заказ готов\' в таблице \'Заказы для клиента\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableЗаказы_для_клиента.Заказ_готовColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsНомер_заказаNull() {
+                return this.IsNull(this.tableЗаказы_для_клиента.Номер_заказаColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetНомер_заказаNull() {
+                this[this.tableЗаказы_для_клиента.Номер_заказаColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsНомер_клиентаNull() {
+                return this.IsNull(this.tableЗаказы_для_клиента.Номер_клиентаColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetНомер_клиентаNull() {
+                this[this.tableЗаказы_для_клиента.Номер_клиентаColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsВид_работыNull() {
+                return this.IsNull(this.tableЗаказы_для_клиента.Вид_работыColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetВид_работыNull() {
+                this[this.tableЗаказы_для_клиента.Вид_работыColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsТип_ремонтаNull() {
+                return this.IsNull(this.tableЗаказы_для_клиента.Тип_ремонтаColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetТип_ремонтаNull() {
+                this[this.tableЗаказы_для_клиента.Тип_ремонтаColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsЦенаNull() {
+                return this.IsNull(this.tableЗаказы_для_клиента.ЦенаColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetЦенаNull() {
+                this[this.tableЗаказы_для_клиента.ЦенаColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsЗаказ_готовNull() {
+                return this.IsNull(this.tableЗаказы_для_клиента.Заказ_готовColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetЗаказ_готовNull() {
+                this[this.tableЗаказы_для_клиента.Заказ_готовColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -3792,6 +4953,74 @@ namespace k_systems {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public Пользователи_для_заказовRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public class Заказы_с_клиентамиRowChangeEvent : global::System.EventArgs {
+            
+            private Заказы_с_клиентамиRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public Заказы_с_клиентамиRowChangeEvent(Заказы_с_клиентамиRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public Заказы_с_клиентамиRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public class Заказы_для_клиентаRowChangeEvent : global::System.EventArgs {
+            
+            private Заказы_для_клиентаRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public Заказы_для_клиентаRowChangeEvent(Заказы_для_клиентаRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public Заказы_для_клиентаRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -6089,6 +7318,353 @@ namespace k_systems._k_systemsDataSetTableAdapters {
                     this.Adapter.InsertCommand.Connection.Close();
                 }
             }
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class Заказы_с_клиентамиTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.OleDb.OleDbDataAdapter _adapter;
+        
+        private global::System.Data.OleDb.OleDbConnection _connection;
+        
+        private global::System.Data.OleDb.OleDbTransaction _transaction;
+        
+        private global::System.Data.OleDb.OleDbCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public Заказы_с_клиентамиTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        protected internal global::System.Data.OleDb.OleDbDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        internal global::System.Data.OleDb.OleDbConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.OleDb.OleDbCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        internal global::System.Data.OleDb.OleDbTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        protected global::System.Data.OleDb.OleDbCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.OleDb.OleDbDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "Заказы с клиентами";
+            tableMapping.ColumnMappings.Add("Номер заказа", "Номер заказа");
+            tableMapping.ColumnMappings.Add("Номер клиента", "Номер клиента");
+            tableMapping.ColumnMappings.Add("ФИО", "ФИО");
+            tableMapping.ColumnMappings.Add("Вид работы", "Вид работы");
+            tableMapping.ColumnMappings.Add("Тип ремонта", "Тип ремонта");
+            tableMapping.ColumnMappings.Add("Цена", "Цена");
+            tableMapping.ColumnMappings.Add("Заказ готов", "Заказ готов");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.OleDb.OleDbConnection();
+            this._connection.ConnectionString = global::k_systems.Properties.Settings.Default.k_systemsConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
+            this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT [Номер заказа], [Номер клиента], ФИО, [Вид работы], [Тип ремонта], Цена, [" +
+                "Заказ готов] FROM [Заказы с клиентами]";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(_k_systemsDataSet.Заказы_с_клиентамиDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual _k_systemsDataSet.Заказы_с_клиентамиDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            _k_systemsDataSet.Заказы_с_клиентамиDataTable dataTable = new _k_systemsDataSet.Заказы_с_клиентамиDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class Заказы_для_клиентаTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.OleDb.OleDbDataAdapter _adapter;
+        
+        private global::System.Data.OleDb.OleDbConnection _connection;
+        
+        private global::System.Data.OleDb.OleDbTransaction _transaction;
+        
+        private global::System.Data.OleDb.OleDbCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public Заказы_для_клиентаTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        protected internal global::System.Data.OleDb.OleDbDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        internal global::System.Data.OleDb.OleDbConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.OleDb.OleDbCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        internal global::System.Data.OleDb.OleDbTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        protected global::System.Data.OleDb.OleDbCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.OleDb.OleDbDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "Заказы для клиента";
+            tableMapping.ColumnMappings.Add("Номер заказа", "Номер заказа");
+            tableMapping.ColumnMappings.Add("Номер клиента", "Номер клиента");
+            tableMapping.ColumnMappings.Add("Вид работы", "Вид работы");
+            tableMapping.ColumnMappings.Add("Тип ремонта", "Тип ремонта");
+            tableMapping.ColumnMappings.Add("Цена", "Цена");
+            tableMapping.ColumnMappings.Add("Заказ готов", "Заказ готов");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.OleDb.OleDbConnection();
+            this._connection.ConnectionString = global::k_systems.Properties.Settings.Default.k_systemsConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
+            this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT [Номер заказа], [Номер клиента], [Вид работы], [Тип ремонта], Цена, [Заказ" +
+                " готов] FROM [Заказы для клиента]";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(_k_systemsDataSet.Заказы_для_клиентаDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual _k_systemsDataSet.Заказы_для_клиентаDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            _k_systemsDataSet.Заказы_для_клиентаDataTable dataTable = new _k_systemsDataSet.Заказы_для_клиентаDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
         }
     }
     
