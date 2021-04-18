@@ -35,17 +35,17 @@
             this.addOrderButton = new System.Windows.Forms.Button();
             this.orderSearchLabel = new System.Windows.Forms.Label();
             this.dataGridViewOrder = new System.Windows.Forms.DataGridView();
-            this._k_systemsDataSet = new k_systems._k_systemsDataSet();
-            this.заказыСКлиентамиBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.заказы_с_клиентамиTableAdapter = new k_systems._k_systemsDataSetTableAdapters.Заказы_с_клиентамиTableAdapter();
             this.фИОDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.видРаботыDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.типРемонтаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ценаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.заказГотовDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.заказыСКлиентамиBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this._k_systemsDataSet = new k_systems._k_systemsDataSet();
+            this.заказы_с_клиентамиTableAdapter = new k_systems._k_systemsDataSetTableAdapters.Заказы_с_клиентамиTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrder)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._k_systemsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.заказыСКлиентамиBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._k_systemsDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // readyOrdersFilterCheckBox
@@ -61,6 +61,7 @@
             this.readyOrdersFilterCheckBox.Text = "Отображаются все заказы";
             this.readyOrdersFilterCheckBox.ThreeState = true;
             this.readyOrdersFilterCheckBox.UseVisualStyleBackColor = true;
+            this.readyOrdersFilterCheckBox.CheckStateChanged += new System.EventHandler(this.readyOrdersFilterCheckBox_CheckStateChanged);
             // 
             // orderFilterTextBox
             // 
@@ -120,20 +121,7 @@
             this.dataGridViewOrder.Name = "dataGridViewOrder";
             this.dataGridViewOrder.Size = new System.Drawing.Size(860, 618);
             this.dataGridViewOrder.TabIndex = 12;
-            // 
-            // _k_systemsDataSet
-            // 
-            this._k_systemsDataSet.DataSetName = "_k_systemsDataSet";
-            this._k_systemsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // заказыСКлиентамиBindingSource
-            // 
-            this.заказыСКлиентамиBindingSource.DataMember = "Заказы с клиентами";
-            this.заказыСКлиентамиBindingSource.DataSource = this._k_systemsDataSet;
-            // 
-            // заказы_с_клиентамиTableAdapter
-            // 
-            this.заказы_с_клиентамиTableAdapter.ClearBeforeFill = true;
+            this.dataGridViewOrder.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewOrder_CellEndEdit);
             // 
             // фИОDataGridViewTextBoxColumn
             // 
@@ -166,6 +154,20 @@
             this.заказГотовDataGridViewCheckBoxColumn.HeaderText = "Заказ готов";
             this.заказГотовDataGridViewCheckBoxColumn.Name = "заказГотовDataGridViewCheckBoxColumn";
             // 
+            // заказыСКлиентамиBindingSource
+            // 
+            this.заказыСКлиентамиBindingSource.DataMember = "Заказы с клиентами";
+            this.заказыСКлиентамиBindingSource.DataSource = this._k_systemsDataSet;
+            // 
+            // _k_systemsDataSet
+            // 
+            this._k_systemsDataSet.DataSetName = "_k_systemsDataSet";
+            this._k_systemsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // заказы_с_клиентамиTableAdapter
+            // 
+            this.заказы_с_клиентамиTableAdapter.ClearBeforeFill = true;
+            // 
             // Добавить_заказ
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -184,8 +186,8 @@
             this.Text = "Добавить заказ";
             this.Load += new System.EventHandler(this.Добавить_заказ_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrder)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._k_systemsDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.заказыСКлиентамиBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._k_systemsDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

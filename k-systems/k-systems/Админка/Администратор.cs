@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static k_systems._k_systemsDataSet;
 
 namespace k_systems.Админка
 {
@@ -55,6 +56,28 @@ namespace k_systems.Админка
                 else e.Cancel = true;
             }
             else Application.Exit();
+        }
+
+        private void AddOrder_Click(object sender, EventArgs e)
+        {
+            var открыть = new Добавить_заказ();
+            открыть.ShowDialog();
+        }
+
+        private void dataGridView_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            var changedRow = (ПользователиRow)((DataRowView)((DataGridView)sender).CurrentRow.DataBoundItem).Row;
+            var userTable = EntityManager.FilterUsers($"Id = {changedRow.Id}");
+
+            userTable[0].Id = changedRow.Id;
+            userTable[0].Фамилия = changedRow.Фамилия;
+            userTable[0].Имя = changedRow.Имя;
+            userTable[0].Отчество = changedRow.Отчество;
+            userTable[0].Телефон = changedRow.Телефон;
+            userTable[0]._E_mail = changedRow._E_mail;
+
+            EntityManager.UpdateUsers();
+
         }
     }
 }

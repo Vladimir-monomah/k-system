@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Заказ));
             this.priceNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.priceLabel = new System.Windows.Forms.Label();
@@ -38,7 +39,18 @@
             this.workKindComboBox = new System.Windows.Forms.ComboBox();
             this.clientLabel = new System.Windows.Forms.Label();
             this.clientComboBox = new System.Windows.Forms.ComboBox();
+            this._k_systemsDataSet = new k_systems._k_systemsDataSet();
+            this.пользователиДляЗаказовBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.пользователи_для_заказовTableAdapter = new k_systems._k_systemsDataSetTableAdapters.Пользователи_для_заказовTableAdapter();
+            this.видРаботBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.вид_работTableAdapter = new k_systems._k_systemsDataSetTableAdapters.Вид_работTableAdapter();
+            this.типРемонтаBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.тип_ремонтаTableAdapter = new k_systems._k_systemsDataSetTableAdapters.Тип_ремонтаTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.priceNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._k_systemsDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.пользователиДляЗаказовBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.видРаботBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.типРемонтаBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // priceNumericUpDown
@@ -76,6 +88,7 @@
             this.addOrderButton.TabIndex = 16;
             this.addOrderButton.Text = "Добавить заказ";
             this.addOrderButton.UseVisualStyleBackColor = true;
+            this.addOrderButton.Click += new System.EventHandler(this.addOrderButton_Click);
             // 
             // dressTypeLabel
             // 
@@ -84,12 +97,13 @@
             this.dressTypeLabel.Location = new System.Drawing.Point(69, 176);
             this.dressTypeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.dressTypeLabel.Name = "dressTypeLabel";
-            this.dressTypeLabel.Size = new System.Drawing.Size(169, 29);
+            this.dressTypeLabel.Size = new System.Drawing.Size(159, 29);
             this.dressTypeLabel.TabIndex = 15;
-            this.dressTypeLabel.Text = "Тип одежды";
+            this.dressTypeLabel.Text = "Тип работы";
             // 
             // dressTypeComboBox
             // 
+            this.dressTypeComboBox.DataSource = this.типРемонтаBindingSource;
             this.dressTypeComboBox.DisplayMember = "Наименование";
             this.dressTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dressTypeComboBox.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -114,6 +128,7 @@
             // 
             // workKindComboBox
             // 
+            this.workKindComboBox.DataSource = this.видРаботBindingSource;
             this.workKindComboBox.DisplayMember = "Наименование";
             this.workKindComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.workKindComboBox.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -138,6 +153,7 @@
             // 
             // clientComboBox
             // 
+            this.clientComboBox.DataSource = this.пользователиДляЗаказовBindingSource;
             this.clientComboBox.DisplayMember = "ФИО";
             this.clientComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.clientComboBox.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -147,7 +163,39 @@
             this.clientComboBox.Name = "clientComboBox";
             this.clientComboBox.Size = new System.Drawing.Size(273, 32);
             this.clientComboBox.TabIndex = 10;
-            this.clientComboBox.ValueMember = "Идентификатор";
+            this.clientComboBox.ValueMember = "Id";
+            // 
+            // _k_systemsDataSet
+            // 
+            this._k_systemsDataSet.DataSetName = "_k_systemsDataSet";
+            this._k_systemsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // пользователиДляЗаказовBindingSource
+            // 
+            this.пользователиДляЗаказовBindingSource.DataMember = "Пользователи для заказов";
+            this.пользователиДляЗаказовBindingSource.DataSource = this._k_systemsDataSet;
+            // 
+            // пользователи_для_заказовTableAdapter
+            // 
+            this.пользователи_для_заказовTableAdapter.ClearBeforeFill = true;
+            // 
+            // видРаботBindingSource
+            // 
+            this.видРаботBindingSource.DataMember = "Вид работ";
+            this.видРаботBindingSource.DataSource = this._k_systemsDataSet;
+            // 
+            // вид_работTableAdapter
+            // 
+            this.вид_работTableAdapter.ClearBeforeFill = true;
+            // 
+            // типРемонтаBindingSource
+            // 
+            this.типРемонтаBindingSource.DataMember = "Тип ремонта";
+            this.типРемонтаBindingSource.DataSource = this._k_systemsDataSet;
+            // 
+            // тип_ремонтаTableAdapter
+            // 
+            this.тип_ремонтаTableAdapter.ClearBeforeFill = true;
             // 
             // Заказ
             // 
@@ -169,7 +217,12 @@
             this.Name = "Заказ";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Заказ";
+            this.Load += new System.EventHandler(this.Заказ_Load);
             ((System.ComponentModel.ISupportInitialize)(this.priceNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._k_systemsDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.пользователиДляЗаказовBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.видРаботBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.типРемонтаBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -186,5 +239,12 @@
         private System.Windows.Forms.ComboBox workKindComboBox;
         private System.Windows.Forms.Label clientLabel;
         private System.Windows.Forms.ComboBox clientComboBox;
+        private _k_systemsDataSet _k_systemsDataSet;
+        private System.Windows.Forms.BindingSource пользователиДляЗаказовBindingSource;
+        private _k_systemsDataSetTableAdapters.Пользователи_для_заказовTableAdapter пользователи_для_заказовTableAdapter;
+        private System.Windows.Forms.BindingSource видРаботBindingSource;
+        private _k_systemsDataSetTableAdapters.Вид_работTableAdapter вид_работTableAdapter;
+        private System.Windows.Forms.BindingSource типРемонтаBindingSource;
+        private _k_systemsDataSetTableAdapters.Тип_ремонтаTableAdapter тип_ремонтаTableAdapter;
     }
 }

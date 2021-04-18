@@ -15,7 +15,21 @@ namespace k_systems
         static _k_systemsDataSet _K_Systems = new _k_systemsDataSet();
 
         private static ПользователиTableAdapter пользователиTableAdapter = new ПользователиTableAdapter();
+        private static ЗаказыTableAdapter заказыTableAdapter = new ЗаказыTableAdapter();
+        private static Цены_работTableAdapter ценыРаботTableAdapter = new Цены_работTableAdapter();
 
+        static EntityManager()
+        {
+            // Костыль заменяет оригинальную команду обновления строк во избежание ошибки "Нарушение параллелизма"
+            var заказыUpdateCommand = заказыTableAdapter.Adapter.UpdateCommand;
+            заказыUpdateCommand.CommandText = "UPDATE `Заказы` SET `Номер клиента` = ?, `заказ готов` = ?, `Вид работы` = ?," +
+                " `Тип работы` = ?, `Цена` = ? WHERE (`Идентификатор` = ?)";
+            var parameters = заказыUpdateCommand.Parameters;
+            while (parameters.Count > 6)
+            {
+                заказыTableAdapter.Adapter.UpdateCommand.Parameters.RemoveAt(6);
+            }
+        }
 
         public static ПользователиDataTable UserDataTable
         {
@@ -25,9 +39,36 @@ namespace k_systems
             }
         }
 
+        public static ЗаказыDataTable OrderDataTable
+        {
+            get
+            {
+                return _K_Systems.Заказы;
+            }
+        }
+
+        public static Цены_работDataTable WorkPrices
+        {
+            get
+            {
+                return _K_Systems.Цены_работ;
+            }
+        }
+
         public static void UpdateUsers()
         {
             пользователиTableAdapter.Adapter.Update(UserDataTable);
+        }
+
+        public static void UpdateOrders()
+        {
+            заказыTableAdapter.Adapter.Update(OrderDataTable);
+            OrderDataTable.AcceptChanges();
+        }
+
+        public static void UpdateWorkPrices()
+        {
+            ценыРаботTableAdapter.Adapter.Update(WorkPrices);
         }
 
         /// <summary>
@@ -79,6 +120,59 @@ namespace k_systems
 
             return string.Join(" OR ", filterStrings);
         }
+
+        /// <summary>
+        /// Возвращает отфильтрованную таблицу заказов по условию <paramref name="condition"/>
+        /// </summary>
+        /// <param name="condition"></param>
+        /// <returns></returns>
+        public static ЗаказыDataTable FilterOrders(string condition = null)
+        {
+            var whereCondition = string.Empty;
+            if (!string.IsNullOrEmpty(condition))
+            {
+                whereCondition = $"WHERE {condition}";
+            }
+
+            var filterOrderCommand = new OleDbCommand()
+            {
+                Connection = заказыTableAdapter.Connection,
+                CommandText = "SELECT Идентификатор, [Номер клиента], [Вид работы], [Тип работы], [заказ готов] " +
+                $"FROM Заказы {whereCondition}",
+                CommandType = global::System.Data.CommandType.Text
+            };
+
+            FillFilteredTable(заказыTableAdapter.Adapter, filterOrderCommand, OrderDataTable);
+
+            return OrderDataTable;
+        }
+
+        /// <summary>
+        /// Возвращает отфильтрованную таблицу цен работ по условию <paramref name="condition"/>
+        /// </summary>
+        /// <param name="condition"></param>
+        /// <returns></returns>
+        public static Цены_работDataTable FilterWorkPrices(string condition = null)
+        {
+            var whereCondition = string.Empty;
+            if (!string.IsNullOrEmpty(condition))
+            {
+                whereCondition = $"WHERE {condition}";
+            }
+
+            var filterUserCommand = new OleDbCommand()
+            {
+                Connection = ценыРаботTableAdapter.Connection,
+                CommandText = "SELECT Идентификатор, [Вид работы], [Тип ремонта], Цена" +
+                $" FROM [Цены работ] {whereCondition}",
+                CommandType = global::System.Data.CommandType.Text
+            };
+
+            FillFilteredTable(ценыРаботTableAdapter.Adapter, filterUserCommand, WorkPrices);
+
+            return WorkPrices;
+        }
+
 
         /// <summary>
         /// Объединяет условия фильтрации заданным логическим оператором

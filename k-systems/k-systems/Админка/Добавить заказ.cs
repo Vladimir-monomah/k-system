@@ -55,5 +55,52 @@ namespace k_systems.Админка
             this.заказы_с_клиентамиTableAdapter.Fill(
                 this._k_systemsDataSet.Заказы_с_клиентами);
         }
+
+        /// <summary>
+        /// Обновляет информацию в бд об отредактированном заказе
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dataGridViewOrder_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            var changedRow = (Заказы_с_клиентамиRow)((DataRowView)((DataGridView)sender).CurrentRow.DataBoundItem).Row;
+            var orderTable = EntityManager.FilterOrders($"Id={changedRow.Номер_заказа}");
+
+            orderTable[0].заказ_готов = changedRow.Заказ_готов;
+            orderTable[0].Цена = changedRow.Цена;
+            EntityManager.UpdateOrders();
+
+            this.заказы_с_клиентамиTableAdapter.Fill(this._k_systemsDataSet.Заказы_с_клиентами);
+        }
+
+        /// <summary>
+        /// Переключает фильтрацию заказов по полю "Заказ готов": true, false, all
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void readyOrdersFilterCheckBox_CheckStateChanged(object sender, EventArgs e)
+        {
+            switch (this.readyOrdersFilterCheckBox.CheckState)
+            {
+                case CheckState.Checked:
+                    this.readyOrNotReadyOrdersFilter = "[Заказ готов] = TRUE";
+                    this.readyOrdersFilterCheckBox.Text = "Отображаются готовые заказы";
+                    break;
+
+                case CheckState.Indeterminate:
+                    this.readyOrNotReadyOrdersFilter = string.Empty;
+                    this.readyOrdersFilterCheckBox.Text = "Отображаются все заказы";
+                    break;
+
+                case CheckState.Unchecked:
+                    this.readyOrNotReadyOrdersFilter = "[Заказ готов] = FALSE";
+                    this.readyOrdersFilterCheckBox.Text = "Отображаются неготовые заказы";
+                    break;
+            }
+
+            this.заказыСКлиентамиBindingSource.Filter = EntityManager.UnionFilter(
+                this.textBoxOrdersFilter,
+                this.readyOrNotReadyOrdersFilter);
+        }
     }
 }

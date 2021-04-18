@@ -104,6 +104,7 @@
             this.dataGridView.RowTemplate.Height = 24;
             this.dataGridView.Size = new System.Drawing.Size(1620, 561);
             this.dataGridView.TabIndex = 27;
+            this.dataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellEndEdit);
             // 
             // фамилияDataGridViewTextBoxColumn
             // 
@@ -181,6 +182,7 @@
             this.AddOrder.TabIndex = 29;
             this.AddOrder.Text = "Добавить заказ";
             this.AddOrder.UseVisualStyleBackColor = true;
+            this.AddOrder.Click += new System.EventHandler(this.AddOrder_Click);
             // 
             // Email
             // 

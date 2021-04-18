@@ -1,4 +1,5 @@
-﻿using System;
+﻿using k_systems.Админка;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace k_systems
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Загрузочный_файл());
+            Application.Run(new Администратор());
         }
     }
 }
