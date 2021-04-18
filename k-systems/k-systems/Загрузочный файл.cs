@@ -14,7 +14,7 @@ namespace k_systems
     {
         public Загрузочный_файл()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
 
         int startpion = 0;

@@ -28,10 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Администратор));
             this.masterFilterTextBox = new System.Windows.Forms.TextBox();
             this.labelSortingCustomers = new System.Windows.Forms.Label();
             this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.фамилияDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.имяDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.отчествоDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.логинDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.парольDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.телефонDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.пользователиBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this._k_systemsDataSet = new k_systems._k_systemsDataSet();
             this.AddOrder = new System.Windows.Forms.Button();
             this.Email = new System.Windows.Forms.Button();
             this.СhangeUser = new System.Windows.Forms.Button();
@@ -42,7 +52,10 @@
             this.btn_cancel = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.пользователиTableAdapter = new k_systems._k_systemsDataSetTableAdapters.ПользователиTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.пользователиBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._k_systemsDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // masterFilterTextBox
@@ -57,6 +70,7 @@
             this.masterFilterTextBox.Name = "masterFilterTextBox";
             this.masterFilterTextBox.Size = new System.Drawing.Size(1619, 46);
             this.masterFilterTextBox.TabIndex = 18;
+            this.masterFilterTextBox.TextChanged += new System.EventHandler(this.masterFilterTextBox_TextChanged);
             // 
             // labelSortingCustomers
             // 
@@ -73,13 +87,89 @@
             this.dataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView.AutoGenerateColumns = false;
             this.dataGridView.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.фамилияDataGridViewTextBoxColumn,
+            this.имяDataGridViewTextBoxColumn,
+            this.отчествоDataGridViewTextBoxColumn,
+            this.логинDataGridViewTextBoxColumn,
+            this.парольDataGridViewTextBoxColumn,
+            this.emailDataGridViewTextBoxColumn,
+            this.телефонDataGridViewTextBoxColumn});
+            this.dataGridView.DataSource = this.пользователиBindingSource;
             this.dataGridView.Location = new System.Drawing.Point(13, 140);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowTemplate.Height = 24;
             this.dataGridView.Size = new System.Drawing.Size(1620, 561);
             this.dataGridView.TabIndex = 27;
+            // 
+            // фамилияDataGridViewTextBoxColumn
+            // 
+            this.фамилияDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.фамилияDataGridViewTextBoxColumn.DataPropertyName = "Фамилия";
+            this.фамилияDataGridViewTextBoxColumn.HeaderText = "Фамилия";
+            this.фамилияDataGridViewTextBoxColumn.Name = "фамилияDataGridViewTextBoxColumn";
+            this.фамилияDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // имяDataGridViewTextBoxColumn
+            // 
+            this.имяDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.имяDataGridViewTextBoxColumn.DataPropertyName = "Имя";
+            this.имяDataGridViewTextBoxColumn.HeaderText = "Имя";
+            this.имяDataGridViewTextBoxColumn.Name = "имяDataGridViewTextBoxColumn";
+            this.имяDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // отчествоDataGridViewTextBoxColumn
+            // 
+            this.отчествоDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.отчествоDataGridViewTextBoxColumn.DataPropertyName = "Отчество";
+            this.отчествоDataGridViewTextBoxColumn.HeaderText = "Отчество";
+            this.отчествоDataGridViewTextBoxColumn.Name = "отчествоDataGridViewTextBoxColumn";
+            this.отчествоDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // логинDataGridViewTextBoxColumn
+            // 
+            this.логинDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.логинDataGridViewTextBoxColumn.DataPropertyName = "логин";
+            this.логинDataGridViewTextBoxColumn.HeaderText = "Логин";
+            this.логинDataGridViewTextBoxColumn.Name = "логинDataGridViewTextBoxColumn";
+            this.логинDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // парольDataGridViewTextBoxColumn
+            // 
+            this.парольDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.парольDataGridViewTextBoxColumn.DataPropertyName = "пароль";
+            this.парольDataGridViewTextBoxColumn.HeaderText = "Пароль";
+            this.парольDataGridViewTextBoxColumn.Name = "парольDataGridViewTextBoxColumn";
+            this.парольDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "E-mail";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "E-mail";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // телефонDataGridViewTextBoxColumn
+            // 
+            this.телефонDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.телефонDataGridViewTextBoxColumn.DataPropertyName = "Телефон";
+            this.телефонDataGridViewTextBoxColumn.HeaderText = "Телефон";
+            this.телефонDataGridViewTextBoxColumn.Name = "телефонDataGridViewTextBoxColumn";
+            this.телефонDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // пользователиBindingSource
+            // 
+            this.пользователиBindingSource.DataMember = "Пользователи";
+            this.пользователиBindingSource.DataSource = this._k_systemsDataSet;
+            // 
+            // _k_systemsDataSet
+            // 
+            this._k_systemsDataSet.DataSetName = "_k_systemsDataSet";
+            this._k_systemsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // AddOrder
             // 
@@ -183,6 +273,10 @@
             this.button2.Text = "Добавить услугу";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // пользователиTableAdapter
+            // 
+            this.пользователиTableAdapter.ClearBeforeFill = true;
+            // 
             // Администратор
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -209,7 +303,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Мастер";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Администратор_FormClosing);
+            this.Load += new System.EventHandler(this.Администратор_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.пользователиBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._k_systemsDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,5 +328,15 @@
         private System.Windows.Forms.Button btn_cancel;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private _k_systemsDataSet _k_systemsDataSet;
+        private System.Windows.Forms.BindingSource пользователиBindingSource;
+        private _k_systemsDataSetTableAdapters.ПользователиTableAdapter пользователиTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn фамилияDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn имяDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn отчествоDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn логинDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn парольDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn телефонDataGridViewTextBoxColumn;
     }
 }

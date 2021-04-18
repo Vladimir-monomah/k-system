@@ -20,7 +20,7 @@ namespace k_systems.Пользовательская_форма
         public Заказы()
         {
             this.orderFilter = $"([Номер клиента])";
-            InitializeComponent();
+            this.InitializeComponent();
         }
 
         private void Заказы_Load(object sender, EventArgs e)

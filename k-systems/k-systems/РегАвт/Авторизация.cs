@@ -52,13 +52,13 @@ namespace k_systems
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            if (tbLogin.Text == "" && tbPassword.Text == "")
+            if (this.tbLogin.Text == "" && this.tbPassword.Text == "")
             {
                 MessageBox.Show("Вы не ввели логин или пароль! Пожалуйста, заполните поля!", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
             this.counter++;
-            if (string.IsNullOrEmpty(tbLogin.Text))
+            if (string.IsNullOrEmpty(this.tbLogin.Text))
             {
                 this.tbLogin.Focus();
                 return;
