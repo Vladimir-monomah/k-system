@@ -127,5 +127,15 @@ namespace k_systems.РегАвт
             }
             else Application.Exit();
         }
+
+        private void Регистрация_Load(object sender, EventArgs e)
+        {
+            this.Phone.Mask = "+7(000)-000-0000";
+        }
+
+        private void textBoxEmail_TextChanged(object sender, EventArgs e)
+        {
+            bool result = ValidEmail.IsValidEmail(textBoxEmail.Text);
+        }
     }
 }

@@ -42,8 +42,8 @@
             this.labelPatronomic = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
             this.labelSername = new System.Windows.Forms.Label();
-            this.Phone = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.Phone = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // textBoxEmail
@@ -54,7 +54,8 @@
             this.textBoxEmail.Multiline = true;
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(267, 39);
-            this.textBoxEmail.TabIndex = 36;
+            this.textBoxEmail.TabIndex = 5;
+            this.textBoxEmail.TextChanged += new System.EventHandler(this.textBoxEmail_TextChanged);
             // 
             // label1
             // 
@@ -74,7 +75,7 @@
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.PasswordChar = '*';
             this.textBoxPassword.Size = new System.Drawing.Size(267, 39);
-            this.textBoxPassword.TabIndex = 34;
+            this.textBoxPassword.TabIndex = 7;
             this.textBoxPassword.Tag = "";
             // 
             // textBoxLogin
@@ -85,7 +86,7 @@
             this.textBoxLogin.Multiline = true;
             this.textBoxLogin.Name = "textBoxLogin";
             this.textBoxLogin.Size = new System.Drawing.Size(267, 39);
-            this.textBoxLogin.TabIndex = 33;
+            this.textBoxLogin.TabIndex = 6;
             // 
             // textBoxPatronomic
             // 
@@ -95,7 +96,7 @@
             this.textBoxPatronomic.Multiline = true;
             this.textBoxPatronomic.Name = "textBoxPatronomic";
             this.textBoxPatronomic.Size = new System.Drawing.Size(267, 39);
-            this.textBoxPatronomic.TabIndex = 32;
+            this.textBoxPatronomic.TabIndex = 3;
             this.textBoxPatronomic.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPatronomic_KeyPress);
             // 
             // textBoxName
@@ -106,7 +107,7 @@
             this.textBoxName.Multiline = true;
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(267, 39);
-            this.textBoxName.TabIndex = 31;
+            this.textBoxName.TabIndex = 2;
             this.textBoxName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPatronomic_KeyPress);
             // 
             // textBoxSername
@@ -117,7 +118,7 @@
             this.textBoxSername.Multiline = true;
             this.textBoxSername.Name = "textBoxSername";
             this.textBoxSername.Size = new System.Drawing.Size(267, 39);
-            this.textBoxSername.TabIndex = 30;
+            this.textBoxSername.TabIndex = 1;
             this.textBoxSername.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPatronomic_KeyPress);
             // 
             // buttonRegister
@@ -176,17 +177,6 @@
             this.labelSername.TabIndex = 24;
             this.labelSername.Text = "Фамилия";
             // 
-            // Phone
-            // 
-            this.Phone.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Phone.Location = new System.Drawing.Point(149, 171);
-            this.Phone.MaxLength = 30;
-            this.Phone.Multiline = true;
-            this.Phone.Name = "Phone";
-            this.Phone.Size = new System.Drawing.Size(267, 39);
-            this.Phone.TabIndex = 38;
-            this.Phone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Phone_KeyPress);
-            // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -195,6 +185,15 @@
             this.label2.Size = new System.Drawing.Size(113, 39);
             this.label2.TabIndex = 37;
             this.label2.Text = "Телефон";
+            // 
+            // Phone
+            // 
+            this.Phone.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.Phone.Location = new System.Drawing.Point(149, 175);
+            this.Phone.Mask = "+7(***) ***-****";
+            this.Phone.Name = "Phone";
+            this.Phone.Size = new System.Drawing.Size(267, 32);
+            this.Phone.TabIndex = 4;
             // 
             // Регистрация
             // 
@@ -224,6 +223,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Регистрация";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Регистрация_FormClosing);
+            this.Load += new System.EventHandler(this.Регистрация_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -244,7 +244,7 @@
         private System.Windows.Forms.Label labelPatronomic;
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Label labelSername;
-        private System.Windows.Forms.TextBox Phone;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.MaskedTextBox Phone;
     }
 }

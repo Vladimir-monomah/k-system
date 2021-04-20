@@ -14,7 +14,7 @@ namespace k_systems.Админка
     {
         public Заказ()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
 
         private void Заказ_Load(object sender, EventArgs e)
@@ -49,6 +49,24 @@ namespace k_systems.Админка
             MessageBox.Show("Заказ успешно добавлен","Информация",
                 MessageBoxButtons.OK,MessageBoxIcon.Information);
             this.Close();
+        }
+
+        /// <summary>
+        /// Загружает цену из таблицы "Цены работ", если выбранная пара значений "Тип ремонта" и "Вид работы"
+        /// найдена в соответствующих полях
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void orderPriceComboBox_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (this.workKindComboBox.SelectedItem == null || this.dressTypeComboBox.SelectedItem == null)
+            {
+                return;
+            }
+
+            var filterCondition = $"[Вид работы] = {this.workKindComboBox.SelectedValue} AND [Тип ремонта] = {this.dressTypeComboBox.SelectedValue}";
+            var foundRowWorkPrices = EntityManager.FilterWorkPrices(filterCondition).FirstOrDefault();
+            this.priceNumericUpDown.Value = foundRowWorkPrices?.Цена as decimal? ?? 0m;
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using k_systems.РегАвт;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,7 +14,10 @@ namespace k_systems.Админка
 {
     public partial class Администратор : Form
     {
+        private string password = "ntvHA2s1y+ryOZizPQ1WHQ==";
+
         const string FilterNinAdministrator = "([Является администратором]=False)";
+
         public Администратор()
         {
             this.InitializeComponent();
@@ -78,6 +82,19 @@ namespace k_systems.Админка
 
             EntityManager.UpdateUsers();
 
+        }
+
+        private void СhangeUser_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var открыть = new Авторизация();
+            открыть.ShowDialog();
+        }
+
+        private void NewClient_Click(object sender, EventArgs e)
+        {
+            var открыть = new Регистрация(this.password);
+            открыть.ShowDialog();
         }
     }
 }

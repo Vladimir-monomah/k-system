@@ -95,6 +95,7 @@
     <Compile Include="Пользовательская форма\Клиент.Designer.cs">
       <DependentUpon>Клиент.cs</DependentUpon>
     </Compile>
+    <Compile Include="РегАвт\ValidEmail.cs" />
     <Compile Include="РегАвт\Авторизация.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -35,22 +35,22 @@
             this.addOrderButton = new System.Windows.Forms.Button();
             this.dressTypeLabel = new System.Windows.Forms.Label();
             this.dressTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.типРемонтаBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this._k_systemsDataSet = new k_systems._k_systemsDataSet();
             this.workKindLabel = new System.Windows.Forms.Label();
             this.workKindComboBox = new System.Windows.Forms.ComboBox();
+            this.видРаботBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.clientLabel = new System.Windows.Forms.Label();
             this.clientComboBox = new System.Windows.Forms.ComboBox();
-            this._k_systemsDataSet = new k_systems._k_systemsDataSet();
             this.пользователиДляЗаказовBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.пользователи_для_заказовTableAdapter = new k_systems._k_systemsDataSetTableAdapters.Пользователи_для_заказовTableAdapter();
-            this.видРаботBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.вид_работTableAdapter = new k_systems._k_systemsDataSetTableAdapters.Вид_работTableAdapter();
-            this.типРемонтаBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.тип_ремонтаTableAdapter = new k_systems._k_systemsDataSetTableAdapters.Тип_ремонтаTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.priceNumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._k_systemsDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.пользователиДляЗаказовBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.видРаботBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.типРемонтаBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._k_systemsDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.видРаботBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.пользователиДляЗаказовBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // priceNumericUpDown
@@ -97,9 +97,9 @@
             this.dressTypeLabel.Location = new System.Drawing.Point(69, 176);
             this.dressTypeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.dressTypeLabel.Name = "dressTypeLabel";
-            this.dressTypeLabel.Size = new System.Drawing.Size(159, 29);
+            this.dressTypeLabel.Size = new System.Drawing.Size(172, 29);
             this.dressTypeLabel.TabIndex = 15;
-            this.dressTypeLabel.Text = "Тип работы";
+            this.dressTypeLabel.Text = "Тип ремонта";
             // 
             // dressTypeComboBox
             // 
@@ -114,6 +114,17 @@
             this.dressTypeComboBox.Size = new System.Drawing.Size(273, 32);
             this.dressTypeComboBox.TabIndex = 14;
             this.dressTypeComboBox.ValueMember = "Идентификатор";
+            this.dressTypeComboBox.SelectedValueChanged += new System.EventHandler(this.orderPriceComboBox_SelectedValueChanged);
+            // 
+            // типРемонтаBindingSource
+            // 
+            this.типРемонтаBindingSource.DataMember = "Тип ремонта";
+            this.типРемонтаBindingSource.DataSource = this._k_systemsDataSet;
+            // 
+            // _k_systemsDataSet
+            // 
+            this._k_systemsDataSet.DataSetName = "_k_systemsDataSet";
+            this._k_systemsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // workKindLabel
             // 
@@ -139,6 +150,12 @@
             this.workKindComboBox.Size = new System.Drawing.Size(273, 32);
             this.workKindComboBox.TabIndex = 12;
             this.workKindComboBox.ValueMember = "Идентификатор";
+            this.workKindComboBox.SelectedValueChanged += new System.EventHandler(this.orderPriceComboBox_SelectedValueChanged);
+            // 
+            // видРаботBindingSource
+            // 
+            this.видРаботBindingSource.DataMember = "Вид работ";
+            this.видРаботBindingSource.DataSource = this._k_systemsDataSet;
             // 
             // clientLabel
             // 
@@ -165,11 +182,6 @@
             this.clientComboBox.TabIndex = 10;
             this.clientComboBox.ValueMember = "Id";
             // 
-            // _k_systemsDataSet
-            // 
-            this._k_systemsDataSet.DataSetName = "_k_systemsDataSet";
-            this._k_systemsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // пользователиДляЗаказовBindingSource
             // 
             this.пользователиДляЗаказовBindingSource.DataMember = "Пользователи для заказов";
@@ -179,19 +191,9 @@
             // 
             this.пользователи_для_заказовTableAdapter.ClearBeforeFill = true;
             // 
-            // видРаботBindingSource
-            // 
-            this.видРаботBindingSource.DataMember = "Вид работ";
-            this.видРаботBindingSource.DataSource = this._k_systemsDataSet;
-            // 
             // вид_работTableAdapter
             // 
             this.вид_работTableAdapter.ClearBeforeFill = true;
-            // 
-            // типРемонтаBindingSource
-            // 
-            this.типРемонтаBindingSource.DataMember = "Тип ремонта";
-            this.типРемонтаBindingSource.DataSource = this._k_systemsDataSet;
             // 
             // тип_ремонтаTableAdapter
             // 
@@ -219,10 +221,10 @@
             this.Text = "Заказ";
             this.Load += new System.EventHandler(this.Заказ_Load);
             ((System.ComponentModel.ISupportInitialize)(this.priceNumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._k_systemsDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.пользователиДляЗаказовBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.видРаботBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.типРемонтаBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._k_systemsDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.видРаботBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.пользователиДляЗаказовBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
