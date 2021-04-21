@@ -33,20 +33,6 @@
             this.masterFilterTextBox = new System.Windows.Forms.TextBox();
             this.labelSortingCustomers = new System.Windows.Forms.Label();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.пользователиBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this._k_systemsDataSet = new k_systems._k_systemsDataSet();
-            this.AddOrder = new System.Windows.Forms.Button();
-            this.Email = new System.Windows.Forms.Button();
-            this.СhangeUser = new System.Windows.Forms.Button();
-            this.RestoreDB = new System.Windows.Forms.Button();
-            this.SaveDB = new System.Windows.Forms.Button();
-            this.Save = new System.Windows.Forms.Button();
-            this.buttonCancel = new System.Windows.Forms.Button();
-            this.btn_cancel = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.пользователиTableAdapter = new k_systems._k_systemsDataSetTableAdapters.ПользователиTableAdapter();
-            this.NewClient = new System.Windows.Forms.Button();
             this.фамилияDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.имяDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.отчествоDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,6 +40,19 @@
             this.телефонDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.логинDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.парольDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.пользователиBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this._k_systemsDataSet = new k_systems._k_systemsDataSet();
+            this.AddOrder = new System.Windows.Forms.Button();
+            this.Email = new System.Windows.Forms.Button();
+            this.СhangeUser = new System.Windows.Forms.Button();
+            this.RestoreDB = new System.Windows.Forms.Button();
+            this.SaveDB = new System.Windows.Forms.Button();
+            this.buttonCancel = new System.Windows.Forms.Button();
+            this.btn_cancel = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.AddService = new System.Windows.Forms.Button();
+            this.пользователиTableAdapter = new k_systems._k_systemsDataSetTableAdapters.ПользователиTableAdapter();
+            this.NewClient = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.пользователиBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._k_systemsDataSet)).BeginInit();
@@ -69,7 +68,7 @@
             this.masterFilterTextBox.MaxLength = 30;
             this.masterFilterTextBox.Multiline = true;
             this.masterFilterTextBox.Name = "masterFilterTextBox";
-            this.masterFilterTextBox.Size = new System.Drawing.Size(1765, 46);
+            this.masterFilterTextBox.Size = new System.Drawing.Size(1620, 46);
             this.masterFilterTextBox.TabIndex = 18;
             this.masterFilterTextBox.TextChanged += new System.EventHandler(this.masterFilterTextBox_TextChanged);
             // 
@@ -103,139 +102,9 @@
             this.dataGridView.Location = new System.Drawing.Point(13, 140);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowTemplate.Height = 24;
-            this.dataGridView.Size = new System.Drawing.Size(1766, 561);
+            this.dataGridView.Size = new System.Drawing.Size(1621, 561);
             this.dataGridView.TabIndex = 27;
             this.dataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellEndEdit);
-            // 
-            // пользователиBindingSource
-            // 
-            this.пользователиBindingSource.DataMember = "Пользователи";
-            this.пользователиBindingSource.DataSource = this._k_systemsDataSet;
-            // 
-            // _k_systemsDataSet
-            // 
-            this._k_systemsDataSet.DataSetName = "_k_systemsDataSet";
-            this._k_systemsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // AddOrder
-            // 
-            this.AddOrder.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AddOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AddOrder.Location = new System.Drawing.Point(181, 85);
-            this.AddOrder.Name = "AddOrder";
-            this.AddOrder.Size = new System.Drawing.Size(163, 49);
-            this.AddOrder.TabIndex = 29;
-            this.AddOrder.Text = "Добавить заказ";
-            this.AddOrder.UseVisualStyleBackColor = true;
-            this.AddOrder.Click += new System.EventHandler(this.AddOrder_Click);
-            // 
-            // Email
-            // 
-            this.Email.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Email.Location = new System.Drawing.Point(519, 85);
-            this.Email.Name = "Email";
-            this.Email.Size = new System.Drawing.Size(163, 49);
-            this.Email.TabIndex = 30;
-            this.Email.Text = "Почта";
-            this.Email.UseVisualStyleBackColor = true;
-            // 
-            // СhangeUser
-            // 
-            this.СhangeUser.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.СhangeUser.Location = new System.Drawing.Point(1629, 85);
-            this.СhangeUser.Name = "СhangeUser";
-            this.СhangeUser.Size = new System.Drawing.Size(150, 49);
-            this.СhangeUser.TabIndex = 36;
-            this.СhangeUser.Text = "Смена пользователя";
-            this.СhangeUser.UseVisualStyleBackColor = true;
-            this.СhangeUser.Click += new System.EventHandler(this.СhangeUser_Click);
-            // 
-            // RestoreDB
-            // 
-            this.RestoreDB.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.RestoreDB.Location = new System.Drawing.Point(1480, 85);
-            this.RestoreDB.Name = "RestoreDB";
-            this.RestoreDB.Size = new System.Drawing.Size(143, 49);
-            this.RestoreDB.TabIndex = 35;
-            this.RestoreDB.Text = "Восстановить БД";
-            this.RestoreDB.UseVisualStyleBackColor = true;
-            // 
-            // SaveDB
-            // 
-            this.SaveDB.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SaveDB.Location = new System.Drawing.Point(1331, 85);
-            this.SaveDB.Name = "SaveDB";
-            this.SaveDB.Size = new System.Drawing.Size(143, 49);
-            this.SaveDB.TabIndex = 34;
-            this.SaveDB.Text = "Сохранить БД";
-            this.SaveDB.UseVisualStyleBackColor = true;
-            // 
-            // Save
-            // 
-            this.Save.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Save.Location = new System.Drawing.Point(1182, 85);
-            this.Save.Name = "Save";
-            this.Save.Size = new System.Drawing.Size(143, 49);
-            this.Save.TabIndex = 33;
-            this.Save.Text = "Сохранить";
-            this.Save.UseVisualStyleBackColor = true;
-            // 
-            // buttonCancel
-            // 
-            this.buttonCancel.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonCancel.Location = new System.Drawing.Point(1026, 85);
-            this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(150, 49);
-            this.buttonCancel.TabIndex = 32;
-            this.buttonCancel.Text = "Удалить";
-            this.buttonCancel.UseVisualStyleBackColor = true;
-            // 
-            // btn_cancel
-            // 
-            this.btn_cancel.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn_cancel.Location = new System.Drawing.Point(857, 85);
-            this.btn_cancel.Name = "btn_cancel";
-            this.btn_cancel.Size = new System.Drawing.Size(163, 49);
-            this.btn_cancel.TabIndex = 31;
-            this.btn_cancel.Text = "Сброс";
-            this.btn_cancel.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(688, 85);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(163, 49);
-            this.button1.TabIndex = 37;
-            this.button1.Text = "Отчётность";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(350, 85);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(163, 49);
-            this.button2.TabIndex = 38;
-            this.button2.Text = "Добавить услугу";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // пользователиTableAdapter
-            // 
-            this.пользователиTableAdapter.ClearBeforeFill = true;
-            // 
-            // NewClient
-            // 
-            this.NewClient.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.NewClient.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.NewClient.Location = new System.Drawing.Point(12, 85);
-            this.NewClient.Name = "NewClient";
-            this.NewClient.Size = new System.Drawing.Size(163, 49);
-            this.NewClient.TabIndex = 39;
-            this.NewClient.Text = "Новый клиент";
-            this.NewClient.UseVisualStyleBackColor = true;
-            this.NewClient.Click += new System.EventHandler(this.NewClient_Click);
             // 
             // фамилияDataGridViewTextBoxColumn
             // 
@@ -293,18 +162,138 @@
             this.парольDataGridViewTextBoxColumn.Name = "парольDataGridViewTextBoxColumn";
             this.парольDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // пользователиBindingSource
+            // 
+            this.пользователиBindingSource.DataMember = "Пользователи";
+            this.пользователиBindingSource.DataSource = this._k_systemsDataSet;
+            // 
+            // _k_systemsDataSet
+            // 
+            this._k_systemsDataSet.DataSetName = "_k_systemsDataSet";
+            this._k_systemsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // AddOrder
+            // 
+            this.AddOrder.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AddOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.AddOrder.Location = new System.Drawing.Point(181, 85);
+            this.AddOrder.Name = "AddOrder";
+            this.AddOrder.Size = new System.Drawing.Size(163, 49);
+            this.AddOrder.TabIndex = 29;
+            this.AddOrder.Text = "Добавить заказ";
+            this.AddOrder.UseVisualStyleBackColor = true;
+            this.AddOrder.Click += new System.EventHandler(this.AddOrder_Click);
+            // 
+            // Email
+            // 
+            this.Email.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Email.Location = new System.Drawing.Point(519, 85);
+            this.Email.Name = "Email";
+            this.Email.Size = new System.Drawing.Size(163, 49);
+            this.Email.TabIndex = 30;
+            this.Email.Text = "Почта";
+            this.Email.UseVisualStyleBackColor = true;
+            // 
+            // СhangeUser
+            // 
+            this.СhangeUser.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.СhangeUser.Location = new System.Drawing.Point(1484, 85);
+            this.СhangeUser.Name = "СhangeUser";
+            this.СhangeUser.Size = new System.Drawing.Size(150, 49);
+            this.СhangeUser.TabIndex = 36;
+            this.СhangeUser.Text = "Смена пользователя";
+            this.СhangeUser.UseVisualStyleBackColor = true;
+            this.СhangeUser.Click += new System.EventHandler(this.СhangeUser_Click);
+            // 
+            // RestoreDB
+            // 
+            this.RestoreDB.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.RestoreDB.Location = new System.Drawing.Point(1335, 85);
+            this.RestoreDB.Name = "RestoreDB";
+            this.RestoreDB.Size = new System.Drawing.Size(143, 49);
+            this.RestoreDB.TabIndex = 35;
+            this.RestoreDB.Text = "Восстановить БД";
+            this.RestoreDB.UseVisualStyleBackColor = true;
+            // 
+            // SaveDB
+            // 
+            this.SaveDB.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SaveDB.Location = new System.Drawing.Point(1186, 85);
+            this.SaveDB.Name = "SaveDB";
+            this.SaveDB.Size = new System.Drawing.Size(143, 49);
+            this.SaveDB.TabIndex = 34;
+            this.SaveDB.Text = "Сохранить БД";
+            this.SaveDB.UseVisualStyleBackColor = true;
+            // 
+            // buttonCancel
+            // 
+            this.buttonCancel.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonCancel.Location = new System.Drawing.Point(1026, 85);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(150, 49);
+            this.buttonCancel.TabIndex = 32;
+            this.buttonCancel.Text = "Удалить";
+            this.buttonCancel.UseVisualStyleBackColor = true;
+            // 
+            // btn_cancel
+            // 
+            this.btn_cancel.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn_cancel.Location = new System.Drawing.Point(857, 85);
+            this.btn_cancel.Name = "btn_cancel";
+            this.btn_cancel.Size = new System.Drawing.Size(163, 49);
+            this.btn_cancel.TabIndex = 31;
+            this.btn_cancel.Text = "Сброс";
+            this.btn_cancel.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(688, 85);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(163, 49);
+            this.button1.TabIndex = 37;
+            this.button1.Text = "Отчётность";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // AddService
+            // 
+            this.AddService.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AddService.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.AddService.Location = new System.Drawing.Point(350, 85);
+            this.AddService.Name = "AddService";
+            this.AddService.Size = new System.Drawing.Size(163, 49);
+            this.AddService.TabIndex = 38;
+            this.AddService.Text = "Добавить услугу";
+            this.AddService.UseVisualStyleBackColor = true;
+            this.AddService.Click += new System.EventHandler(this.AddService_Click);
+            // 
+            // пользователиTableAdapter
+            // 
+            this.пользователиTableAdapter.ClearBeforeFill = true;
+            // 
+            // NewClient
+            // 
+            this.NewClient.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.NewClient.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.NewClient.Location = new System.Drawing.Point(12, 85);
+            this.NewClient.Name = "NewClient";
+            this.NewClient.Size = new System.Drawing.Size(163, 49);
+            this.NewClient.TabIndex = 39;
+            this.NewClient.Text = "Новый клиент";
+            this.NewClient.UseVisualStyleBackColor = true;
+            this.NewClient.Click += new System.EventHandler(this.NewClient_Click);
+            // 
             // Администратор
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1791, 713);
+            this.ClientSize = new System.Drawing.Size(1646, 713);
             this.Controls.Add(this.NewClient);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.AddService);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.СhangeUser);
             this.Controls.Add(this.RestoreDB);
             this.Controls.Add(this.SaveDB);
-            this.Controls.Add(this.Save);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.btn_cancel);
             this.Controls.Add(this.Email);
@@ -340,11 +329,10 @@
         private System.Windows.Forms.Button СhangeUser;
         private System.Windows.Forms.Button RestoreDB;
         private System.Windows.Forms.Button SaveDB;
-        private System.Windows.Forms.Button Save;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button btn_cancel;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button AddService;
         private _k_systemsDataSet _k_systemsDataSet;
         private System.Windows.Forms.BindingSource пользователиBindingSource;
         private _k_systemsDataSetTableAdapters.ПользователиTableAdapter пользователиTableAdapter;

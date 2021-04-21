@@ -17,6 +17,8 @@ namespace k_systems
         private static ПользователиTableAdapter пользователиTableAdapter = new ПользователиTableAdapter();
         private static ЗаказыTableAdapter заказыTableAdapter = new ЗаказыTableAdapter();
         private static Цены_работTableAdapter ценыРаботTableAdapter = new Цены_работTableAdapter();
+        private static Вид_работTableAdapter вид_РаботTableAdapter = new Вид_работTableAdapter();
+        private static Тип_ремонтаTableAdapter тип_РемонтаTableAdapter = new Тип_ремонтаTableAdapter();
 
         static EntityManager()
         {
@@ -55,6 +57,22 @@ namespace k_systems
             }
         }
 
+        public static Вид_работDataTable TypeService
+        {
+            get
+            {
+                return _K_Systems.Вид_работ;
+            }
+        }
+
+        public static Тип_ремонтаDataTable TypeRepair
+        {
+            get
+            {
+                return _K_Systems.Тип_ремонта;
+            }
+        }
+
         public static void UpdateUsers()
         {
             пользователиTableAdapter.Adapter.Update(UserDataTable);
@@ -69,6 +87,16 @@ namespace k_systems
         public static void UpdateWorkPrices()
         {
             ценыРаботTableAdapter.Adapter.Update(WorkPrices);
+        }
+
+        public static void UpdateTypeService()
+        {
+            вид_РаботTableAdapter.Adapter.Update(TypeService);
+        }
+
+        public static void UpdateTypeRepair()
+        {
+            тип_РемонтаTableAdapter.Adapter.Update(TypeRepair);
         }
 
         /// <summary>
@@ -171,6 +199,58 @@ namespace k_systems
             FillFilteredTable(ценыРаботTableAdapter.Adapter, filterUserCommand, WorkPrices);
 
             return WorkPrices;
+        }
+
+        /// <summary>
+        /// Возвращает отфильтрованную таблицу вид работы по условию <paramref name="condition"/>
+        /// </summary>
+        /// <param name="condition"></param>
+        /// <returns></returns>
+        public static Вид_работDataTable FilterTypeService(string condition = null)
+        {
+            var whereCondition = string.Empty;
+            if (!string.IsNullOrEmpty(condition))
+            {
+                whereCondition = $"WHERE {condition}";
+            }
+
+            var filterUserCommand = new OleDbCommand()
+            {
+                Connection = вид_РаботTableAdapter.Connection,
+                CommandText = "SELECT Идентификатор, Наименование" +
+                $" FROM [Вид работ] {whereCondition}",
+                CommandType = global::System.Data.CommandType.Text
+            };
+
+            FillFilteredTable(вид_РаботTableAdapter.Adapter, filterUserCommand, TypeService);
+
+            return TypeService;
+        }
+
+        /// <summary>
+        /// Возвращает отфильтрованную таблицу вид работы по условию <paramref name="condition"/>
+        /// </summary>
+        /// <param name="condition"></param>
+        /// <returns></returns>
+        public static Тип_ремонтаDataTable FilterTypeRepair(string condition = null)
+        {
+            var whereCondition = string.Empty;
+            if (!string.IsNullOrEmpty(condition))
+            {
+                whereCondition = $"WHERE {condition}";
+            }
+
+            var filterUserCommand = new OleDbCommand()
+            {
+                Connection = тип_РемонтаTableAdapter.Connection,
+                CommandText = "SELECT Идентификатор, Наименование" +
+                $" FROM [Тип ремонта] {whereCondition}",
+                CommandType = global::System.Data.CommandType.Text
+            };
+
+            FillFilteredTable(тип_РемонтаTableAdapter.Adapter, filterUserCommand, TypeRepair);
+
+            return TypeRepair;
         }
 
 

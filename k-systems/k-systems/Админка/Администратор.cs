@@ -96,5 +96,11 @@ namespace k_systems.Админка
             var открыть = new Регистрация(this.password);
             открыть.ShowDialog();
         }
+
+        private void AddService_Click(object sender, EventArgs e)
+        {
+            var открыть = new Добавить_услугу();
+            открыть.ShowDialog();
+        }
     }
 }
