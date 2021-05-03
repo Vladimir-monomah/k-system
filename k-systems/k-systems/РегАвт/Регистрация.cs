@@ -135,7 +135,7 @@ namespace k_systems.РегАвт
 
         private void textBoxEmail_TextChanged(object sender, EventArgs e)
         {
-            bool result = ValidEmail.IsValidEmail(textBoxEmail.Text);
+            bool result = ValidEmail.IsValidEmail(this.textBoxEmail.Text);
         }
     }
 }
