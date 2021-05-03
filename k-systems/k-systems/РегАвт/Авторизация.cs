@@ -117,5 +117,32 @@ namespace k_systems
             var user = EntityManager.FilterUsers(loginCondition).FirstOrDefault();
             return user;
         }
+
+        private _k_systemsDataSet.ПользователиRow User(string login)
+        {
+            var loginCondition = $"Логин='{login}'";
+            var user = EntityManager.FilterUsers(loginCondition).FirstOrDefault();
+            return user;
+        }
+
+        private void PasswordChangeLabel_Click(object sender, EventArgs e)
+        {
+            var открыть = new Смена_пароля();
+            открыть.OnValidateUser += (login, newPassword) =>
+            {
+                var user = this.User(открыть.GetLogin());
+                if (user == null)
+                {
+                    MessageBox.Show("Не найден пользователь с таким логином и паролем");
+                    return false;
+                }
+
+                user.пароль = Регистрация.Encrypt(открыть.GetNewPassword(), this.password);
+                EntityManager.UpdateUsers();
+                MessageBox.Show("Пароль изменён!");
+                return true;
+            };
+            открыть.ShowDialog();
+        }
     }
 }

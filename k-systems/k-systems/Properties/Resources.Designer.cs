@@ -61,6 +61,16 @@ namespace k_systems.Properties {
         }
         
         /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _71669957_star_icon_asterisk_flat_icon_ {
+            get {
+                object obj = ResourceManager.GetObject("_71669957_star_icon_asterisk_flat_icon_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Icon, аналогичного (Значок).
         /// </summary>
         internal static System.Drawing.Icon box_delivery_order_icon_148914 {

@@ -8,10 +8,11 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>k_systems</RootNamespace>
     <AssemblyName>k-systems</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -110,6 +111,12 @@
     <Compile Include="РегАвт\Регистрация.Designer.cs">
       <DependentUpon>Регистрация.cs</DependentUpon>
     </Compile>
+    <Compile Include="РегАвт\Смена пароля.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="РегАвт\Смена пароля.Designer.cs">
+      <DependentUpon>Смена пароля.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -144,6 +151,9 @@
     <EmbeddedResource Include="РегАвт\Регистрация.resx">
       <DependentUpon>Регистрация.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="РегАвт\Смена пароля.resx">
+      <DependentUpon>Смена пароля.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -173,6 +183,7 @@
     <None Include="Resources\mail_22591.ico" />
     <None Include="Resources\box_delivery_order_icon_148914.ico" />
     <None Include="Resources\employee_2_icon-icons.com_76980.ico" />
+    <None Include="Resources\71669957-star-icon-asterisk-flat-icon-.jpg" />
     <Content Include="system-windows_26863.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

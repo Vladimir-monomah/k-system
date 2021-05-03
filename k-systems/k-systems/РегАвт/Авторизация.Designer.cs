@@ -38,6 +38,8 @@
             this.tbLogin = new System.Windows.Forms.TextBox();
             this.labelPassword = new System.Windows.Forms.Label();
             this.labelLogin = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.PasswordChangeLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRestart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -143,11 +145,32 @@
             this.labelLogin.Text = "Логин";
             this.labelLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(147, 407);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(145, 32);
+            this.button1.TabIndex = 24;
+            this.button1.Text = "Смена пароля";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.PasswordChangeLabel_Click);
+            // 
+            // PasswordChangeLabel
+            // 
+            this.PasswordChangeLabel.AutoSize = true;
+            this.PasswordChangeLabel.Location = new System.Drawing.Point(190, 396);
+            this.PasswordChangeLabel.Name = "PasswordChangeLabel";
+            this.PasswordChangeLabel.Size = new System.Drawing.Size(0, 17);
+            this.PasswordChangeLabel.TabIndex = 25;
+            this.PasswordChangeLabel.Click += new System.EventHandler(this.PasswordChangeLabel_Click);
+            // 
             // Авторизация
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(448, 534);
+            this.Controls.Add(this.PasswordChangeLabel);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBoxRestart);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBoxRegistration);
@@ -185,6 +208,8 @@
         private System.Windows.Forms.TextBox tbLogin;
         private System.Windows.Forms.Label labelPassword;
         private System.Windows.Forms.Label labelLogin;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label PasswordChangeLabel;
     }
 }
 
