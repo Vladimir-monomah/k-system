@@ -46,6 +46,10 @@
             this.пользователи_для_заказовTableAdapter = new k_systems._k_systemsDataSetTableAdapters.Пользователи_для_заказовTableAdapter();
             this.вид_работTableAdapter = new k_systems._k_systemsDataSetTableAdapters.Вид_работTableAdapter();
             this.тип_ремонтаTableAdapter = new k_systems._k_systemsDataSetTableAdapters.Тип_ремонтаTableAdapter();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Ready = new System.Windows.Forms.CheckBox();
+            this.Work = new System.Windows.Forms.CheckBox();
+            this.Postponed = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.priceNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.типРемонтаBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._k_systemsDataSet)).BeginInit();
@@ -81,7 +85,7 @@
             // addOrderButton
             // 
             this.addOrderButton.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.addOrderButton.Location = new System.Drawing.Point(198, 346);
+            this.addOrderButton.Location = new System.Drawing.Point(198, 413);
             this.addOrderButton.Margin = new System.Windows.Forms.Padding(4);
             this.addOrderButton.Name = "addOrderButton";
             this.addOrderButton.Size = new System.Drawing.Size(240, 64);
@@ -199,11 +203,56 @@
             // 
             this.тип_ремонтаTableAdapter.ClearBeforeFill = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(56, 323);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(185, 29);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "Статус заказа";
+            // 
+            // Ready
+            // 
+            this.Ready.AutoSize = true;
+            this.Ready.Location = new System.Drawing.Point(294, 296);
+            this.Ready.Name = "Ready";
+            this.Ready.Size = new System.Drawing.Size(68, 21);
+            this.Ready.TabIndex = 21;
+            this.Ready.Text = "Готов";
+            this.Ready.UseVisualStyleBackColor = true;
+            // 
+            // Work
+            // 
+            this.Work.AutoSize = true;
+            this.Work.Location = new System.Drawing.Point(294, 333);
+            this.Work.Name = "Work";
+            this.Work.Size = new System.Drawing.Size(90, 21);
+            this.Work.TabIndex = 22;
+            this.Work.Text = "В работе";
+            this.Work.UseVisualStyleBackColor = true;
+            // 
+            // Postponed
+            // 
+            this.Postponed.AutoSize = true;
+            this.Postponed.Location = new System.Drawing.Point(294, 369);
+            this.Postponed.Name = "Postponed";
+            this.Postponed.Size = new System.Drawing.Size(89, 21);
+            this.Postponed.TabIndex = 23;
+            this.Postponed.Text = "Отложен";
+            this.Postponed.UseVisualStyleBackColor = true;
+            // 
             // Заказ
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(620, 452);
+            this.ClientSize = new System.Drawing.Size(620, 490);
+            this.Controls.Add(this.Postponed);
+            this.Controls.Add(this.Work);
+            this.Controls.Add(this.Ready);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.priceNumericUpDown);
             this.Controls.Add(this.priceLabel);
             this.Controls.Add(this.addOrderButton);
@@ -248,5 +297,9 @@
         private _k_systemsDataSetTableAdapters.Вид_работTableAdapter вид_работTableAdapter;
         private System.Windows.Forms.BindingSource типРемонтаBindingSource;
         private _k_systemsDataSetTableAdapters.Тип_ремонтаTableAdapter тип_ремонтаTableAdapter;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox Ready;
+        private System.Windows.Forms.CheckBox Work;
+        private System.Windows.Forms.CheckBox Postponed;
     }
 }
