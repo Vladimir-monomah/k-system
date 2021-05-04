@@ -108,10 +108,10 @@
             this.логинDataGridViewTextBoxColumn,
             this.парольDataGridViewTextBoxColumn});
             this.dataGridView.DataSource = this.пользователиBindingSource;
-            this.dataGridView.Location = new System.Drawing.Point(13, 210);
+            this.dataGridView.Location = new System.Drawing.Point(13, 162);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowTemplate.Height = 24;
-            this.dataGridView.Size = new System.Drawing.Size(1621, 491);
+            this.dataGridView.Size = new System.Drawing.Size(1621, 539);
             this.dataGridView.TabIndex = 27;
             this.dataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellEndEdit);
             // 
@@ -190,6 +190,7 @@
             this.buttonCancel.TabIndex = 32;
             this.buttonCancel.Text = "Удалить";
             this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // btn_cancel
             // 
@@ -200,6 +201,7 @@
             this.btn_cancel.TabIndex = 31;
             this.btn_cancel.Text = "Сброс";
             this.btn_cancel.UseVisualStyleBackColor = true;
+            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
             // 
             // пользователиTableAdapter
             // 
@@ -232,7 +234,7 @@
             // NewClient
             // 
             this.NewClient.Name = "NewClient";
-            this.NewClient.Size = new System.Drawing.Size(216, 26);
+            this.NewClient.Size = new System.Drawing.Size(183, 26);
             this.NewClient.Text = "Новый клиент";
             this.NewClient.Click += new System.EventHandler(this.NewClient_Click);
             // 
@@ -247,7 +249,7 @@
             // AddOrder
             // 
             this.AddOrder.Name = "AddOrder";
-            this.AddOrder.Size = new System.Drawing.Size(216, 26);
+            this.AddOrder.Size = new System.Drawing.Size(192, 26);
             this.AddOrder.Text = "Добавить заказ";
             this.AddOrder.Click += new System.EventHandler(this.AddOrder_Click);
             // 
@@ -262,7 +264,7 @@
             // AddService
             // 
             this.AddService.Name = "AddService";
-            this.AddService.Size = new System.Drawing.Size(216, 26);
+            this.AddService.Size = new System.Drawing.Size(197, 26);
             this.AddService.Text = "Добавить услугу";
             this.AddService.Click += new System.EventHandler(this.AddService_Click);
             // 
@@ -291,7 +293,7 @@
             // Email
             // 
             this.Email.Name = "Email";
-            this.Email.Size = new System.Drawing.Size(216, 26);
+            this.Email.Size = new System.Drawing.Size(121, 26);
             this.Email.Text = "Email";
             // 
             // настройкиToolStripMenuItem
@@ -310,12 +312,14 @@
             this.SaveDB.Name = "SaveDB";
             this.SaveDB.Size = new System.Drawing.Size(229, 26);
             this.SaveDB.Text = "Сохранить БД";
+            this.SaveDB.Click += new System.EventHandler(this.SaveDB_Click);
             // 
             // RestoreDB
             // 
             this.RestoreDB.Name = "RestoreDB";
             this.RestoreDB.Size = new System.Drawing.Size(229, 26);
             this.RestoreDB.Text = "Восстановить БД";
+            this.RestoreDB.Click += new System.EventHandler(this.RestoreDB_Click);
             // 
             // toolStripMenuItem1
             // 

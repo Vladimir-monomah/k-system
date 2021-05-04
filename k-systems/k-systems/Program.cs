@@ -17,7 +17,7 @@ namespace k_systems
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Авторизация());
+            Application.Run(new Администратор());
         }
     }
 }

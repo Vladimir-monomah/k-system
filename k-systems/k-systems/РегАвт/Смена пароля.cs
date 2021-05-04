@@ -17,7 +17,7 @@ namespace k_systems.РегАвт
         public Смена_пароля()
         {
             this.OnValidateUser += (login, newPassword) => { return true; };
-            InitializeComponent();
+            this.InitializeComponent();
         }
 
         public string GetLogin()
