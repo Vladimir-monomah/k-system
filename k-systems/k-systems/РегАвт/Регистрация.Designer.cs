@@ -55,7 +55,6 @@
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(267, 39);
             this.textBoxEmail.TabIndex = 5;
-            this.textBoxEmail.TextChanged += new System.EventHandler(this.textBoxEmail_TextChanged);
             // 
             // label1
             // 
@@ -222,7 +221,6 @@
             this.Name = "Регистрация";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Регистрация";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Регистрация_FormClosing);
             this.Load += new System.EventHandler(this.Регистрация_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

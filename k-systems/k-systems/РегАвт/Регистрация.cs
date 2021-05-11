@@ -85,6 +85,13 @@ namespace k_systems.РегАвт
                 return;
             }
 
+            var isEmailValid = ValidEmail.IsValidEmail(this.textBoxEmail.Text);
+            if (!isEmailValid)
+            {
+                MessageBox.Show("Введите корректный Email!","Информация",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                return;
+            }
+
             var newUser = EntityManager.UserDataTable.NewПользователиRow();
             newUser.Фамилия = this.textBoxSername.Text;
             newUser.Имя = this.textBoxName.Text;
@@ -113,29 +120,9 @@ namespace k_systems.РегАвт
             e.Handled = !(char.IsDigit(c) || c == '.' || c == ',' || c == '\b');
         }
 
-        private void Регистрация_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (e.CloseReason == CloseReason.UserClosing)
-            {
-                DialogResult dialogResult = MessageBox.Show("Вы действиетльно хотите выйти?",
-                    "Закрытие программы", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    Application.Exit();
-                }
-                else e.Cancel = true;
-            }
-            else Application.Exit();
-        }
-
         private void Регистрация_Load(object sender, EventArgs e)
         {
             this.Phone.Mask = "+7(000)-000-0000";
-        }
-
-        private void textBoxEmail_TextChanged(object sender, EventArgs e)
-        {
-            bool result = ValidEmail.IsValidEmail(this.textBoxEmail.Text);
         }
     }
 }
