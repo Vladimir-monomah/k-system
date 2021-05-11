@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -101,6 +103,62 @@ namespace k_systems.Админка
         {
             var открыть = new Добавить_услугу();
             открыть.ShowDialog();
+        }
+
+        private void btn_cancel_Click(object sender, EventArgs e)
+        {
+            this.пользователиBindingSource.Filter = null;
+            this.masterFilterTextBox.Text = "";
+        }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            int ind = this.dataGridView.SelectedCells[0].RowIndex;
+            this.dataGridView.Rows.RemoveAt(ind);
+        }
+
+        private void SaveDB_Click(object sender, EventArgs e)
+        {
+            var dataBasePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\k-systems.mdb";
+            var saveDialog = new SaveFileDialog
+            {
+                Filter="AccessDB files|*.mdb"
+            };
+            try
+            {
+                if (saveDialog.ShowDialog() == DialogResult.OK)
+                {
+                    File.Copy(dataBasePath, saveDialog.FileName, true);
+                    MessageBox.Show("Резервное копирование прошло успешно!", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Не удаётся скопировать файл из-за исключения: " + ex.Message);
+            }
+        }
+
+        private void RestoreDB_Click(object sender, EventArgs e)
+        {
+            var dataBasePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Библиотека.mdb";
+            var openDialog = new OpenFileDialog
+            {
+                Filter = "AccessDB files|*.mdb"
+            };
+            try
+            {
+                if (openDialog.ShowDialog() == DialogResult.OK)
+                {
+                    File.Copy(openDialog.FileName, dataBasePath, true);
+                    MessageBox.Show("Восстановление прошло успешно!", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                this.пользователиTableAdapter.Adapter.Fill(this._k_systemsDataSet.Пользователи);
+                this.пользователиTableAdapter.Adapter.Update(this._k_systemsDataSet.Пользователи);
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
