@@ -39,13 +39,26 @@ namespace k_systems.Админка
         /// <param name="e"></param>
         private void orderFilterTextBox_TextChanged(object sender, EventArgs e)
         {
-            var findFields = new[] { "ФИО", "[Вид работы]", "[Тип ремонта]" };
-            this.textBoxOrdersFilter =
-                EntityManager.GetFilterStringByFields(findFields, this.orderFilterTextBox.Text).Trim();
+            //var findFields = new[] { "ФИО", "[Вид работы]", "[Тип ремонта]" };
+            //this.textBoxOrdersFilter =
+            //    EntityManager.GetFilterStringByFields(findFields, this.orderFilterTextBox.Text).Trim();
 
-            this.заказыСКлиентамиBindingSource.Filter = EntityManager.UnionFilter(
-                this.textBoxOrdersFilter,
-                this.readyOrNotReadyOrdersFilter);
+            //this.заказыСКлиентамиBindingSource.Filter = EntityManager.UnionFilter(
+            //    this.textBoxOrdersFilter,
+            //    this.readyOrNotReadyOrdersFilter);
+
+            this.заказыСКлиентамиBindingSource.Filter=this.BuildWorkerCardFilter();
+        }
+
+        private string BuildWorkerCardFilter()
+        {
+            var filterExpressionList = new List<string>();
+            var fieldFilter = this.orderFilterTextBox.Text;
+            if (!string.IsNullOrEmpty(fieldFilter))
+            {
+                filterExpressionList.Add(string.Format("(([ФИО] Like '%{0}%') OR ([Вид работы] Like '%{0}%'))", fieldFilter));
+            }
+            return string.Join(" AND ", filterExpressionList);
         }
 
         /// <summary>

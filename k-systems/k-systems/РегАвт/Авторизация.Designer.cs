@@ -40,6 +40,7 @@
             this.labelLogin = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.PasswordChangeLabel = new System.Windows.Forms.Label();
+            this.invisibleButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRestart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -82,7 +83,7 @@
             // 
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(39, 445);
+            this.pictureBox2.Location = new System.Drawing.Point(22, 445);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(151, 48);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -164,15 +165,27 @@
             this.PasswordChangeLabel.TabIndex = 25;
             this.PasswordChangeLabel.Click += new System.EventHandler(this.PasswordChangeLabel_Click);
             // 
+            // invisibleButton
+            // 
+            this.invisibleButton.Location = new System.Drawing.Point(55, 475);
+            this.invisibleButton.Name = "invisibleButton";
+            this.invisibleButton.Size = new System.Drawing.Size(16, 18);
+            this.invisibleButton.TabIndex = 26;
+            this.invisibleButton.Text = "button1";
+            this.invisibleButton.UseVisualStyleBackColor = true;
+            this.invisibleButton.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
             // Авторизация
             // 
+            this.AcceptButton = this.invisibleButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(448, 534);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.invisibleButton);
             this.Controls.Add(this.PasswordChangeLabel);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBoxRestart);
-            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBoxRegistration);
             this.Controls.Add(this.tbPassword);
             this.Controls.Add(this.tbLogin);
@@ -210,6 +223,7 @@
         private System.Windows.Forms.Label labelLogin;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label PasswordChangeLabel;
+        private System.Windows.Forms.Button invisibleButton;
     }
 }
 
