@@ -154,7 +154,7 @@
             this.workKindComboBox.Size = new System.Drawing.Size(273, 32);
             this.workKindComboBox.TabIndex = 12;
             this.workKindComboBox.ValueMember = "Идентификатор";
-            this.workKindComboBox.SelectedValueChanged += new System.EventHandler(this.orderPriceComboBox_SelectedValueChanged);
+            this.workKindComboBox.SelectedValueChanged += new System.EventHandler(this.workKindComboBox_SelectedValueChanged);
             // 
             // видРаботBindingSource
             // 
@@ -217,7 +217,8 @@
             // Ready
             // 
             this.Ready.AutoSize = true;
-            this.Ready.Location = new System.Drawing.Point(294, 296);
+            this.Ready.Enabled = false;
+            this.Ready.Location = new System.Drawing.Point(294, 331);
             this.Ready.Name = "Ready";
             this.Ready.Size = new System.Drawing.Size(68, 21);
             this.Ready.TabIndex = 21;
@@ -227,7 +228,7 @@
             // Work
             // 
             this.Work.AutoSize = true;
-            this.Work.Location = new System.Drawing.Point(294, 333);
+            this.Work.Location = new System.Drawing.Point(294, 294);
             this.Work.Name = "Work";
             this.Work.Size = new System.Drawing.Size(90, 21);
             this.Work.TabIndex = 22;

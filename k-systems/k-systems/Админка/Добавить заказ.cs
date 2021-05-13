@@ -25,6 +25,10 @@ namespace k_systems.Админка
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "_k_systemsDataSet.Заказы_с_клиентами". При необходимости она может быть перемещена или удалена.
             this.заказы_с_клиентамиTableAdapter.Fill(this._k_systemsDataSet.Заказы_с_клиентами);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "_k_systemsDataSet.Заказы_с_клиентами". При необходимости она может быть перемещена или удалена.
+            this.заказы_с_клиентамиTableAdapter.Fill(this._k_systemsDataSet.Заказы_с_клиентами);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "_k_systemsDataSet.Заказы_с_клиентами". При необходимости она может быть перемещена или удалена.
+            this.заказы_с_клиентамиTableAdapter.Fill(this._k_systemsDataSet.Заказы_с_клиентами);
 
         }
 
@@ -66,7 +70,7 @@ namespace k_systems.Админка
             var changedRow = (Заказы_с_клиентамиRow)((DataRowView)((DataGridView)sender).CurrentRow.DataBoundItem).Row;
             var orderTable = EntityManager.FilterOrders($"Id={changedRow.Номер_заказа}");
 
-            orderTable[0].заказ_готов = changedRow.Заказ_готов;
+            orderTable[0].Статус_заказа = changedRow.Статус_заказа;
             orderTable[0].Цена = changedRow.Цена;
             EntityManager.UpdateOrders();
 
@@ -83,7 +87,7 @@ namespace k_systems.Админка
             switch (this.readyOrdersFilterCheckBox.CheckState)
             {
                 case CheckState.Checked:
-                    this.readyOrNotReadyOrdersFilter = "[Заказ готов] = TRUE";
+                    this.readyOrNotReadyOrdersFilter = "[Статус заказа] = TRUE";
                     this.readyOrdersFilterCheckBox.Text = "Отображаются готовые заказы";
                     break;
 
@@ -93,7 +97,7 @@ namespace k_systems.Админка
                     break;
 
                 case CheckState.Unchecked:
-                    this.readyOrNotReadyOrdersFilter = "[Заказ готов] = FALSE";
+                    this.readyOrNotReadyOrdersFilter = "[Статус заказа] = FALSE";
                     this.readyOrdersFilterCheckBox.Text = "Отображаются неготовые заказы";
                     break;
             }

@@ -20,11 +20,14 @@ namespace k_systems.Админка
 
         public delegate void OnBefore(Тип_ремонтаRow isRecordExist);
 
+        public delegate void OnBeforePrice(Цены_работRow isRecEx);
+
         public Добавить_услугу()
         {
             this.OnSaveEvent += () => { };
             this.OnBeforeSaveEvent += isRecordExists => { };
             this.OnBeforeEvent += isRecordExist => { };
+            this.OnBeforePriceEvent += isRecEx => { };
             this.InitializeComponent();
         }
 
@@ -34,6 +37,8 @@ namespace k_systems.Админка
 
         public event OnBefore OnBeforeEvent;
 
+        public event OnBeforePrice OnBeforePriceEvent;
+
         public void ЗагрузитьУслугу(string услуга)
         {
             this.TypeService.Text = услуга;
@@ -41,7 +46,7 @@ namespace k_systems.Админка
 
         private bool CheckTextBoxes()
         {
-            if (this.TypeService.Text == "" || this.TypeRepair.Text == "")
+            if (this.TypeService.Text == "" || this.TypeRepair.Text == ""|| this.Price.Text=="")
             {
                 return false;
             }
@@ -83,6 +88,19 @@ namespace k_systems.Админка
                 }
             }
 
+            var Price = this.Price.Text;
+            var ada = new Цены_работTableAdapter();
+            ada.Fill(EntityManager.WorkPrices);
+            Цены_работRow existingPrice = null;
+            foreach(var price in EntityManager.WorkPrices)
+            {
+                if (price.Цена == Convert.ToInt32(Price))
+                {
+                    existingPrice = price;
+                    break;
+                }
+            }
+
             if (existingService != null || existingRepair != null)
             {
                 this.OnBeforeSaveEvent(existingService);
@@ -93,12 +111,16 @@ namespace k_systems.Админка
 
             var newService = EntityManager.TypeService.NewВид_работRow();
             var newRepair = EntityManager.TypeRepair.NewТип_ремонтаRow();
+            var newPrice = EntityManager.WorkPrices.NewЦены_работRow();
             newService.Наименование = TypeService;
             newRepair.Наименование = TypeRepair;
+            newPrice.Цена = Convert.ToInt32(Price);
             EntityManager.TypeService.AddВид_работRow(newService);
             EntityManager.TypeRepair.AddТип_ремонтаRow(newRepair);
+            EntityManager.WorkPrices.AddЦены_работRow(newPrice);
             EntityManager.UpdateTypeService();
             EntityManager.UpdateTypeRepair();
+            EntityManager.UpdateWorkPrices();
             this.OnSaveEvent();
 
             MessageBox.Show("Добавление прошло успешно!", "Информация", MessageBoxButtons.OK);

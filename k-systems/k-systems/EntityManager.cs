@@ -24,7 +24,7 @@ namespace k_systems
         {
             // Костыль заменяет оригинальную команду обновления строк во избежание ошибки "Нарушение параллелизма"
             var заказыUpdateCommand = заказыTableAdapter.Adapter.UpdateCommand;
-            заказыUpdateCommand.CommandText = "UPDATE `Заказы` SET `Номер клиента` = ?, `заказ готов` = ?, `Вид работы` = ?," +
+            заказыUpdateCommand.CommandText = "UPDATE `Заказы` SET `Номер клиента` = ?, `Статус заказа` = ?, `Вид работы` = ?," +
                 " `Тип работы` = ?, `Цена` = ? WHERE (`Идентификатор` = ?)";
             var parameters = заказыUpdateCommand.Parameters;
             while (parameters.Count > 6)
@@ -165,7 +165,7 @@ namespace k_systems
             var filterOrderCommand = new OleDbCommand()
             {
                 Connection = заказыTableAdapter.Connection,
-                CommandText = "SELECT Идентификатор, [Номер клиента], [Вид работы], [Тип работы], [заказ готов] " +
+                CommandText = "SELECT Идентификатор, [Номер клиента], [Вид работы], [Тип работы], [Статус заказа] " +
                 $"FROM Заказы {whereCondition}",
                 CommandType = global::System.Data.CommandType.Text
             };
