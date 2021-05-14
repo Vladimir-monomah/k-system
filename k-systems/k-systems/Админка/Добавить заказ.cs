@@ -39,14 +39,6 @@ namespace k_systems.Админка
         /// <param name="e"></param>
         private void orderFilterTextBox_TextChanged(object sender, EventArgs e)
         {
-            //var findFields = new[] { "ФИО", "[Вид работы]", "[Тип ремонта]" };
-            //this.textBoxOrdersFilter =
-            //    EntityManager.GetFilterStringByFields(findFields, this.orderFilterTextBox.Text).Trim();
-
-            //this.заказыСКлиентамиBindingSource.Filter = EntityManager.UnionFilter(
-            //    this.textBoxOrdersFilter,
-            //    this.readyOrNotReadyOrdersFilter);
-
             this.заказыСКлиентамиBindingSource.Filter=this.BuildWorkerCardFilter();
         }
 
@@ -100,7 +92,7 @@ namespace k_systems.Админка
             switch (this.readyOrdersFilterCheckBox.CheckState)
             {
                 case CheckState.Checked:
-                    this.readyOrNotReadyOrdersFilter = "[Статус заказа] = TRUE";
+                    this.readyOrNotReadyOrdersFilter = "[Статус заказа] = 'Готово'";
                     this.readyOrdersFilterCheckBox.Text = "Отображаются готовые заказы";
                     break;
 
@@ -110,7 +102,7 @@ namespace k_systems.Админка
                     break;
 
                 case CheckState.Unchecked:
-                    this.readyOrNotReadyOrdersFilter = "[Статус заказа] = FALSE";
+                    this.readyOrNotReadyOrdersFilter = "[Статус заказа] = 'В работе'";
                     this.readyOrdersFilterCheckBox.Text = "Отображаются неготовые заказы";
                     break;
             }
@@ -118,6 +110,16 @@ namespace k_systems.Админка
             this.заказыСКлиентамиBindingSource.Filter = EntityManager.UnionFilter(
                 this.textBoxOrdersFilter,
                 this.readyOrNotReadyOrdersFilter);
+        }
+
+        private void dataGridViewOrder_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var открыть = new Акт_приёмки_заказа(this._k_systemsDataSet);
+            открыть.LoadЗаказы(
+                (Заказы_с_клиентамиRow)((DataRowView)this.dataGridViewOrder.CurrentRow.DataBoundItem).Row);
+            открыть.ShowDialog();
+
+            this.заказы_с_клиентамиTableAdapter.Fill(this._k_systemsDataSet.Заказы_с_клиентами);
         }
     }
 }

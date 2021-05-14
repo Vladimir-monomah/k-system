@@ -19,6 +19,7 @@ namespace k_systems
         private static Цены_работTableAdapter ценыРаботTableAdapter = new Цены_работTableAdapter();
         private static Вид_работTableAdapter вид_РаботTableAdapter = new Вид_работTableAdapter();
         private static Тип_ремонтаTableAdapter тип_РемонтаTableAdapter = new Тип_ремонтаTableAdapter();
+        private static Заказы_с_клиентамиTableAdapter заказы_С_КлиентамиTableAdapter = new Заказы_с_клиентамиTableAdapter();
 
         static EntityManager()
         {
@@ -73,6 +74,14 @@ namespace k_systems
             }
         }
 
+        public static Заказы_с_клиентамиDataTable OrderClients
+        {
+            get
+            {
+                return _K_Systems.Заказы_с_клиентами;
+            }
+        }
+
         public static void UpdateUsers()
         {
             пользователиTableAdapter.Adapter.Update(UserDataTable);
@@ -97,6 +106,11 @@ namespace k_systems
         public static void UpdateTypeRepair()
         {
             тип_РемонтаTableAdapter.Adapter.Update(TypeRepair);
+        }
+
+        public static void UpdateOrderClients()
+        {
+            заказы_С_КлиентамиTableAdapter.Adapter.Update(OrderClients);
         }
 
         /// <summary>
@@ -251,6 +265,32 @@ namespace k_systems
             FillFilteredTable(тип_РемонтаTableAdapter.Adapter, filterUserCommand, TypeRepair);
 
             return TypeRepair;
+        }
+
+        /// <summary>
+        /// Возвращает отфильтрованную таблицу заказы с клиентами по условию <paramref name="condition"/>
+        /// </summary>
+        /// <param name="condition"></param>
+        /// <returns></returns>
+        public static Заказы_с_клиентамиDataTable FilterOrderCkients(string condition = null)
+        {
+            var whereCondition = string.Empty;
+            if (!string.IsNullOrEmpty(condition))
+            {
+                whereCondition = $"WHERE {condition}";
+            }
+
+            var filterUserCommand = new OleDbCommand()
+            {
+                Connection = заказы_С_КлиентамиTableAdapter.Connection,
+                CommandText = "SELECT [Номер заказа], [Номер клиента], ФИО, [Вид работы], [Тип ремонта], Цена, [Статус заказа]" +
+                $" FROM [Заказы с клиентами] {whereCondition}",
+                CommandType = global::System.Data.CommandType.Text
+            };
+
+            FillFilteredTable(заказы_С_КлиентамиTableAdapter.Adapter, filterUserCommand, OrderClients);
+
+            return OrderClients;
         }
 
 

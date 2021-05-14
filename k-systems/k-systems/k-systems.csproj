@@ -55,6 +55,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EntityManager.cs" />
+    <Compile Include="_k_systemsDataSet.cs">
+      <DependentUpon>_k_systemsDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="_k_systemsDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

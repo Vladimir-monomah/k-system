@@ -18,7 +18,7 @@ namespace k_systems.РегАвт
             try
             {
                 return Regex.IsMatch(email,
-                    @"^[a-z0-9_-]+@[a-z0-9_-]+$",
+                    @"^[a-z0-9_-]+@[a-z0-9_-]+\.[a-z0-9_-]+$",
                     RegexOptions.IgnoreCase);
             }
             catch (RegexMatchTimeoutException)

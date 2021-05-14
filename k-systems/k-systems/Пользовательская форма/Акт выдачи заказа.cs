@@ -14,7 +14,7 @@ namespace k_systems.Пользовательская_форма
     {
         public Заказ_для_клиента()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
     }
 }

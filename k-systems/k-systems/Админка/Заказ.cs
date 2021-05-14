@@ -32,7 +32,7 @@ namespace k_systems.Админка
         /// <param name="e"></param>
         private void addOrderButton_Click(object sender, EventArgs e)
         {
-            var orderState = GetOrderState();
+            var orderState = this.GetOrderState();
             if (string.IsNullOrEmpty(orderState))
             {
                 MessageBox.Show("Выберите статус заказа");
@@ -57,17 +57,17 @@ namespace k_systems.Админка
 
         private string GetOrderState()
         {
-            if (Ready.Checked)
+            if (this.Ready.Checked)
             {
                 return "Готово";
             }
 
-            if (Work.Checked)
+            if (this.Work.Checked)
             {
                 return "В работе";
             }
 
-            if (Postponed.Checked)
+            if (this.Postponed.Checked)
             {
                 return "Отложен";
             }
@@ -105,11 +105,11 @@ namespace k_systems.Админка
                 .ToArray();
             if(typeServiceIds.Length == 0)
             {
-                типРемонтаBindingSource.Filter = $"False";
+                this.типРемонтаBindingSource.Filter = $"False";
             }
             else
             {
-                типРемонтаBindingSource.Filter = $"[Идентификатор] in ({string.Join(", ", typeServiceIds)})";
+                this.типРемонтаBindingSource.Filter = $"[Идентификатор] in ({string.Join(", ", typeServiceIds)})";
             }
 
             this.тип_ремонтаTableAdapter.Fill(this._k_systemsDataSet.Тип_ремонта);
