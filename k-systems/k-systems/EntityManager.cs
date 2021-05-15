@@ -20,6 +20,7 @@ namespace k_systems
         private static Вид_работTableAdapter вид_РаботTableAdapter = new Вид_работTableAdapter();
         private static Тип_ремонтаTableAdapter тип_РемонтаTableAdapter = new Тип_ремонтаTableAdapter();
         private static Заказы_с_клиентамиTableAdapter заказы_С_КлиентамиTableAdapter = new Заказы_с_клиентамиTableAdapter();
+        private static СообщенияTableAdapter сообщенияTableAdapter = new СообщенияTableAdapter();
 
         static EntityManager()
         {
@@ -82,6 +83,14 @@ namespace k_systems
             }
         }
 
+        public static СообщенияDataTable MessageDataTable
+        {
+            get
+            {
+                return _K_Systems.Сообщения;
+            }
+        }
+
         public static void UpdateUsers()
         {
             пользователиTableAdapter.Adapter.Update(UserDataTable);
@@ -111,6 +120,11 @@ namespace k_systems
         public static void UpdateOrderClients()
         {
             заказы_С_КлиентамиTableAdapter.Adapter.Update(OrderClients);
+        }
+
+        internal static void UpdateMessages()
+        {
+            сообщенияTableAdapter.Adapter.Update(MessageDataTable);
         }
 
         /// <summary>
@@ -291,6 +305,33 @@ namespace k_systems
             FillFilteredTable(заказы_С_КлиентамиTableAdapter.Adapter, filterUserCommand, OrderClients);
 
             return OrderClients;
+        }
+
+        /// <summary>
+        /// Возвращает отфильтрованную таблицу заказы с клиентами по условию <paramref name="condition"/>
+        /// </summary>
+        /// <param name="condition"></param>
+        /// <returns></returns>
+        public static СообщенияDataTable FilterMessages(string condition = null)
+        {
+            var whereCondition = string.Empty;
+            if (!string.IsNullOrEmpty(condition))
+            {
+                whereCondition = $"WHERE {condition}";
+            }
+
+            var filterUserCommand = new OleDbCommand()
+            {
+                Connection = сообщенияTableAdapter.Connection,
+                CommandText = "SELECT Код, Отправитель, Получатель, Тема, [Текст сообщения]," +
+                    " [Прочитано получателем], [Удалено отправителем], [Удалено получателем]" +
+                    $" FROM [Сообщения] {whereCondition}",
+                CommandType = CommandType.Text
+            };
+
+            FillFilteredTable(сообщенияTableAdapter.Adapter, filterUserCommand, MessageDataTable);
+
+            return MessageDataTable;
         }
 
 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Почта));
             this.deletedMessagesTabControl = new System.Windows.Forms.TabControl();
             this.WriteLetter = new System.Windows.Forms.TabPage();
@@ -42,10 +43,41 @@
             this.outcommingMessagesTabPanel = new System.Windows.Forms.TabPage();
             this.deleteOutMessageButton = new System.Windows.Forms.Button();
             this.Basket = new System.Windows.Forms.TabPage();
+            this.inputMessagesDataGridView = new System.Windows.Forms.DataGridView();
+            this.outMessagesDataGridView = new System.Windows.Forms.DataGridView();
+            this._k_systemsDataSet = new k_systems._k_systemsDataSet();
+            this.сообщенияДляАдминистраторовBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.сообщения_для_администраторовTableAdapter = new k_systems._k_systemsDataSetTableAdapters.Сообщения_для_администраторовTableAdapter();
+            this.фИОDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.темаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.текстСообщенияDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.сообщенияДляАдминистраторовОтправленныеBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.сообщения_для_администраторов_отправленныеTableAdapter = new k_systems._k_systemsDataSetTableAdapters.Сообщения_для_администраторов_отправленныеTableAdapter();
+            this.фИОDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.темаDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.текстСообщенияDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.сообщенияДляАдминистраторовУдалённыеBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.сообщения_для_администраторов_удалённыеTableAdapter = new k_systems._k_systemsDataSetTableAdapters.Сообщения_для_администраторов_удалённыеTableAdapter();
+            this.фИОПолучателяDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.фИООтправителяDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.темаDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.текстСообщенияDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.пользователиДляЗаказовBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.пользователи_для_заказовTableAdapter = new k_systems._k_systemsDataSetTableAdapters.Пользователи_для_заказовTableAdapter();
             this.deletedMessagesTabControl.SuspendLayout();
             this.WriteLetter.SuspendLayout();
             this.incomingMessagesTabPanel.SuspendLayout();
             this.outcommingMessagesTabPanel.SuspendLayout();
+            this.Basket.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.inputMessagesDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.outMessagesDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._k_systemsDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.сообщенияДляАдминистраторовBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.сообщенияДляАдминистраторовОтправленныеBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.сообщенияДляАдминистраторовУдалённыеBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.пользователиДляЗаказовBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // deletedMessagesTabControl
@@ -82,6 +114,7 @@
             // 
             this.userAdresseesComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.userAdresseesComboBox.DataSource = this.пользователиДляЗаказовBindingSource;
             this.userAdresseesComboBox.DisplayMember = "ФИО";
             this.userAdresseesComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.userAdresseesComboBox.FormattingEnabled = true;
@@ -155,6 +188,7 @@
             // 
             // incomingMessagesTabPanel
             // 
+            this.incomingMessagesTabPanel.Controls.Add(this.inputMessagesDataGridView);
             this.incomingMessagesTabPanel.Controls.Add(this.deleteMessageButton);
             this.incomingMessagesTabPanel.Location = new System.Drawing.Point(4, 25);
             this.incomingMessagesTabPanel.Margin = new System.Windows.Forms.Padding(4);
@@ -178,6 +212,7 @@
             // 
             // outcommingMessagesTabPanel
             // 
+            this.outcommingMessagesTabPanel.Controls.Add(this.outMessagesDataGridView);
             this.outcommingMessagesTabPanel.Controls.Add(this.deleteOutMessageButton);
             this.outcommingMessagesTabPanel.Location = new System.Drawing.Point(4, 25);
             this.outcommingMessagesTabPanel.Margin = new System.Windows.Forms.Padding(4);
@@ -200,6 +235,7 @@
             // 
             // Basket
             // 
+            this.Basket.Controls.Add(this.dataGridView1);
             this.Basket.Location = new System.Drawing.Point(4, 25);
             this.Basket.Margin = new System.Windows.Forms.Padding(4);
             this.Basket.Name = "Basket";
@@ -207,6 +243,176 @@
             this.Basket.TabIndex = 3;
             this.Basket.Text = "Корзина";
             this.Basket.UseVisualStyleBackColor = true;
+            // 
+            // inputMessagesDataGridView
+            // 
+            this.inputMessagesDataGridView.AutoGenerateColumns = false;
+            this.inputMessagesDataGridView.BackgroundColor = System.Drawing.Color.White;
+            this.inputMessagesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.inputMessagesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.фИОDataGridViewTextBoxColumn,
+            this.темаDataGridViewTextBoxColumn,
+            this.текстСообщенияDataGridViewTextBoxColumn});
+            this.inputMessagesDataGridView.DataSource = this.сообщенияДляАдминистраторовBindingSource;
+            this.inputMessagesDataGridView.Location = new System.Drawing.Point(8, 85);
+            this.inputMessagesDataGridView.Name = "inputMessagesDataGridView";
+            this.inputMessagesDataGridView.RowTemplate.Height = 24;
+            this.inputMessagesDataGridView.Size = new System.Drawing.Size(855, 677);
+            this.inputMessagesDataGridView.TabIndex = 2;
+            // 
+            // outMessagesDataGridView
+            // 
+            this.outMessagesDataGridView.AutoGenerateColumns = false;
+            this.outMessagesDataGridView.BackgroundColor = System.Drawing.Color.White;
+            this.outMessagesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.outMessagesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.фИОDataGridViewTextBoxColumn1,
+            this.темаDataGridViewTextBoxColumn1,
+            this.текстСообщенияDataGridViewTextBoxColumn1});
+            this.outMessagesDataGridView.DataSource = this.сообщенияДляАдминистраторовОтправленныеBindingSource;
+            this.outMessagesDataGridView.Location = new System.Drawing.Point(8, 85);
+            this.outMessagesDataGridView.Name = "outMessagesDataGridView";
+            this.outMessagesDataGridView.RowTemplate.Height = 24;
+            this.outMessagesDataGridView.Size = new System.Drawing.Size(855, 677);
+            this.outMessagesDataGridView.TabIndex = 3;
+            // 
+            // _k_systemsDataSet
+            // 
+            this._k_systemsDataSet.DataSetName = "_k_systemsDataSet";
+            this._k_systemsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // сообщенияДляАдминистраторовBindingSource
+            // 
+            this.сообщенияДляАдминистраторовBindingSource.DataMember = "Сообщения для администраторов";
+            this.сообщенияДляАдминистраторовBindingSource.DataSource = this._k_systemsDataSet;
+            // 
+            // сообщения_для_администраторовTableAdapter
+            // 
+            this.сообщения_для_администраторовTableAdapter.ClearBeforeFill = true;
+            // 
+            // фИОDataGridViewTextBoxColumn
+            // 
+            this.фИОDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.фИОDataGridViewTextBoxColumn.DataPropertyName = "ФИО";
+            this.фИОDataGridViewTextBoxColumn.HeaderText = "ФИО";
+            this.фИОDataGridViewTextBoxColumn.Name = "фИОDataGridViewTextBoxColumn";
+            this.фИОDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // темаDataGridViewTextBoxColumn
+            // 
+            this.темаDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.темаDataGridViewTextBoxColumn.DataPropertyName = "Тема";
+            this.темаDataGridViewTextBoxColumn.HeaderText = "Тема";
+            this.темаDataGridViewTextBoxColumn.Name = "темаDataGridViewTextBoxColumn";
+            this.темаDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // текстСообщенияDataGridViewTextBoxColumn
+            // 
+            this.текстСообщенияDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.текстСообщенияDataGridViewTextBoxColumn.DataPropertyName = "Текст сообщения";
+            this.текстСообщенияDataGridViewTextBoxColumn.HeaderText = "Текст сообщения";
+            this.текстСообщенияDataGridViewTextBoxColumn.Name = "текстСообщенияDataGridViewTextBoxColumn";
+            this.текстСообщенияDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // сообщенияДляАдминистраторовОтправленныеBindingSource
+            // 
+            this.сообщенияДляАдминистраторовОтправленныеBindingSource.DataMember = "Сообщения для администраторов отправленные";
+            this.сообщенияДляАдминистраторовОтправленныеBindingSource.DataSource = this._k_systemsDataSet;
+            // 
+            // сообщения_для_администраторов_отправленныеTableAdapter
+            // 
+            this.сообщения_для_администраторов_отправленныеTableAdapter.ClearBeforeFill = true;
+            // 
+            // фИОDataGridViewTextBoxColumn1
+            // 
+            this.фИОDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.фИОDataGridViewTextBoxColumn1.DataPropertyName = "ФИО";
+            this.фИОDataGridViewTextBoxColumn1.HeaderText = "ФИО";
+            this.фИОDataGridViewTextBoxColumn1.Name = "фИОDataGridViewTextBoxColumn1";
+            this.фИОDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // темаDataGridViewTextBoxColumn1
+            // 
+            this.темаDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.темаDataGridViewTextBoxColumn1.DataPropertyName = "Тема";
+            this.темаDataGridViewTextBoxColumn1.HeaderText = "Тема";
+            this.темаDataGridViewTextBoxColumn1.Name = "темаDataGridViewTextBoxColumn1";
+            this.темаDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // текстСообщенияDataGridViewTextBoxColumn1
+            // 
+            this.текстСообщенияDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.текстСообщенияDataGridViewTextBoxColumn1.DataPropertyName = "Текст сообщения";
+            this.текстСообщенияDataGridViewTextBoxColumn1.HeaderText = "Текст сообщения";
+            this.текстСообщенияDataGridViewTextBoxColumn1.Name = "текстСообщенияDataGridViewTextBoxColumn1";
+            this.текстСообщенияDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.фИОПолучателяDataGridViewTextBoxColumn,
+            this.фИООтправителяDataGridViewTextBoxColumn,
+            this.темаDataGridViewTextBoxColumn2,
+            this.текстСообщенияDataGridViewTextBoxColumn2});
+            this.dataGridView1.DataSource = this.сообщенияДляАдминистраторовУдалённыеBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(860, 759);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // сообщенияДляАдминистраторовУдалённыеBindingSource
+            // 
+            this.сообщенияДляАдминистраторовУдалённыеBindingSource.DataMember = "Сообщения для администраторов удалённые";
+            this.сообщенияДляАдминистраторовУдалённыеBindingSource.DataSource = this._k_systemsDataSet;
+            // 
+            // сообщения_для_администраторов_удалённыеTableAdapter
+            // 
+            this.сообщения_для_администраторов_удалённыеTableAdapter.ClearBeforeFill = true;
+            // 
+            // фИОПолучателяDataGridViewTextBoxColumn
+            // 
+            this.фИОПолучателяDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.фИОПолучателяDataGridViewTextBoxColumn.DataPropertyName = "ФИО получателя";
+            this.фИОПолучателяDataGridViewTextBoxColumn.HeaderText = "ФИО получателя";
+            this.фИОПолучателяDataGridViewTextBoxColumn.Name = "фИОПолучателяDataGridViewTextBoxColumn";
+            this.фИОПолучателяDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // фИООтправителяDataGridViewTextBoxColumn
+            // 
+            this.фИООтправителяDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.фИООтправителяDataGridViewTextBoxColumn.DataPropertyName = "ФИО отправителя";
+            this.фИООтправителяDataGridViewTextBoxColumn.HeaderText = "ФИО отправителя";
+            this.фИООтправителяDataGridViewTextBoxColumn.Name = "фИООтправителяDataGridViewTextBoxColumn";
+            this.фИООтправителяDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // темаDataGridViewTextBoxColumn2
+            // 
+            this.темаDataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.темаDataGridViewTextBoxColumn2.DataPropertyName = "Тема";
+            this.темаDataGridViewTextBoxColumn2.HeaderText = "Тема";
+            this.темаDataGridViewTextBoxColumn2.Name = "темаDataGridViewTextBoxColumn2";
+            this.темаDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // текстСообщенияDataGridViewTextBoxColumn2
+            // 
+            this.текстСообщенияDataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.текстСообщенияDataGridViewTextBoxColumn2.DataPropertyName = "Текст сообщения";
+            this.текстСообщенияDataGridViewTextBoxColumn2.HeaderText = "Текст сообщения";
+            this.текстСообщенияDataGridViewTextBoxColumn2.Name = "текстСообщенияDataGridViewTextBoxColumn2";
+            this.текстСообщенияDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // пользователиДляЗаказовBindingSource
+            // 
+            this.пользователиДляЗаказовBindingSource.DataMember = "Пользователи для заказов";
+            this.пользователиДляЗаказовBindingSource.DataSource = this._k_systemsDataSet;
+            // 
+            // пользователи_для_заказовTableAdapter
+            // 
+            this.пользователи_для_заказовTableAdapter.ClearBeforeFill = true;
             // 
             // Почта
             // 
@@ -221,11 +427,21 @@
             this.Name = "Почта";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Почта";
+            this.Load += new System.EventHandler(this.Почта_Load);
             this.deletedMessagesTabControl.ResumeLayout(false);
             this.WriteLetter.ResumeLayout(false);
             this.WriteLetter.PerformLayout();
             this.incomingMessagesTabPanel.ResumeLayout(false);
             this.outcommingMessagesTabPanel.ResumeLayout(false);
+            this.Basket.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.inputMessagesDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.outMessagesDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._k_systemsDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.сообщенияДляАдминистраторовBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.сообщенияДляАдминистраторовОтправленныеBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.сообщенияДляАдминистраторовУдалённыеBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.пользователиДляЗаказовBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -245,5 +461,27 @@
         private System.Windows.Forms.TabPage outcommingMessagesTabPanel;
         private System.Windows.Forms.Button deleteOutMessageButton;
         private System.Windows.Forms.TabPage Basket;
+        private System.Windows.Forms.DataGridView inputMessagesDataGridView;
+        private System.Windows.Forms.DataGridView outMessagesDataGridView;
+        private _k_systemsDataSet _k_systemsDataSet;
+        private System.Windows.Forms.BindingSource сообщенияДляАдминистраторовBindingSource;
+        private _k_systemsDataSetTableAdapters.Сообщения_для_администраторовTableAdapter сообщения_для_администраторовTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn фИОDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn темаDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn текстСообщенияDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource сообщенияДляАдминистраторовОтправленныеBindingSource;
+        private _k_systemsDataSetTableAdapters.Сообщения_для_администраторов_отправленныеTableAdapter сообщения_для_администраторов_отправленныеTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn фИОDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn темаDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn текстСообщенияDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource сообщенияДляАдминистраторовУдалённыеBindingSource;
+        private _k_systemsDataSetTableAdapters.Сообщения_для_администраторов_удалённыеTableAdapter сообщения_для_администраторов_удалённыеTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn фИОПолучателяDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn фИООтправителяDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn темаDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn текстСообщенияDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.BindingSource пользователиДляЗаказовBindingSource;
+        private _k_systemsDataSetTableAdapters.Пользователи_для_заказовTableAdapter пользователи_для_заказовTableAdapter;
     }
 }

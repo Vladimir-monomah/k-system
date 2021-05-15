@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Email\EmailService.cs" />
     <Compile Include="EntityManager.cs" />
     <Compile Include="_k_systemsDataSet.cs">
       <DependentUpon>_k_systemsDataSet.xsd</DependentUpon>
