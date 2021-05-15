@@ -1,8 +1,10 @@
-﻿using k_systems.РегАвт;
+﻿using k_systems.Properties;
+using k_systems.РегАвт;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -23,9 +25,10 @@ namespace k_systems.Админка
         public Администратор()
         {
             this.InitializeComponent();
+            this.Администратор_Load();
         }
 
-        private void Администратор_Load(object sender, EventArgs e)
+        private void Администратор_Load()
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "_k_systemsDataSet.Пользователи". При необходимости она может быть перемещена или удалена.
             this.пользователиTableAdapter.Fill(this._k_systemsDataSet.Пользователи);
@@ -113,8 +116,33 @@ namespace k_systems.Админка
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
-            int ind = this.dataGridView.SelectedCells[0].RowIndex;
-            this.dataGridView.Rows.RemoveAt(ind);
+            //int ind = this.dataGridView.SelectedCells[0].RowIndex;
+            //this.dataGridView.Rows.RemoveAt(ind);
+
+            var idUser= ((ПользователиRow)((DataRowView)this.dataGridView.CurrentRow?.DataBoundItem)?.Row)?.Id;
+            if (!idUser.HasValue)
+            {
+                return;
+            }
+
+            var deleteUser = MessageBox.Show("Вы действительно хотите удалить данного пользователя? ", "Информация",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (deleteUser != DialogResult.Yes)
+            {
+                return;
+            }
+
+            using(var connection=new OleDbConnection(Settings.Default.k_systemsConnectionString))
+            {
+                connection.Open();
+                using(var sqlCommand = connection.CreateCommand())
+                {
+                    sqlCommand.CommandText = $"DELETE FROM Пользователи WHERE Id={idUser.Value}";
+                    sqlCommand.ExecuteNonQuery();
+                }
+            }
+
+            this.Администратор_Load();
         }
 
         private void SaveDB_Click(object sender, EventArgs e)
