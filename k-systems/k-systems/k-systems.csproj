@@ -66,6 +66,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>_k_systemsDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Админка\EmailMessageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Админка\EmailMessageForm.Designer.cs">
+      <DependentUpon>EmailMessageForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Админка\Администратор.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +164,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Админка\EmailMessageForm.resx">
+      <DependentUpon>EmailMessageForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Админка\Администратор.resx">
       <DependentUpon>Администратор.cs</DependentUpon>
     </EmbeddedResource>

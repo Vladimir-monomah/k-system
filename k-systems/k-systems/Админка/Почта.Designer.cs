@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Почта));
             this.deletedMessagesTabControl = new System.Windows.Forms.TabControl();
             this.WriteLetter = new System.Windows.Forms.TabPage();
-            this.userAdresseesComboBox = new System.Windows.Forms.ComboBox();
             this.пользователиДляЗаказовBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this._k_systemsDataSet = new k_systems._k_systemsDataSet();
             this.sendEmailButton = new System.Windows.Forms.Button();
@@ -65,6 +64,7 @@
             this.сообщения_для_администраторов_отправленныеTableAdapter = new k_systems._k_systemsDataSetTableAdapters.Сообщения_для_администраторов_отправленныеTableAdapter();
             this.сообщения_для_администраторов_удалённыеTableAdapter = new k_systems._k_systemsDataSetTableAdapters.Сообщения_для_администраторов_удалённыеTableAdapter();
             this.пользователи_для_заказовTableAdapter = new k_systems._k_systemsDataSetTableAdapters.Пользователи_для_заказовTableAdapter();
+            this.userAdresseesComboBox = new System.Windows.Forms.ComboBox();
             this.deletedMessagesTabControl.SuspendLayout();
             this.WriteLetter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.пользователиДляЗаказовBindingSource)).BeginInit();
@@ -110,21 +110,6 @@
             this.WriteLetter.Text = "Написать письмо";
             this.WriteLetter.UseVisualStyleBackColor = true;
             // 
-            // userAdresseesComboBox
-            // 
-            this.userAdresseesComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.userAdresseesComboBox.DataSource = this.пользователиДляЗаказовBindingSource;
-            this.userAdresseesComboBox.DisplayMember = "ФИО";
-            this.userAdresseesComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.userAdresseesComboBox.FormattingEnabled = true;
-            this.userAdresseesComboBox.Location = new System.Drawing.Point(9, 20);
-            this.userAdresseesComboBox.Margin = new System.Windows.Forms.Padding(4);
-            this.userAdresseesComboBox.Name = "userAdresseesComboBox";
-            this.userAdresseesComboBox.Size = new System.Drawing.Size(852, 24);
-            this.userAdresseesComboBox.TabIndex = 4;
-            this.userAdresseesComboBox.ValueMember = "Идентификатор";
-            // 
             // пользователиДляЗаказовBindingSource
             // 
             this.пользователиДляЗаказовBindingSource.DataMember = "Пользователи для заказов";
@@ -155,7 +140,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.emailMessageTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.emailMessageTextBox.Location = new System.Drawing.Point(4, 113);
+            this.emailMessageTextBox.Location = new System.Drawing.Point(0, 113);
             this.emailMessageTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.emailMessageTextBox.Multiline = true;
             this.emailMessageTextBox.Name = "emailMessageTextBox";
@@ -225,6 +210,10 @@
             this.inputMessagesDataGridView.RowTemplate.Height = 24;
             this.inputMessagesDataGridView.Size = new System.Drawing.Size(855, 677);
             this.inputMessagesDataGridView.TabIndex = 2;
+            this.inputMessagesDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.messagesDataGridView_CellDoubleClick);
+            this.inputMessagesDataGridView.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.messagesDataGridView_CellClick);
+            this.inputMessagesDataGridView.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.messagesDataGridView_DataBindingComplete);
+            this.inputMessagesDataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.messagesDataGridView_KeyDown);
             // 
             // фИОDataGridViewTextBoxColumn
             // 
@@ -265,6 +254,7 @@
             this.deleteMessageButton.TabIndex = 1;
             this.deleteMessageButton.Text = "Удалить сообщение";
             this.deleteMessageButton.UseVisualStyleBackColor = true;
+            this.deleteMessageButton.Click += new System.EventHandler(this.deleteMessageButton_Click);
             // 
             // outcommingMessagesTabPanel
             // 
@@ -293,6 +283,10 @@
             this.outMessagesDataGridView.RowTemplate.Height = 24;
             this.outMessagesDataGridView.Size = new System.Drawing.Size(855, 677);
             this.outMessagesDataGridView.TabIndex = 3;
+            this.outMessagesDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.messagesDataGridView_CellDoubleClick);
+            this.outMessagesDataGridView.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.messagesDataGridView_CellClick);
+            this.outMessagesDataGridView.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.messagesDataGridView_DataBindingComplete);
+            this.outMessagesDataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.messagesDataGridView_KeyDown);
             // 
             // фИОDataGridViewTextBoxColumn1
             // 
@@ -333,6 +327,7 @@
             this.deleteOutMessageButton.TabIndex = 2;
             this.deleteOutMessageButton.Text = "Удалить сообщение";
             this.deleteOutMessageButton.UseVisualStyleBackColor = true;
+            this.deleteOutMessageButton.Click += new System.EventHandler(this.deleteOutMessageButton_Click);
             // 
             // Basket
             // 
@@ -361,6 +356,9 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(860, 759);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.messagesDataGridView_CellClick);
+            this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.messagesDataGridView_DataBindingComplete);
+            this.dataGridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.messagesDataGridView_KeyDown);
             // 
             // фИОПолучателяDataGridViewTextBoxColumn
             // 
@@ -415,6 +413,21 @@
             // 
             this.пользователи_для_заказовTableAdapter.ClearBeforeFill = true;
             // 
+            // userAdresseesComboBox
+            // 
+            this.userAdresseesComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.userAdresseesComboBox.DataSource = this.пользователиДляЗаказовBindingSource;
+            this.userAdresseesComboBox.DisplayMember = "ФИО";
+            this.userAdresseesComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.userAdresseesComboBox.FormattingEnabled = true;
+            this.userAdresseesComboBox.Location = new System.Drawing.Point(5, 25);
+            this.userAdresseesComboBox.Margin = new System.Windows.Forms.Padding(4);
+            this.userAdresseesComboBox.Name = "userAdresseesComboBox";
+            this.userAdresseesComboBox.Size = new System.Drawing.Size(862, 24);
+            this.userAdresseesComboBox.TabIndex = 5;
+            this.userAdresseesComboBox.ValueMember = "Id";
+            // 
             // Почта
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -451,7 +464,6 @@
 
         private System.Windows.Forms.TabControl deletedMessagesTabControl;
         private System.Windows.Forms.TabPage WriteLetter;
-        private System.Windows.Forms.ComboBox userAdresseesComboBox;
         private System.Windows.Forms.Button sendEmailButton;
         private System.Windows.Forms.TextBox emailMessageTextBox;
         private System.Windows.Forms.Label labelSubject;
@@ -484,5 +496,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn текстСообщенияDataGridViewTextBoxColumn2;
         private System.Windows.Forms.BindingSource пользователиДляЗаказовBindingSource;
         private _k_systemsDataSetTableAdapters.Пользователи_для_заказовTableAdapter пользователи_для_заказовTableAdapter;
+        private System.Windows.Forms.ComboBox userAdresseesComboBox;
     }
 }

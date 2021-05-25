@@ -249,8 +249,8 @@
             // AddOrder
             // 
             this.AddOrder.Name = "AddOrder";
-            this.AddOrder.Size = new System.Drawing.Size(192, 26);
-            this.AddOrder.Text = "Добавить заказ";
+            this.AddOrder.Size = new System.Drawing.Size(216, 26);
+            this.AddOrder.Text = "Список заказов";
             this.AddOrder.Click += new System.EventHandler(this.AddOrder_Click);
             // 
             // услугиToolStripMenuItem
@@ -264,7 +264,7 @@
             // AddService
             // 
             this.AddService.Name = "AddService";
-            this.AddService.Size = new System.Drawing.Size(197, 26);
+            this.AddService.Size = new System.Drawing.Size(216, 26);
             this.AddService.Text = "Добавить услугу";
             this.AddService.Click += new System.EventHandler(this.AddService_Click);
             // 
@@ -293,7 +293,7 @@
             // Email
             // 
             this.Email.Name = "Email";
-            this.Email.Size = new System.Drawing.Size(216, 26);
+            this.Email.Size = new System.Drawing.Size(121, 26);
             this.Email.Text = "Email";
             this.Email.Click += new System.EventHandler(this.Email_Click);
             // 
