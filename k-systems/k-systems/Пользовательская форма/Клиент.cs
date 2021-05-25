@@ -12,9 +12,18 @@ namespace k_systems.Пользовательская_форма
 {
     public partial class Клиент : Form
     {
+        private long idClient;
+        private _k_systemsDataSet.ПользователиRow user;
+
         public Клиент(Int64 userId)
         {
+            this.idClient = userId;
             this.InitializeComponent();
+        }
+
+        public Клиент(_k_systemsDataSet.ПользователиRow user)
+        {
+            this.user = user;
         }
 
         private void Клиент_Load(object sender, EventArgs e)
@@ -53,7 +62,7 @@ namespace k_systems.Пользовательская_форма
 
         private void заказыToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var открыть = new Заказы();
+            var открыть = new Заказы(this.idClient);
             открыть.ShowDialog();
         }
     }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using k_systems.Константы;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -57,22 +58,13 @@ namespace k_systems.Админка
 
         private string GetOrderState()
         {
-            if (this.Ready.Checked)
-            {
-                return "Готово";
-            }
 
             if (this.Work.Checked)
             {
-                return "В работе";
+                return WorkStates.Working;
             }
 
-            if (this.Postponed.Checked)
-            {
-                return "Отложен";
-            }
-
-            return null;
+            return WorkStates.Waiting;
         }
 
         /// <summary>

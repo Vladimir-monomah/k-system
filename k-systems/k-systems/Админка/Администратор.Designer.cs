@@ -293,8 +293,9 @@
             // Email
             // 
             this.Email.Name = "Email";
-            this.Email.Size = new System.Drawing.Size(121, 26);
+            this.Email.Size = new System.Drawing.Size(216, 26);
             this.Email.Text = "Email";
+            this.Email.Click += new System.EventHandler(this.Email_Click);
             // 
             // настройкиToolStripMenuItem
             // 
@@ -354,7 +355,6 @@
             this.Text = "Мастер";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Администратор_FormClosing);
-            //this.Load += new System.EventHandler(this.Администратор_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.пользователиBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._k_systemsDataSet)).EndInit();

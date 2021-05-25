@@ -1,4 +1,5 @@
-﻿using System;
+﻿using k_systems.Константы;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -92,7 +93,7 @@ namespace k_systems.Админка
             switch (this.readyOrdersFilterCheckBox.CheckState)
             {
                 case CheckState.Checked:
-                    this.readyOrNotReadyOrdersFilter = "[Статус заказа] = 'Готово'";
+                    this.readyOrNotReadyOrdersFilter = $"[Статус заказа] = '{WorkStates.Ready}'";
                     this.readyOrdersFilterCheckBox.Text = "Отображаются готовые заказы";
                     break;
 
@@ -102,7 +103,7 @@ namespace k_systems.Админка
                     break;
 
                 case CheckState.Unchecked:
-                    this.readyOrNotReadyOrdersFilter = "[Статус заказа] = 'В работе'";
+                    this.readyOrNotReadyOrdersFilter = $"[Статус заказа] = '{WorkStates.Working}'";
                     this.readyOrdersFilterCheckBox.Text = "Отображаются неготовые заказы";
                     break;
             }

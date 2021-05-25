@@ -145,7 +145,7 @@ namespace k_systems
                 Connection = пользователиTableAdapter.Connection,
                 CommandText = "SELECT Id, Фамилия, Имя, Отчество, Телефон, логин, пароль, " +
                 $"[E-mail], [Является администратором] FROM Пользователи {whereCondition}",
-                CommandType = global::System.Data.CommandType.Text
+                CommandType = CommandType.Text
             };
 
             FillFilteredTable(пользователиTableAdapter.Adapter, filterUserCommand, UserDataTable);
@@ -193,14 +193,39 @@ namespace k_systems
             var filterOrderCommand = new OleDbCommand()
             {
                 Connection = заказыTableAdapter.Connection,
-                CommandText = "SELECT Идентификатор, [Номер клиента], [Вид работы], [Тип работы], [Статус заказа] " +
+                CommandText = "SELECT Идентификатор, [Номер клиента], [Вид работы], [Тип ремонта], Цена, [Статус заказа] " +
                 $"FROM Заказы {whereCondition}",
-                CommandType = global::System.Data.CommandType.Text
+                CommandType = CommandType.Text
             };
 
             FillFilteredTable(заказыTableAdapter.Adapter, filterOrderCommand, OrderDataTable);
 
             return OrderDataTable;
+        }
+
+        public static void UpdateOrder(string updateFields, string condition = null)
+        {
+            var whereCondition = string.Empty;
+            if (!string.IsNullOrEmpty(condition))
+            {
+                whereCondition = $"WHERE {condition}";
+            }
+
+            var updateOrderCommand = new OleDbCommand()
+            {
+                Connection = заказыTableAdapter.Connection,
+                CommandText = $"UPDATE Заказы SET {updateFields} {whereCondition}",
+                CommandType = CommandType.Text
+            };
+            try
+            {
+                заказыTableAdapter.Connection.Open();
+                updateOrderCommand.ExecuteNonQuery();
+            }
+            finally
+            {
+                заказыTableAdapter.Connection.Close();
+            }
         }
 
         /// <summary>
@@ -221,7 +246,7 @@ namespace k_systems
                 Connection = ценыРаботTableAdapter.Connection,
                 CommandText = "SELECT Идентификатор, [Вид работы], [Тип ремонта], Цена" +
                 $" FROM [Цены работ] {whereCondition}",
-                CommandType = global::System.Data.CommandType.Text
+                CommandType = CommandType.Text
             };
 
             FillFilteredTable(ценыРаботTableAdapter.Adapter, filterUserCommand, WorkPrices);
@@ -247,7 +272,7 @@ namespace k_systems
                 Connection = вид_РаботTableAdapter.Connection,
                 CommandText = "SELECT Идентификатор, Наименование" +
                 $" FROM [Вид работ] {whereCondition}",
-                CommandType = global::System.Data.CommandType.Text
+                CommandType = CommandType.Text
             };
 
             FillFilteredTable(вид_РаботTableAdapter.Adapter, filterUserCommand, TypeService);
@@ -273,7 +298,7 @@ namespace k_systems
                 Connection = тип_РемонтаTableAdapter.Connection,
                 CommandText = "SELECT Идентификатор, Наименование" +
                 $" FROM [Тип ремонта] {whereCondition}",
-                CommandType = global::System.Data.CommandType.Text
+                CommandType = CommandType.Text
             };
 
             FillFilteredTable(тип_РемонтаTableAdapter.Adapter, filterUserCommand, TypeRepair);
@@ -299,7 +324,7 @@ namespace k_systems
                 Connection = заказы_С_КлиентамиTableAdapter.Connection,
                 CommandText = "SELECT [Номер заказа], [Номер клиента], ФИО, [Вид работы], [Тип ремонта], Цена, [Статус заказа]" +
                 $" FROM [Заказы с клиентами] {whereCondition}",
-                CommandType = global::System.Data.CommandType.Text
+                CommandType = CommandType.Text
             };
 
             FillFilteredTable(заказы_С_КлиентамиTableAdapter.Adapter, filterUserCommand, OrderClients);

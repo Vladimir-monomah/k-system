@@ -188,5 +188,11 @@ namespace k_systems.Админка
                 MessageBox.Show(exception.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void Email_Click(object sender, EventArgs e)
+        {
+            var открыть = new Почта();
+            открыть.ShowDialog();
+        }
     }
 }

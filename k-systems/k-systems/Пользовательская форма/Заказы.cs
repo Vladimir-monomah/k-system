@@ -17,9 +17,9 @@ namespace k_systems.Пользовательская_форма
         private string textBoxOrderFilter;
         private string readyOrNotReadyOrdersFilter;
 
-        public Заказы()
+        public Заказы(long userId)
         {
-            this.orderFilter = $"([Номер клиента])";
+            this.orderFilter = $"([Номер клиента]= {userId})";
             this.InitializeComponent();
         }
 

@@ -46,7 +46,7 @@ namespace k_systems.Админка
 
         private bool CheckTextBoxes()
         {
-            if (this.TypeService.Text == "" || this.TypeRepair.Text == ""|| this.Price.Text=="")
+            if (this.TypeService.Text == "" || this.TypeRepair.Text == "" || this.Price.Text == "")
             {
                 return false;
             }
@@ -65,48 +65,27 @@ namespace k_systems.Админка
             var TypeService = this.TypeService.Text;
             var adapter = new Вид_работTableAdapter();
             adapter.Fill(EntityManager.TypeService);
-            Вид_работRow existingService = null;
-            foreach(var works in EntityManager.TypeService)
+            foreach (var works in EntityManager.TypeService)
             {
                 if (works.Наименование == TypeService)
                 {
-                    existingService = works;
-                    break;
+                    MessageBox.Show("Вид услуги " +
+                        "с таким названием уже существует!", "Информация", MessageBoxButtons.OK);
+                    return;
                 }
             }
 
             var TypeRepair = this.TypeRepair.Text;
             var adap = new Тип_ремонтаTableAdapter();
             adap.Fill(EntityManager.TypeRepair);
-            Тип_ремонтаRow existingRepair = null;
-            foreach(var rep in EntityManager.TypeRepair)
+            foreach (var rep in EntityManager.TypeRepair)
             {
                 if (rep.Наименование == TypeRepair)
                 {
-                    existingRepair = rep;
-                    break;
+                    MessageBox.Show("Тип ремонта " +
+                        "с таким названием уже существует!", "Информация", MessageBoxButtons.OK);
+                    return;
                 }
-            }
-
-            var Price = this.Price.Text;
-            var ada = new Цены_работTableAdapter();
-            ada.Fill(EntityManager.WorkPrices);
-            Цены_работRow existingPrice = null;
-            foreach(var price in EntityManager.WorkPrices)
-            {
-                if (price.Цена == Convert.ToInt32(Price))
-                {
-                    existingPrice = price;
-                    break;
-                }
-            }
-
-            if (existingService != null || existingRepair != null)
-            {
-                this.OnBeforeSaveEvent(existingService);
-                MessageBox.Show("Вид услуги или тип ремонта" +
-                    "с таким названием уже существует!", "Информация", MessageBoxButtons.OK);
-                return;
             }
 
             var newService = EntityManager.TypeService.NewВид_работRow();
@@ -114,16 +93,29 @@ namespace k_systems.Админка
             var newPrice = EntityManager.WorkPrices.NewЦены_работRow();
             newService.Наименование = TypeService;
             newRepair.Наименование = TypeRepair;
-            newPrice.Цена = Convert.ToInt32(Price);
             EntityManager.TypeService.AddВид_работRow(newService);
             EntityManager.TypeRepair.AddТип_ремонтаRow(newRepair);
-            EntityManager.WorkPrices.AddЦены_работRow(newPrice);
             EntityManager.UpdateTypeService();
             EntityManager.UpdateTypeRepair();
+
+            newService = EntityManager.FilterTypeService(
+                    $"Наименование = '{newService.Наименование}'")
+                .First();
+
+            newRepair = EntityManager.FilterTypeRepair(
+                    $"Наименование = '{newRepair.Наименование}'")
+                .First();
+
+            newPrice.Цена = Convert.ToInt32(Price.Text);
+            newPrice.Вид_работы = newService.Идентификатор;
+            newPrice.Тип_ремонта = newRepair.Идентификатор;
+            EntityManager.WorkPrices.AddЦены_работRow(newPrice);
             EntityManager.UpdateWorkPrices();
+
             this.OnSaveEvent();
 
             MessageBox.Show("Добавление прошло успешно!", "Информация", MessageBoxButtons.OK);
+            this.DialogResult = DialogResult.OK;
         }
     }
 }

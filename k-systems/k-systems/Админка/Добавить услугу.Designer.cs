@@ -90,7 +90,6 @@
             // 
             // buttonSave
             // 
-            this.buttonSave.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.buttonSave.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonSave.Location = new System.Drawing.Point(405, 201);
             this.buttonSave.Name = "buttonSave";

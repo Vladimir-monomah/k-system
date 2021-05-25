@@ -30,6 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Акт_приёмки_заказа));
             this.panel = new System.Windows.Forms.Panel();
+            this.Postponed = new System.Windows.Forms.CheckBox();
+            this.Work = new System.Windows.Forms.CheckBox();
+            this.Ready = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.tbPrice = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.tbKindWork = new System.Windows.Forms.TextBox();
@@ -40,10 +44,7 @@
             this.labelFIO = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.btnPrint = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.Postponed = new System.Windows.Forms.CheckBox();
-            this.Work = new System.Windows.Forms.CheckBox();
-            this.Ready = new System.Windows.Forms.CheckBox();
+            this.Save = new System.Windows.Forms.Button();
             this.panel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,6 +68,49 @@
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(919, 339);
             this.panel.TabIndex = 125;
+            // 
+            // Postponed
+            // 
+            this.Postponed.AutoSize = true;
+            this.Postponed.Location = new System.Drawing.Point(635, 281);
+            this.Postponed.Name = "Postponed";
+            this.Postponed.Size = new System.Drawing.Size(89, 21);
+            this.Postponed.TabIndex = 132;
+            this.Postponed.Text = "Отложен";
+            this.Postponed.UseVisualStyleBackColor = true;
+            this.Postponed.CheckedChanged += new System.EventHandler(this.States_CheckedChanged);
+            // 
+            // Work
+            // 
+            this.Work.AutoSize = true;
+            this.Work.Location = new System.Drawing.Point(635, 201);
+            this.Work.Name = "Work";
+            this.Work.Size = new System.Drawing.Size(90, 21);
+            this.Work.TabIndex = 131;
+            this.Work.Text = "В работе";
+            this.Work.UseVisualStyleBackColor = true;
+            this.Work.CheckedChanged += new System.EventHandler(this.States_CheckedChanged);
+            // 
+            // Ready
+            // 
+            this.Ready.AutoSize = true;
+            this.Ready.Location = new System.Drawing.Point(635, 243);
+            this.Ready.Name = "Ready";
+            this.Ready.Size = new System.Drawing.Size(68, 21);
+            this.Ready.TabIndex = 130;
+            this.Ready.Text = "Готов";
+            this.Ready.UseVisualStyleBackColor = true;
+            this.Ready.CheckedChanged += new System.EventHandler(this.States_CheckedChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(495, 201);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(117, 21);
+            this.label1.TabIndex = 129;
+            this.label1.Text = "Статус заказа";
             // 
             // tbPrice
             // 
@@ -169,51 +213,24 @@
             this.btnPrint.Text = "Печать";
             this.btnPrint.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // Save
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(495, 201);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 21);
-            this.label1.TabIndex = 129;
-            this.label1.Text = "Статус заказа";
-            // 
-            // Postponed
-            // 
-            this.Postponed.AutoSize = true;
-            this.Postponed.Location = new System.Drawing.Point(635, 281);
-            this.Postponed.Name = "Postponed";
-            this.Postponed.Size = new System.Drawing.Size(89, 21);
-            this.Postponed.TabIndex = 132;
-            this.Postponed.Text = "Отложен";
-            this.Postponed.UseVisualStyleBackColor = true;
-            // 
-            // Work
-            // 
-            this.Work.AutoSize = true;
-            this.Work.Location = new System.Drawing.Point(635, 201);
-            this.Work.Name = "Work";
-            this.Work.Size = new System.Drawing.Size(90, 21);
-            this.Work.TabIndex = 131;
-            this.Work.Text = "В работе";
-            this.Work.UseVisualStyleBackColor = true;
-            // 
-            // Ready
-            // 
-            this.Ready.AutoSize = true;
-            this.Ready.Location = new System.Drawing.Point(635, 243);
-            this.Ready.Name = "Ready";
-            this.Ready.Size = new System.Drawing.Size(68, 21);
-            this.Ready.TabIndex = 130;
-            this.Ready.Text = "Готов";
-            this.Ready.UseVisualStyleBackColor = true;
+            this.Save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Save.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Save.Location = new System.Drawing.Point(707, 379);
+            this.Save.Name = "Save";
+            this.Save.Size = new System.Drawing.Size(112, 30);
+            this.Save.TabIndex = 127;
+            this.Save.Text = "Сохранить";
+            this.Save.UseVisualStyleBackColor = true;
+            this.Save.Click += new System.EventHandler(this.Save_Click);
             // 
             // Акт_приёмки_заказа
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(955, 421);
+            this.Controls.Add(this.Save);
             this.Controls.Add(this.panel);
             this.Controls.Add(this.btnPrint);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -246,5 +263,6 @@
         private System.Windows.Forms.CheckBox Postponed;
         private System.Windows.Forms.CheckBox Work;
         private System.Windows.Forms.CheckBox Ready;
+        private System.Windows.Forms.Button Save;
     }
 }

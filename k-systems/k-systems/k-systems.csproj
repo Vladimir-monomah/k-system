@@ -46,7 +46,9 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Net.Http" />
@@ -106,6 +108,7 @@
     <Compile Include="Загрузочный файл.Designer.cs">
       <DependentUpon>Загрузочный файл.cs</DependentUpon>
     </Compile>
+    <Compile Include="Константы\WorkStates.cs" />
     <Compile Include="Пользовательская форма\Акт выдачи заказа.cs">
       <SubType>Form</SubType>
     </Compile>
