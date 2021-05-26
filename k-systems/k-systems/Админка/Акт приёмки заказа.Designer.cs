@@ -45,11 +45,15 @@
             this.label22 = new System.Windows.Forms.Label();
             this.btnPrint = new System.Windows.Forms.Button();
             this.Save = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tbPhone = new System.Windows.Forms.TextBox();
             this.panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel
             // 
+            this.panel.Controls.Add(this.tbPhone);
+            this.panel.Controls.Add(this.label2);
             this.panel.Controls.Add(this.Postponed);
             this.panel.Controls.Add(this.Work);
             this.panel.Controls.Add(this.Ready);
@@ -72,7 +76,7 @@
             // Postponed
             // 
             this.Postponed.AutoSize = true;
-            this.Postponed.Location = new System.Drawing.Point(635, 281);
+            this.Postponed.Location = new System.Drawing.Point(632, 298);
             this.Postponed.Name = "Postponed";
             this.Postponed.Size = new System.Drawing.Size(89, 21);
             this.Postponed.TabIndex = 132;
@@ -83,7 +87,7 @@
             // Work
             // 
             this.Work.AutoSize = true;
-            this.Work.Location = new System.Drawing.Point(635, 201);
+            this.Work.Location = new System.Drawing.Point(632, 218);
             this.Work.Name = "Work";
             this.Work.Size = new System.Drawing.Size(90, 21);
             this.Work.TabIndex = 131;
@@ -94,7 +98,7 @@
             // Ready
             // 
             this.Ready.AutoSize = true;
-            this.Ready.Location = new System.Drawing.Point(635, 243);
+            this.Ready.Location = new System.Drawing.Point(632, 260);
             this.Ready.Name = "Ready";
             this.Ready.Size = new System.Drawing.Size(68, 21);
             this.Ready.TabIndex = 130;
@@ -106,7 +110,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(495, 201);
+            this.label1.Location = new System.Drawing.Point(491, 218);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(117, 21);
             this.label1.TabIndex = 129;
@@ -114,7 +118,7 @@
             // 
             // tbPrice
             // 
-            this.tbPrice.Location = new System.Drawing.Point(213, 193);
+            this.tbPrice.Location = new System.Drawing.Point(209, 219);
             this.tbPrice.MaxLength = 6;
             this.tbPrice.Multiline = true;
             this.tbPrice.Name = "tbPrice";
@@ -126,7 +130,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(19, 192);
+            this.label5.Location = new System.Drawing.Point(15, 218);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(50, 21);
             this.label5.TabIndex = 127;
@@ -134,7 +138,7 @@
             // 
             // tbKindWork
             // 
-            this.tbKindWork.Location = new System.Drawing.Point(213, 147);
+            this.tbKindWork.Location = new System.Drawing.Point(209, 173);
             this.tbKindWork.MaxLength = 4;
             this.tbKindWork.Multiline = true;
             this.tbKindWork.Name = "tbKindWork";
@@ -146,7 +150,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(21, 146);
+            this.label4.Location = new System.Drawing.Point(17, 172);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(101, 21);
             this.label4.TabIndex = 125;
@@ -212,6 +216,7 @@
             this.btnPrint.TabIndex = 126;
             this.btnPrint.Text = "Печать";
             this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // Save
             // 
@@ -224,6 +229,26 @@
             this.Save.Text = "Сохранить";
             this.Save.UseVisualStyleBackColor = true;
             this.Save.Click += new System.EventHandler(this.Save_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(17, 138);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(79, 21);
+            this.label2.TabIndex = 133;
+            this.label2.Text = "Телефон";
+            // 
+            // tbPhone
+            // 
+            this.tbPhone.Location = new System.Drawing.Point(213, 138);
+            this.tbPhone.MaxLength = 11;
+            this.tbPhone.Multiline = true;
+            this.tbPhone.Name = "tbPhone";
+            this.tbPhone.ReadOnly = true;
+            this.tbPhone.Size = new System.Drawing.Size(276, 29);
+            this.tbPhone.TabIndex = 134;
             // 
             // Акт_приёмки_заказа
             // 
@@ -264,5 +289,7 @@
         private System.Windows.Forms.CheckBox Work;
         private System.Windows.Forms.CheckBox Ready;
         private System.Windows.Forms.Button Save;
+        private System.Windows.Forms.TextBox tbPhone;
+        private System.Windows.Forms.Label label2;
     }
 }
