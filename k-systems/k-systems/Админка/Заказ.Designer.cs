@@ -48,6 +48,8 @@
             this.тип_ремонтаTableAdapter = new k_systems._k_systemsDataSetTableAdapters.Тип_ремонтаTableAdapter();
             this.label1 = new System.Windows.Forms.Label();
             this.Work = new System.Windows.Forms.CheckBox();
+            this.Phone = new System.Windows.Forms.MaskedTextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.priceNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.типРемонтаBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._k_systemsDataSet)).BeginInit();
@@ -58,7 +60,7 @@
             // priceNumericUpDown
             // 
             this.priceNumericUpDown.DecimalPlaces = 2;
-            this.priceNumericUpDown.Location = new System.Drawing.Point(278, 255);
+            this.priceNumericUpDown.Location = new System.Drawing.Point(277, 282);
             this.priceNumericUpDown.Margin = new System.Windows.Forms.Padding(4);
             this.priceNumericUpDown.Maximum = new decimal(new int[] {
             -159383553,
@@ -73,7 +75,7 @@
             // 
             this.priceLabel.AutoSize = true;
             this.priceLabel.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold);
-            this.priceLabel.Location = new System.Drawing.Point(166, 248);
+            this.priceLabel.Location = new System.Drawing.Point(164, 282);
             this.priceLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.priceLabel.Name = "priceLabel";
             this.priceLabel.Size = new System.Drawing.Size(76, 29);
@@ -83,7 +85,7 @@
             // addOrderButton
             // 
             this.addOrderButton.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.addOrderButton.Location = new System.Drawing.Point(198, 413);
+            this.addOrderButton.Location = new System.Drawing.Point(192, 402);
             this.addOrderButton.Margin = new System.Windows.Forms.Padding(4);
             this.addOrderButton.Name = "addOrderButton";
             this.addOrderButton.Size = new System.Drawing.Size(240, 64);
@@ -96,7 +98,7 @@
             // 
             this.dressTypeLabel.AutoSize = true;
             this.dressTypeLabel.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dressTypeLabel.Location = new System.Drawing.Point(69, 176);
+            this.dressTypeLabel.Location = new System.Drawing.Point(71, 222);
             this.dressTypeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.dressTypeLabel.Name = "dressTypeLabel";
             this.dressTypeLabel.Size = new System.Drawing.Size(172, 29);
@@ -110,7 +112,7 @@
             this.dressTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dressTypeComboBox.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.dressTypeComboBox.FormattingEnabled = true;
-            this.dressTypeComboBox.Location = new System.Drawing.Point(277, 176);
+            this.dressTypeComboBox.Location = new System.Drawing.Point(277, 223);
             this.dressTypeComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.dressTypeComboBox.Name = "dressTypeComboBox";
             this.dressTypeComboBox.Size = new System.Drawing.Size(273, 32);
@@ -132,7 +134,7 @@
             // 
             this.workKindLabel.AutoSize = true;
             this.workKindLabel.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.workKindLabel.Location = new System.Drawing.Point(77, 110);
+            this.workKindLabel.Location = new System.Drawing.Point(81, 159);
             this.workKindLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.workKindLabel.Name = "workKindLabel";
             this.workKindLabel.Size = new System.Drawing.Size(160, 29);
@@ -146,7 +148,7 @@
             this.workKindComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.workKindComboBox.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.workKindComboBox.FormattingEnabled = true;
-            this.workKindComboBox.Location = new System.Drawing.Point(278, 110);
+            this.workKindComboBox.Location = new System.Drawing.Point(277, 159);
             this.workKindComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.workKindComboBox.Name = "workKindComboBox";
             this.workKindComboBox.Size = new System.Drawing.Size(273, 32);
@@ -205,7 +207,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(56, 323);
+            this.label1.Location = new System.Drawing.Point(58, 335);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(185, 29);
@@ -215,18 +217,39 @@
             // Work
             // 
             this.Work.AutoSize = true;
-            this.Work.Location = new System.Drawing.Point(278, 331);
+            this.Work.Location = new System.Drawing.Point(277, 335);
             this.Work.Name = "Work";
             this.Work.Size = new System.Drawing.Size(90, 21);
             this.Work.TabIndex = 22;
             this.Work.Text = "В работе";
             this.Work.UseVisualStyleBackColor = true;
             // 
+            // Phone
+            // 
+            this.Phone.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.Phone.Location = new System.Drawing.Point(276, 104);
+            this.Phone.Mask = "+7(***) ***-****";
+            this.Phone.Name = "Phone";
+            this.Phone.Size = new System.Drawing.Size(274, 32);
+            this.Phone.TabIndex = 38;
+            this.Phone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Phone_KeyPress);
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(120, 100);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(132, 39);
+            this.label2.TabIndex = 39;
+            this.label2.Text = "Телефон";
+            // 
             // Заказ
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(620, 490);
+            this.ClientSize = new System.Drawing.Size(620, 476);
+            this.Controls.Add(this.Phone);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.Work);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.priceNumericUpDown);
@@ -276,5 +299,7 @@
         private _k_systemsDataSetTableAdapters.Тип_ремонтаTableAdapter тип_ремонтаTableAdapter;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox Work;
+        private System.Windows.Forms.MaskedTextBox Phone;
+        private System.Windows.Forms.Label label2;
     }
 }

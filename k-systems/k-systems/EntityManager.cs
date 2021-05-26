@@ -143,7 +143,7 @@ namespace k_systems
             var filterUserCommand = new OleDbCommand()
             {
                 Connection = пользователиTableAdapter.Connection,
-                CommandText = "SELECT Id, Фамилия, Имя, Отчество, Телефон, логин, пароль, " +
+                CommandText = "SELECT Id, Фамилия, Имя, Отчество, логин, пароль, " +
                 $"[E-mail], [Является администратором] FROM Пользователи {whereCondition}",
                 CommandType = CommandType.Text
             };
@@ -193,7 +193,7 @@ namespace k_systems
             var filterOrderCommand = new OleDbCommand()
             {
                 Connection = заказыTableAdapter.Connection,
-                CommandText = "SELECT Идентификатор, [Номер клиента], [Вид работы], [Тип ремонта], Цена, [Статус заказа] " +
+                CommandText = "SELECT Идентификатор, [Номер клиента], [Вид работы], [Тип ремонта], Цена, [Статус заказа], Телефон " +
                 $"FROM Заказы {whereCondition}",
                 CommandType = CommandType.Text
             };
@@ -322,7 +322,7 @@ namespace k_systems
             var filterUserCommand = new OleDbCommand()
             {
                 Connection = заказы_С_КлиентамиTableAdapter.Connection,
-                CommandText = "SELECT [Номер заказа], [Номер клиента], ФИО, [Вид работы], [Тип ремонта], Цена, [Статус заказа]" +
+                CommandText = "SELECT [Номер заказа], [Номер клиента], ФИО, [Вид работы], [Тип ремонта], Цена, [Статус заказа], Телефон" +
                 $" FROM [Заказы с клиентами] {whereCondition}",
                 CommandType = CommandType.Text
             };
@@ -333,7 +333,7 @@ namespace k_systems
         }
 
         /// <summary>
-        /// Возвращает отфильтрованную таблицу заказы с клиентами по условию <paramref name="condition"/>
+        /// Возвращает отфильтрованную таблицу сообщения по условию <paramref name="condition"/>
         /// </summary>
         /// <param name="condition"></param>
         /// <returns></returns>

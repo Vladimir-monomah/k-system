@@ -23,7 +23,9 @@ namespace k_systems.Админка
             // TODO: данная строка кода позволяет загрузить данные в таблицу "_k_systemsDataSet.Вид_работ". При необходимости она может быть перемещена или удалена.
             this.вид_работTableAdapter.Fill(this._k_systemsDataSet.Вид_работ);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "_k_systemsDataSet.Пользователи_для_заказов". При необходимости она может быть перемещена или удалена.
-            this.пользователи_для_заказовTableAdapter.Fill(this._k_systemsDataSet.Пользователи_для_заказов);            
+            this.пользователи_для_заказовTableAdapter.Fill(this._k_systemsDataSet.Пользователи_для_заказов);
+
+            this.Phone.Mask = "+7(000)-000-0000";
         }
 
         /// <summary>
@@ -47,6 +49,7 @@ namespace k_systems.Админка
             newOrder.Тип_ремонта = (int)this.dressTypeComboBox.SelectedValue;
             newOrder.Цена = this.priceNumericUpDown.Value;
             newOrder.Статус_заказа = orderState;
+            newOrder.Телефон = this.Phone.Text;
 
             EntityManager.OrderDataTable.AddЗаказыRow(newOrder);
             EntityManager.UpdateOrders();
@@ -105,6 +108,12 @@ namespace k_systems.Админка
             }
 
             this.тип_ремонтаTableAdapter.Fill(this._k_systemsDataSet.Тип_ремонта);
+        }
+
+        private void Phone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char c = e.KeyChar;
+            e.Handled = !(char.IsDigit(c) || c == '.' || c == ',' || c == '\b');
         }
     }
 }

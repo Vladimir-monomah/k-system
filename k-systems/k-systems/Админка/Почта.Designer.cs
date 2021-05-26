@@ -55,16 +55,15 @@
             this.deleteOutMessageButton = new System.Windows.Forms.Button();
             this.Basket = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.фИОПолучателяDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.фИООтправителяDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.темаDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.текстСообщенияDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.сообщенияДляАдминистраторовУдалённыеBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.сообщения_для_администраторовTableAdapter = new k_systems._k_systemsDataSetTableAdapters.Сообщения_для_администраторовTableAdapter();
             this.сообщения_для_администраторов_отправленныеTableAdapter = new k_systems._k_systemsDataSetTableAdapters.Сообщения_для_администраторов_отправленныеTableAdapter();
             this.сообщения_для_администраторов_удалённыеTableAdapter = new k_systems._k_systemsDataSetTableAdapters.Сообщения_для_администраторов_удалённыеTableAdapter();
             this.пользователи_для_заказовTableAdapter = new k_systems._k_systemsDataSetTableAdapters.Пользователи_для_заказовTableAdapter();
             this.userAdresseesComboBox = new System.Windows.Forms.ComboBox();
+            this.фИОПолучателяDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.темаDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.текстСообщенияDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.deletedMessagesTabControl.SuspendLayout();
             this.WriteLetter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.пользователиДляЗаказовBindingSource)).BeginInit();
@@ -347,7 +346,6 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.фИОПолучателяDataGridViewTextBoxColumn,
-            this.фИООтправителяDataGridViewTextBoxColumn,
             this.темаDataGridViewTextBoxColumn2,
             this.текстСообщенияDataGridViewTextBoxColumn2});
             this.dataGridView1.DataSource = this.сообщенияДляАдминистраторовУдалённыеBindingSource;
@@ -359,38 +357,6 @@
             this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.messagesDataGridView_CellClick);
             this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.messagesDataGridView_DataBindingComplete);
             this.dataGridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.messagesDataGridView_KeyDown);
-            // 
-            // фИОПолучателяDataGridViewTextBoxColumn
-            // 
-            this.фИОПолучателяDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.фИОПолучателяDataGridViewTextBoxColumn.DataPropertyName = "ФИО получателя";
-            this.фИОПолучателяDataGridViewTextBoxColumn.HeaderText = "ФИО получателя";
-            this.фИОПолучателяDataGridViewTextBoxColumn.Name = "фИОПолучателяDataGridViewTextBoxColumn";
-            this.фИОПолучателяDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // фИООтправителяDataGridViewTextBoxColumn
-            // 
-            this.фИООтправителяDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.фИООтправителяDataGridViewTextBoxColumn.DataPropertyName = "ФИО отправителя";
-            this.фИООтправителяDataGridViewTextBoxColumn.HeaderText = "ФИО отправителя";
-            this.фИООтправителяDataGridViewTextBoxColumn.Name = "фИООтправителяDataGridViewTextBoxColumn";
-            this.фИООтправителяDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // темаDataGridViewTextBoxColumn2
-            // 
-            this.темаDataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.темаDataGridViewTextBoxColumn2.DataPropertyName = "Тема";
-            this.темаDataGridViewTextBoxColumn2.HeaderText = "Тема";
-            this.темаDataGridViewTextBoxColumn2.Name = "темаDataGridViewTextBoxColumn2";
-            this.темаDataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // текстСообщенияDataGridViewTextBoxColumn2
-            // 
-            this.текстСообщенияDataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.текстСообщенияDataGridViewTextBoxColumn2.DataPropertyName = "Текст сообщения";
-            this.текстСообщенияDataGridViewTextBoxColumn2.HeaderText = "Текст сообщения";
-            this.текстСообщенияDataGridViewTextBoxColumn2.Name = "текстСообщенияDataGridViewTextBoxColumn2";
-            this.текстСообщенияDataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // сообщенияДляАдминистраторовУдалённыеBindingSource
             // 
@@ -427,6 +393,30 @@
             this.userAdresseesComboBox.Size = new System.Drawing.Size(862, 24);
             this.userAdresseesComboBox.TabIndex = 5;
             this.userAdresseesComboBox.ValueMember = "Id";
+            // 
+            // фИОПолучателяDataGridViewTextBoxColumn
+            // 
+            this.фИОПолучателяDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.фИОПолучателяDataGridViewTextBoxColumn.DataPropertyName = "ФИО получателя";
+            this.фИОПолучателяDataGridViewTextBoxColumn.HeaderText = "ФИО получателя";
+            this.фИОПолучателяDataGridViewTextBoxColumn.Name = "фИОПолучателяDataGridViewTextBoxColumn";
+            this.фИОПолучателяDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // темаDataGridViewTextBoxColumn2
+            // 
+            this.темаDataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.темаDataGridViewTextBoxColumn2.DataPropertyName = "Тема";
+            this.темаDataGridViewTextBoxColumn2.HeaderText = "Тема";
+            this.темаDataGridViewTextBoxColumn2.Name = "темаDataGridViewTextBoxColumn2";
+            this.темаDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // текстСообщенияDataGridViewTextBoxColumn2
+            // 
+            this.текстСообщенияDataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.текстСообщенияDataGridViewTextBoxColumn2.DataPropertyName = "Текст сообщения";
+            this.текстСообщенияDataGridViewTextBoxColumn2.HeaderText = "Текст сообщения";
+            this.текстСообщенияDataGridViewTextBoxColumn2.Name = "текстСообщенияDataGridViewTextBoxColumn2";
+            this.текстСообщенияDataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // Почта
             // 
@@ -490,12 +480,11 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource сообщенияДляАдминистраторовУдалённыеBindingSource;
         private _k_systemsDataSetTableAdapters.Сообщения_для_администраторов_удалённыеTableAdapter сообщения_для_администраторов_удалённыеTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn фИОПолучателяDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn фИООтправителяDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn темаDataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn текстСообщенияDataGridViewTextBoxColumn2;
         private System.Windows.Forms.BindingSource пользователиДляЗаказовBindingSource;
         private _k_systemsDataSetTableAdapters.Пользователи_для_заказовTableAdapter пользователи_для_заказовTableAdapter;
         private System.Windows.Forms.ComboBox userAdresseesComboBox;
+        private System.Windows.Forms.DataGridViewTextBoxColumn фИОПолучателяDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn темаDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn текстСообщенияDataGridViewTextBoxColumn2;
     }
 }

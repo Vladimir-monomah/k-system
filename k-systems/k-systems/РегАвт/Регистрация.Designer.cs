@@ -42,14 +42,12 @@
             this.labelPatronomic = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
             this.labelSername = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.Phone = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // textBoxEmail
             // 
             this.textBoxEmail.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxEmail.Location = new System.Drawing.Point(149, 216);
+            this.textBoxEmail.Location = new System.Drawing.Point(149, 173);
             this.textBoxEmail.MaxLength = 30;
             this.textBoxEmail.Multiline = true;
             this.textBoxEmail.Name = "textBoxEmail";
@@ -59,7 +57,7 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(12, 219);
+            this.label1.Location = new System.Drawing.Point(12, 176);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(113, 39);
             this.label1.TabIndex = 35;
@@ -68,7 +66,7 @@
             // textBoxPassword
             // 
             this.textBoxPassword.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxPassword.Location = new System.Drawing.Point(149, 306);
+            this.textBoxPassword.Location = new System.Drawing.Point(149, 263);
             this.textBoxPassword.MaxLength = 20;
             this.textBoxPassword.Multiline = true;
             this.textBoxPassword.Name = "textBoxPassword";
@@ -80,7 +78,7 @@
             // textBoxLogin
             // 
             this.textBoxLogin.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxLogin.Location = new System.Drawing.Point(149, 261);
+            this.textBoxLogin.Location = new System.Drawing.Point(149, 218);
             this.textBoxLogin.MaxLength = 15;
             this.textBoxLogin.Multiline = true;
             this.textBoxLogin.Name = "textBoxLogin";
@@ -123,7 +121,7 @@
             // buttonRegister
             // 
             this.buttonRegister.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonRegister.Location = new System.Drawing.Point(16, 364);
+            this.buttonRegister.Location = new System.Drawing.Point(16, 318);
             this.buttonRegister.Name = "buttonRegister";
             this.buttonRegister.Size = new System.Drawing.Size(400, 72);
             this.buttonRegister.TabIndex = 29;
@@ -134,7 +132,7 @@
             // labelPassword
             // 
             this.labelPassword.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelPassword.Location = new System.Drawing.Point(12, 306);
+            this.labelPassword.Location = new System.Drawing.Point(12, 263);
             this.labelPassword.Name = "labelPassword";
             this.labelPassword.Size = new System.Drawing.Size(100, 39);
             this.labelPassword.TabIndex = 28;
@@ -143,7 +141,7 @@
             // labelLogin
             // 
             this.labelLogin.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelLogin.Location = new System.Drawing.Point(12, 264);
+            this.labelLogin.Location = new System.Drawing.Point(12, 221);
             this.labelLogin.Name = "labelLogin";
             this.labelLogin.Size = new System.Drawing.Size(100, 39);
             this.labelLogin.TabIndex = 27;
@@ -176,31 +174,11 @@
             this.labelSername.TabIndex = 24;
             this.labelSername.Text = "Фамилия";
             // 
-            // label2
-            // 
-            this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(12, 171);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(113, 39);
-            this.label2.TabIndex = 37;
-            this.label2.Text = "Телефон";
-            // 
-            // Phone
-            // 
-            this.Phone.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.Phone.Location = new System.Drawing.Point(149, 175);
-            this.Phone.Mask = "+7(***) ***-****";
-            this.Phone.Name = "Phone";
-            this.Phone.Size = new System.Drawing.Size(267, 32);
-            this.Phone.TabIndex = 4;
-            // 
             // Регистрация
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(435, 453);
-            this.Controls.Add(this.Phone);
-            this.Controls.Add(this.label2);
+            this.ClientSize = new System.Drawing.Size(435, 406);
             this.Controls.Add(this.textBoxEmail);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxPassword);
@@ -221,7 +199,6 @@
             this.Name = "Регистрация";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Регистрация";
-            this.Load += new System.EventHandler(this.Регистрация_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -242,7 +219,5 @@
         private System.Windows.Forms.Label labelPatronomic;
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Label labelSername;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.MaskedTextBox Phone;
     }
 }

@@ -69,7 +69,7 @@ namespace k_systems.РегАвт
         private bool CheckTextBoxes()
         {
             if (this.textBoxSername.Text == "" || this.textBoxName.Text == "" ||
-                this.textBoxPatronomic.Text == "" || this.Phone.Text == ""||this.textBoxEmail.Text == "" ||
+                this.textBoxPatronomic.Text == "" ||this.textBoxEmail.Text == "" ||
                 this.textBoxLogin.Text == "" || this.textBoxPassword.Text == "")
             {
                 return false;
@@ -97,7 +97,6 @@ namespace k_systems.РегАвт
             newUser.Имя = this.textBoxName.Text;
             newUser.Отчество = this.textBoxPatronomic.Text;
             newUser._E_mail = this.textBoxEmail.Text;
-            newUser.Телефон = this.Phone.Text;
             newUser.логин = this.textBoxLogin.Text;
             newUser.пароль = Encrypt(this.textBoxPassword.Text, this.password);
             EntityManager.UserDataTable.AddПользователиRow(newUser);
@@ -112,17 +111,6 @@ namespace k_systems.РегАвт
             if (!Char.IsDigit(e.KeyChar)) return;
             else
                 e.Handled = true;
-        }
-
-        private void Phone_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            char c = e.KeyChar;
-            e.Handled = !(char.IsDigit(c) || c == '.' || c == ',' || c == '\b');
-        }
-
-        private void Регистрация_Load(object sender, EventArgs e)
-        {
-            this.Phone.Mask = "+7(000)-000-0000";
         }
     }
 }

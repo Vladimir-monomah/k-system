@@ -32,6 +32,8 @@ namespace k_systems.Админка
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "_k_systemsDataSet.Пользователи". При необходимости она может быть перемещена или удалена.
             this.пользователиTableAdapter.Fill(this._k_systemsDataSet.Пользователи);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "_k_systemsDataSet.Пользователи". При необходимости она может быть перемещена или удалена.
+            this.пользователиTableAdapter.Fill(this._k_systemsDataSet.Пользователи);
 
         }
 
@@ -42,7 +44,7 @@ namespace k_systems.Админка
         /// <param name="e"></param>
         private void masterFilterTextBox_TextChanged(object sender, EventArgs e)
         {
-            var findFields = new[] { "Телефон", "Фамилия", "Имя", "Отчество" };
+            var findFields = new[] {"Фамилия", "Имя", "Отчество" };
             var filterString = EntityManager.GetFilterStringByFields(findFields, this.masterFilterTextBox.Text).Trim();
 
             this.пользователиBindingSource.Filter = FilterNinAdministrator;
@@ -82,7 +84,6 @@ namespace k_systems.Админка
             userTable[0].Фамилия = changedRow.Фамилия;
             userTable[0].Имя = changedRow.Имя;
             userTable[0].Отчество = changedRow.Отчество;
-            userTable[0].Телефон = changedRow.Телефон;
             userTable[0]._E_mail = changedRow._E_mail;
 
             EntityManager.UpdateUsers();
@@ -193,6 +194,11 @@ namespace k_systems.Админка
         {
             var открыть = new Почта();
             открыть.ShowDialog();
+        }
+
+        private void Администратор_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
