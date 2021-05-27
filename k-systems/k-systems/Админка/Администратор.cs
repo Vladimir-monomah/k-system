@@ -196,9 +196,10 @@ namespace k_systems.Админка
             открыть.ShowDialog();
         }
 
-        private void Администратор_Load(object sender, EventArgs e)
+        private void Reporting_Click(object sender, EventArgs e)
         {
-
+            var открыть = new Отчётность_по_заказам();
+            открыть.ShowDialog();
         }
     }
 }

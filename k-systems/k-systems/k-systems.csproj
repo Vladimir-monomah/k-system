@@ -37,11 +37,30 @@
     <ApplicationIcon>system-windows_26863.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Bunifu_UI_v1.52">
-      <HintPath>..\..\..\MobExpress\MobExpress\bin\Debug\Bunifu_UI_v1.52.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.2.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -104,6 +123,18 @@
     </Compile>
     <Compile Include="Админка\Заказ.Designer.cs">
       <DependentUpon>Заказ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Админка\Карточка клиентов.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Админка\Карточка клиентов.Designer.cs">
+      <DependentUpon>Карточка клиентов.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Админка\Отчётность по заказам.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Админка\Отчётность по заказам.Designer.cs">
+      <DependentUpon>Отчётность по заказам.cs</DependentUpon>
     </Compile>
     <Compile Include="Админка\Почта.cs">
       <SubType>Form</SubType>
@@ -184,6 +215,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Админка\Заказ.resx">
       <DependentUpon>Заказ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Админка\Карточка клиентов.resx">
+      <DependentUpon>Карточка клиентов.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Админка\Отчётность по заказам.rdlc" />
+    <EmbeddedResource Include="Админка\Отчётность по заказам.resx">
+      <DependentUpon>Отчётность по заказам.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Админка\Почта.resx">
       <DependentUpon>Почта.cs</DependentUpon>
