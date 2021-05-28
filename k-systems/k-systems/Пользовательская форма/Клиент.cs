@@ -65,5 +65,12 @@ namespace k_systems.Пользовательская_форма
             var открыть = new Заказы(this.idClient);
             открыть.ShowDialog();
         }
+
+        private void сменаПользователяToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var открыть = new Авторизация();
+            открыть.ShowDialog();
+        }
     }
 }

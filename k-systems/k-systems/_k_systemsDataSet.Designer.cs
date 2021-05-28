@@ -253,7 +253,8 @@ namespace k_systems {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public Заказы_для_клиентаDataTable Заказы_для_клиента {
+        public Заказы_для_клиентаDataTable Заказы_для_клиента
+        {
             get {
                 return this.tableЗаказы_для_клиента;
             }

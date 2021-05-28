@@ -27,8 +27,7 @@ namespace k_systems.Админка
             this.отчётность_по_заказамTableAdapter.Fill(this._k_systemsDataSet.Отчётность_по_заказам);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "_k_systemsDataSet.Заказы_с_клиентами". При необходимости она может быть перемещена или удалена.
             this.заказы_с_клиентамиTableAdapter.Fill(this._k_systemsDataSet.Заказы_с_клиентами);
-
-            this.reportViewer.RefreshReport();
+            this.reportViewer1.RefreshReport();
         }
 
         private void button47_Click(object sender, EventArgs e)
@@ -88,9 +87,11 @@ namespace k_systems.Админка
             try
             {
                 this.заказы_с_клиентамиTableAdapter.Fill(this._k_systemsDataSet.Заказы_с_клиентами);
-                this.reportViewer.LocalReport.SetParameters(new ReportParameter(
+                this.reportViewer1.LocalReport.SetParameters(new ReportParameter(
                     "IsDataNull",
                     (this._k_systemsDataSet.Отчётность_по_заказам.Rows.Count == 0).ToString()));
+                this.reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("DataSet1", (DataTable)this._k_systemsDataSet.Отчётность_по_заказам));
+                this.reportViewer1.RefreshReport();
             }
             catch
             {

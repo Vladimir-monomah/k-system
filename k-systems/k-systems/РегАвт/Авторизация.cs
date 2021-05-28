@@ -1,12 +1,16 @@
-﻿using k_systems.Админка;
+﻿using k_systems.Properties;
+using k_systems.Админка;
 using k_systems.Пользовательская_форма;
 using k_systems.РегАвт;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -21,7 +25,58 @@ namespace k_systems
 
         public Авторизация()
         {
+            if (!CheckDBConnect())
+            {
+                this.Close();
+            }
+
             this.InitializeComponent();
+        }
+
+        /// <summary>
+        /// Проверяет возможность соединения с БД СИЗ,
+        /// при необходимости, заменяет путь к резервной копии по указанию пользователя
+        /// </summary>
+        private bool CheckDBConnect()
+        {
+            while (true)
+            {
+                try
+                {
+                    using (var connection = new OleDbConnection(Settings.Default.k_systemsConnectionString))
+                    {
+                        connection.Open();
+                        return true;
+                    }
+                }
+                catch
+                {
+                    var reservDBFileQuestionResult = MessageBox.Show(
+                        "Не найдена база данных k-system!\r\nХотите указать файл из резервной копии?",
+                        "Информация",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question);
+                    if (reservDBFileQuestionResult != DialogResult.Yes)
+                    {
+                        return false;
+                    }
+
+                    var openDialog = new OpenFileDialog
+                    {
+                        Title = "Укажите файл базы данных k-system",
+                        Filter = "База данных k-system|*.mdb",
+                        InitialDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)
+                    };
+                    if (openDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        Settings.Default["k_systemsConnectionString"] = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + openDialog.FileName;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
         }
 
         /// <summary>

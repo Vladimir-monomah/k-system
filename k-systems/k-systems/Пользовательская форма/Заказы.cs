@@ -1,4 +1,5 @@
-﻿using System;
+﻿using k_systems.Константы;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static k_systems._k_systemsDataSet;
 
 namespace k_systems.Пользовательская_форма
 {
@@ -25,15 +27,15 @@ namespace k_systems.Пользовательская_форма
 
         private void Заказы_Load(object sender, EventArgs e)
         {
-            this.заказыДляКлиентаBindingSource.Filter = this.textBoxOrderFilter = this.orderFilter;
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "_k_systemsDataSet.Заказы_для_клиента". При необходимости она может быть перемещена или удалена.
-            this.заказы_для_клиентаTableAdapter.Fill(this._k_systemsDataSet.Заказы_для_клиента);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "_k_systemsDataSet.Заказы_с_клиентами". При необходимости она может быть перемещена или удалена.
+            this.заказы_с_клиентамиTableAdapter.Fill(this._k_systemsDataSet.Заказы_с_клиентами);
+            this.заказыСКлиентамиBindingSource.Filter = this.textBoxOrderFilter = this.orderFilter;
 
         }
 
         private void orderFilterTextBox_TextChanged(object sender, EventArgs e)
         {
-            var findFields = new[] { "[Вид работы]", "[Тип работы]" };
+            var findFields = new[] { "[Вид работы]", "[Тип ремонта]" };
             var filterString =
                 EntityManager.GetFilterStringByFields(findFields,this.orderFilterTextBox.Text).Trim();
 
@@ -43,7 +45,7 @@ namespace k_systems.Пользовательская_форма
                 this.textBoxOrderFilter += $"And ({filterString})";
             }
 
-            this.заказыДляКлиентаBindingSource.Filter = EntityManager.UnionFilter(
+            this.заказыСКлиентамиBindingSource.Filter = EntityManager.UnionFilter(
                 this.textBoxOrderFilter,
                 this.readyOrNotReadyOrdersFilter);
         }
@@ -53,7 +55,7 @@ namespace k_systems.Пользовательская_форма
             switch (this.clientOrdersFilterCheckBox.CheckState)
             {
                 case CheckState.Checked:
-                    this.readyOrNotReadyOrdersFilter = "[Заказ готов]=True";
+                    this.readyOrNotReadyOrdersFilter = $"[Статус заказа] = '{WorkStates.Ready}'";
                     this.clientOrdersFilterCheckBox.Text = "Отображаются готовые заказы";
                     break;
 
@@ -63,19 +65,29 @@ namespace k_systems.Пользовательская_форма
                     break;
 
                 case CheckState.Unchecked:
-                    this.readyOrNotReadyOrdersFilter = "[Заказ готов] = FALSE";
+                    this.readyOrNotReadyOrdersFilter = $"[Статус заказа] = '{WorkStates.Working}'";
                     this.clientOrdersFilterCheckBox.Text = "Отображаются неготовые заказы";
                     break;
             }
 
-            this.заказыДляКлиентаBindingSource.Filter = EntityManager.UnionFilter(
+            this.заказыСКлиентамиBindingSource.Filter = EntityManager.UnionFilter(
                 this.textBoxOrderFilter,
                 this.readyOrNotReadyOrdersFilter);
         }
 
         private void updateOrdersButton_Click(object sender, EventArgs e)
         {
-            this.заказы_для_клиентаTableAdapter.Fill(this._k_systemsDataSet.Заказы_для_клиента);
+            this.заказы_с_клиентамиTableAdapter.Fill(this._k_systemsDataSet.Заказы_с_клиентами);
+        }
+
+        private void dataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var открыть = new Заказ_для_клиента(this._k_systemsDataSet);
+            открыть.LoadЗаказы(
+                (Заказы_с_клиентамиRow)((DataRowView)this.dataGridView.CurrentRow.DataBoundItem).Row);
+            открыть.ShowDialog();
+
+            this.заказы_с_клиентамиTableAdapter.Fill(this._k_systemsDataSet.Заказы_с_клиентами);
         }
     }
 }

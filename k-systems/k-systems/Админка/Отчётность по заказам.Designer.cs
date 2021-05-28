@@ -40,16 +40,18 @@
             this.button47 = new System.Windows.Forms.Button();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.reportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
             this.заказыСКлиентамиBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this._k_systemsDataSet = new k_systems._k_systemsDataSet();
             this.заказы_с_клиентамиTableAdapter = new k_systems._k_systemsDataSetTableAdapters.Заказы_с_клиентамиTableAdapter();
             this.отчётностьПоЗаказамBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.отчётность_по_заказамTableAdapter = new k_systems._k_systemsDataSetTableAdapters.Отчётность_по_заказамTableAdapter();
+            this.Отчётность_по_заказамBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.заказыСКлиентамиBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._k_systemsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.отчётностьПоЗаказамBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Отчётность_по_заказамBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -153,15 +155,6 @@
             this.label21.TabIndex = 0;
             this.label21.Text = "Клиенты";
             // 
-            // reportViewer
-            // 
-            this.reportViewer.LocalReport.ReportEmbeddedResource = "k_systems.Админка.Отчётность по заказам.rdlc";
-            this.reportViewer.Location = new System.Drawing.Point(389, 12);
-            this.reportViewer.Name = "reportViewer";
-            this.reportViewer.ServerReport.BearerToken = null;
-            this.reportViewer.Size = new System.Drawing.Size(1080, 718);
-            this.reportViewer.TabIndex = 6;
-            // 
             // заказыСКлиентамиBindingSource
             // 
             this.заказыСКлиентамиBindingSource.DataMember = "Заказы с клиентами";
@@ -185,12 +178,29 @@
             // 
             this.отчётность_по_заказамTableAdapter.ClearBeforeFill = true;
             // 
+            // Отчётность_по_заказамBindingSource
+            // 
+            this.Отчётность_по_заказамBindingSource.DataMember = "Отчётность по заказам";
+            this.Отчётность_по_заказамBindingSource.DataSource = this._k_systemsDataSet;
+            // 
+            // reportViewer1
+            // 
+            this.reportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "k_systems.Админка.Отчётность по заказам.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(389, 12);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(1080, 708);
+            this.reportViewer1.TabIndex = 6;
+            // 
             // Отчётность_по_заказам
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1481, 771);
-            this.Controls.Add(this.reportViewer);
+            this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -206,6 +216,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.заказыСКлиентамиBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._k_systemsDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.отчётностьПоЗаказамBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Отчётность_по_заказамBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -222,11 +233,12 @@
         private System.Windows.Forms.Button button47;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label21;
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer;
         private _k_systemsDataSet _k_systemsDataSet;
         private System.Windows.Forms.BindingSource заказыСКлиентамиBindingSource;
         private _k_systemsDataSetTableAdapters.Заказы_с_клиентамиTableAdapter заказы_с_клиентамиTableAdapter;
         private System.Windows.Forms.BindingSource отчётностьПоЗаказамBindingSource;
         private _k_systemsDataSetTableAdapters.Отчётность_по_заказамTableAdapter отчётность_по_заказамTableAdapter;
+        private System.Windows.Forms.BindingSource Отчётность_по_заказамBindingSource;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
     }
 }

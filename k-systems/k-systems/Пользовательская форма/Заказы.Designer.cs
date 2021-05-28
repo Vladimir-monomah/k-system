@@ -34,17 +34,21 @@
             this.clientOrdersFilterCheckBox = new System.Windows.Forms.CheckBox();
             this.orderFilterTextBox = new System.Windows.Forms.TextBox();
             this.labelSortingCustomers = new System.Windows.Forms.Label();
-            this.dataGridView = new System.Windows.Forms.DataGridView();
             this.видРаботыDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.типРемонтаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ценаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.заказГотовDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.заказыДляКлиентаBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridView = new System.Windows.Forms.DataGridView();
             this._k_systemsDataSet = new k_systems._k_systemsDataSet();
-            this.заказы_для_клиентаTableAdapter = new k_systems._k_systemsDataSetTableAdapters.Заказы_для_клиентаTableAdapter();
+            this.заказыСКлиентамиBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.заказы_с_клиентамиTableAdapter = new k_systems._k_systemsDataSetTableAdapters.Заказы_с_клиентамиTableAdapter();
+            this.фИОDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.видРаботыDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.типРемонтаDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ценаDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.статусЗаказаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.заказыДляКлиентаBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._k_systemsDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.заказыСКлиентамиBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // updateOrdersButton
@@ -95,29 +99,6 @@
             this.labelSortingCustomers.TabIndex = 21;
             this.labelSortingCustomers.Text = "Поиск заказов";
             // 
-            // dataGridView
-            // 
-            this.dataGridView.AllowUserToAddRows = false;
-            this.dataGridView.AllowUserToDeleteRows = false;
-            this.dataGridView.AllowUserToOrderColumns = true;
-            this.dataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView.AutoGenerateColumns = false;
-            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.видРаботыDataGridViewTextBoxColumn,
-            this.типРемонтаDataGridViewTextBoxColumn,
-            this.ценаDataGridViewTextBoxColumn,
-            this.заказГотовDataGridViewCheckBoxColumn});
-            this.dataGridView.DataSource = this.заказыДляКлиентаBindingSource;
-            this.dataGridView.Location = new System.Drawing.Point(12, 130);
-            this.dataGridView.Name = "dataGridView";
-            this.dataGridView.RowTemplate.Height = 24;
-            this.dataGridView.Size = new System.Drawing.Size(800, 643);
-            this.dataGridView.TabIndex = 1;
-            // 
             // видРаботыDataGridViewTextBoxColumn
             // 
             this.видРаботыDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -142,27 +123,78 @@
             this.ценаDataGridViewTextBoxColumn.Name = "ценаDataGridViewTextBoxColumn";
             this.ценаDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // заказГотовDataGridViewCheckBoxColumn
+            // dataGridView
             // 
-            this.заказГотовDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.заказГотовDataGridViewCheckBoxColumn.DataPropertyName = "Заказ готов";
-            this.заказГотовDataGridViewCheckBoxColumn.HeaderText = "Заказ готов";
-            this.заказГотовDataGridViewCheckBoxColumn.Name = "заказГотовDataGridViewCheckBoxColumn";
-            this.заказГотовDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
-            // заказыДляКлиентаBindingSource
-            // 
-            this.заказыДляКлиентаBindingSource.DataMember = "Заказы для клиента";
-            this.заказыДляКлиентаBindingSource.DataSource = this._k_systemsDataSet;
+            this.dataGridView.AutoGenerateColumns = false;
+            this.dataGridView.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.фИОDataGridViewTextBoxColumn,
+            this.видРаботыDataGridViewTextBoxColumn1,
+            this.типРемонтаDataGridViewTextBoxColumn1,
+            this.ценаDataGridViewTextBoxColumn1,
+            this.статусЗаказаDataGridViewTextBoxColumn});
+            this.dataGridView.DataSource = this.заказыСКлиентамиBindingSource;
+            this.dataGridView.Location = new System.Drawing.Point(12, 130);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.RowTemplate.Height = 24;
+            this.dataGridView.Size = new System.Drawing.Size(800, 643);
+            this.dataGridView.TabIndex = 22;
+            this.dataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellDoubleClick);
             // 
             // _k_systemsDataSet
             // 
             this._k_systemsDataSet.DataSetName = "_k_systemsDataSet";
             this._k_systemsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // заказы_для_клиентаTableAdapter
+            // заказыСКлиентамиBindingSource
             // 
-            this.заказы_для_клиентаTableAdapter.ClearBeforeFill = true;
+            this.заказыСКлиентамиBindingSource.DataMember = "Заказы с клиентами";
+            this.заказыСКлиентамиBindingSource.DataSource = this._k_systemsDataSet;
+            // 
+            // заказы_с_клиентамиTableAdapter
+            // 
+            this.заказы_с_клиентамиTableAdapter.ClearBeforeFill = true;
+            // 
+            // фИОDataGridViewTextBoxColumn
+            // 
+            this.фИОDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.фИОDataGridViewTextBoxColumn.DataPropertyName = "ФИО";
+            this.фИОDataGridViewTextBoxColumn.HeaderText = "ФИО";
+            this.фИОDataGridViewTextBoxColumn.Name = "фИОDataGridViewTextBoxColumn";
+            this.фИОDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // видРаботыDataGridViewTextBoxColumn1
+            // 
+            this.видРаботыDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.видРаботыDataGridViewTextBoxColumn1.DataPropertyName = "Вид работы";
+            this.видРаботыDataGridViewTextBoxColumn1.HeaderText = "Вид работы";
+            this.видРаботыDataGridViewTextBoxColumn1.Name = "видРаботыDataGridViewTextBoxColumn1";
+            this.видРаботыDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // типРемонтаDataGridViewTextBoxColumn1
+            // 
+            this.типРемонтаDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.типРемонтаDataGridViewTextBoxColumn1.DataPropertyName = "Тип ремонта";
+            this.типРемонтаDataGridViewTextBoxColumn1.HeaderText = "Тип ремонта";
+            this.типРемонтаDataGridViewTextBoxColumn1.Name = "типРемонтаDataGridViewTextBoxColumn1";
+            this.типРемонтаDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // ценаDataGridViewTextBoxColumn1
+            // 
+            this.ценаDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ценаDataGridViewTextBoxColumn1.DataPropertyName = "Цена";
+            this.ценаDataGridViewTextBoxColumn1.HeaderText = "Цена";
+            this.ценаDataGridViewTextBoxColumn1.Name = "ценаDataGridViewTextBoxColumn1";
+            this.ценаDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // статусЗаказаDataGridViewTextBoxColumn
+            // 
+            this.статусЗаказаDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.статусЗаказаDataGridViewTextBoxColumn.DataPropertyName = "Статус заказа";
+            this.статусЗаказаDataGridViewTextBoxColumn.HeaderText = "Статус заказа";
+            this.статусЗаказаDataGridViewTextBoxColumn.Name = "статусЗаказаDataGridViewTextBoxColumn";
+            this.статусЗаказаDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // Заказы
             // 
@@ -183,8 +215,8 @@
             this.Text = "Заказы";
             this.Load += new System.EventHandler(this.Заказы_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.заказыДляКлиентаBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._k_systemsDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.заказыСКлиентамиBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -196,13 +228,18 @@
         private System.Windows.Forms.CheckBox clientOrdersFilterCheckBox;
         private System.Windows.Forms.TextBox orderFilterTextBox;
         private System.Windows.Forms.Label labelSortingCustomers;
-        private System.Windows.Forms.DataGridView dataGridView;
-        private _k_systemsDataSet _k_systemsDataSet;
-        private System.Windows.Forms.BindingSource заказыДляКлиентаBindingSource;
-        private _k_systemsDataSetTableAdapters.Заказы_для_клиентаTableAdapter заказы_для_клиентаTableAdapter;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn заказГотовDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn видРаботыDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn типРемонтаDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ценаDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn заказГотовDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridView dataGridView;
+        private _k_systemsDataSet _k_systemsDataSet;
+        private System.Windows.Forms.BindingSource заказыСКлиентамиBindingSource;
+        private _k_systemsDataSetTableAdapters.Заказы_с_клиентамиTableAdapter заказы_с_клиентамиTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn фИОDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn видРаботыDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn типРемонтаDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ценаDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn статусЗаказаDataGridViewTextBoxColumn;
     }
 }

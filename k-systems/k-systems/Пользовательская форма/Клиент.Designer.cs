@@ -85,6 +85,7 @@
             this.сменаПользователяToolStripMenuItem.Name = "сменаПользователяToolStripMenuItem";
             this.сменаПользователяToolStripMenuItem.Size = new System.Drawing.Size(229, 26);
             this.сменаПользователяToolStripMenuItem.Text = "Смена пользователя";
+            this.сменаПользователяToolStripMenuItem.Click += new System.EventHandler(this.сменаПользователяToolStripMenuItem_Click);
             // 
             // справочникиToolStripMenuItem
             // 
@@ -101,28 +102,28 @@
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(213, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 6);
             // 
             // заказыToolStripMenuItem
             // 
             this.заказыToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("заказыToolStripMenuItem.Image")));
             this.заказыToolStripMenuItem.Name = "заказыToolStripMenuItem";
             this.заказыToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D1)));
-            this.заказыToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.заказыToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
             this.заказыToolStripMenuItem.Text = "Заказы";
             this.заказыToolStripMenuItem.Click += new System.EventHandler(this.заказыToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(213, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 6);
             // 
             // почтаToolStripMenuItem
             // 
             this.почтаToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("почтаToolStripMenuItem.Image")));
             this.почтаToolStripMenuItem.Name = "почтаToolStripMenuItem";
             this.почтаToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D2)));
-            this.почтаToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.почтаToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
             this.почтаToolStripMenuItem.Text = "Почта";
             // 
             // справкаToolStripMenuItem
