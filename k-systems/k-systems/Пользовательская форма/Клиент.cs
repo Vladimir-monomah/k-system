@@ -13,19 +13,15 @@ namespace k_systems.Пользовательская_форма
     public partial class Клиент : Form
     {
         private long idClient;
-        private _k_systemsDataSet.ПользователиRow user;
+        private readonly Авторизация авторизация;
 
-        public Клиент(Int64 userId)
+        public Клиент(Int64 userId, Авторизация авторизация)
         {
             this.idClient = userId;
+            this.авторизация = авторизация;
             this.InitializeComponent();
         }
-
-        public Клиент(_k_systemsDataSet.ПользователиRow user)
-        {
-            this.user = user;
-        }
-
+        
         private void Клиент_Load(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "_k_systemsDataSet.Цены_работ_для_клиента". При необходимости она может быть перемещена или удалена.
@@ -69,7 +65,12 @@ namespace k_systems.Пользовательская_форма
         private void сменаПользователяToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            var открыть = new Авторизация();
+            this.авторизация.Show();
+        }
+
+        private void почтаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var открыть = new Почта(this.idClient);
             открыть.ShowDialog();
         }
     }

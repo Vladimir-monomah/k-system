@@ -39,26 +39,36 @@
             this.EmailTabPage = new System.Windows.Forms.TabPage();
             this.inputMessageDeleteButton = new System.Windows.Forms.Button();
             this.inputMessagesDataGridView = new System.Windows.Forms.DataGridView();
+            this.темаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.текстСообщенияDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.сообщенияBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this._k_systemsDataSet = new k_systems._k_systemsDataSet();
             this.outputMessagesTabPage = new System.Windows.Forms.TabPage();
             this.outputMessageDeleteButton = new System.Windows.Forms.Button();
             this.outputMessagesDataGridView = new System.Windows.Forms.DataGridView();
+            this.исходящиеСообщенияBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Basket = new System.Windows.Forms.TabPage();
             this.deletedMessagesDataGridView = new System.Windows.Forms.DataGridView();
-            this._k_systemsDataSet = new k_systems._k_systemsDataSet();
-            this.сообщенияBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.удаленныеСообщенияBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.сообщенияTableAdapter = new k_systems._k_systemsDataSetTableAdapters.СообщенияTableAdapter();
-            this.темаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.текстСообщенияDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.сообщения_для_клиентов_удалённыеTableAdapter = new k_systems._k_systemsDataSetTableAdapters.Сообщения_для_клиентов_удалённыеTableAdapter();
+            this.типСообщенияDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.темаDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.текстСообщенияDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.темаDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.текстСообщенияDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControlEmail.SuspendLayout();
             this.WriteLetter.SuspendLayout();
             this.EmailTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inputMessagesDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.сообщенияBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._k_systemsDataSet)).BeginInit();
             this.outputMessagesTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.outputMessagesDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.исходящиеСообщенияBindingSource)).BeginInit();
             this.Basket.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.deletedMessagesDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._k_systemsDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.сообщенияBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.удаленныеСообщенияBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlEmail
@@ -101,6 +111,7 @@
             this.emailSendButton.TabIndex = 3;
             this.emailSendButton.Text = "Отправить";
             this.emailSendButton.UseVisualStyleBackColor = true;
+            this.emailSendButton.Click += new System.EventHandler(this.emailSendButton_Click);
             // 
             // emailMessageTextBox
             // 
@@ -154,13 +165,14 @@
             // 
             // inputMessageDeleteButton
             // 
-            this.inputMessageDeleteButton.Location = new System.Drawing.Point(631, 28);
+            this.inputMessageDeleteButton.Location = new System.Drawing.Point(676, 28);
             this.inputMessageDeleteButton.Margin = new System.Windows.Forms.Padding(4);
             this.inputMessageDeleteButton.Name = "inputMessageDeleteButton";
             this.inputMessageDeleteButton.Size = new System.Drawing.Size(187, 28);
             this.inputMessageDeleteButton.TabIndex = 1;
             this.inputMessageDeleteButton.Text = "Удалить сообщение";
             this.inputMessageDeleteButton.UseVisualStyleBackColor = true;
+            this.inputMessageDeleteButton.Click += new System.EventHandler(this.inputMessageDeleteButton_Click);
             // 
             // inputMessagesDataGridView
             // 
@@ -185,6 +197,32 @@
             this.inputMessagesDataGridView.Size = new System.Drawing.Size(860, 695);
             this.inputMessagesDataGridView.TabIndex = 0;
             // 
+            // темаDataGridViewTextBoxColumn
+            // 
+            this.темаDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.темаDataGridViewTextBoxColumn.DataPropertyName = "Тема";
+            this.темаDataGridViewTextBoxColumn.HeaderText = "Тема";
+            this.темаDataGridViewTextBoxColumn.Name = "темаDataGridViewTextBoxColumn";
+            this.темаDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // текстСообщенияDataGridViewTextBoxColumn
+            // 
+            this.текстСообщенияDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.текстСообщенияDataGridViewTextBoxColumn.DataPropertyName = "Текст сообщения";
+            this.текстСообщенияDataGridViewTextBoxColumn.HeaderText = "Текст сообщения";
+            this.текстСообщенияDataGridViewTextBoxColumn.Name = "текстСообщенияDataGridViewTextBoxColumn";
+            this.текстСообщенияDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // сообщенияBindingSource
+            // 
+            this.сообщенияBindingSource.DataMember = "Сообщения";
+            this.сообщенияBindingSource.DataSource = this._k_systemsDataSet;
+            // 
+            // _k_systemsDataSet
+            // 
+            this._k_systemsDataSet.DataSetName = "_k_systemsDataSet";
+            this._k_systemsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // outputMessagesTabPage
             // 
             this.outputMessagesTabPage.Controls.Add(this.outputMessageDeleteButton);
@@ -199,13 +237,14 @@
             // 
             // outputMessageDeleteButton
             // 
-            this.outputMessageDeleteButton.Location = new System.Drawing.Point(629, 28);
+            this.outputMessageDeleteButton.Location = new System.Drawing.Point(675, 28);
             this.outputMessageDeleteButton.Margin = new System.Windows.Forms.Padding(4);
             this.outputMessageDeleteButton.Name = "outputMessageDeleteButton";
             this.outputMessageDeleteButton.Size = new System.Drawing.Size(187, 28);
             this.outputMessageDeleteButton.TabIndex = 1;
             this.outputMessageDeleteButton.Text = "Удалить сообщение";
             this.outputMessageDeleteButton.UseVisualStyleBackColor = true;
+            this.outputMessageDeleteButton.Click += new System.EventHandler(this.outputMessageDeleteButton_Click);
             // 
             // outputMessagesDataGridView
             // 
@@ -215,9 +254,14 @@
             this.outputMessagesDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.outputMessagesDataGridView.AutoGenerateColumns = false;
             this.outputMessagesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.outputMessagesDataGridView.BackgroundColor = System.Drawing.Color.White;
             this.outputMessagesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.outputMessagesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.темаDataGridViewTextBoxColumn2,
+            this.текстСообщенияDataGridViewTextBoxColumn2});
+            this.outputMessagesDataGridView.DataSource = this.исходящиеСообщенияBindingSource;
             this.outputMessagesDataGridView.Location = new System.Drawing.Point(4, 64);
             this.outputMessagesDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.outputMessagesDataGridView.Name = "outputMessagesDataGridView";
@@ -225,6 +269,11 @@
             this.outputMessagesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.outputMessagesDataGridView.Size = new System.Drawing.Size(860, 695);
             this.outputMessagesDataGridView.TabIndex = 0;
+            // 
+            // исходящиеСообщенияBindingSource
+            // 
+            this.исходящиеСообщенияBindingSource.DataMember = "Сообщения";
+            this.исходящиеСообщенияBindingSource.DataSource = this._k_systemsDataSet;
             // 
             // Basket
             // 
@@ -241,9 +290,15 @@
             // 
             this.deletedMessagesDataGridView.AllowUserToAddRows = false;
             this.deletedMessagesDataGridView.AllowUserToDeleteRows = false;
+            this.deletedMessagesDataGridView.AutoGenerateColumns = false;
             this.deletedMessagesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.deletedMessagesDataGridView.BackgroundColor = System.Drawing.Color.White;
             this.deletedMessagesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.deletedMessagesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.типСообщенияDataGridViewTextBoxColumn,
+            this.темаDataGridViewTextBoxColumn1,
+            this.текстСообщенияDataGridViewTextBoxColumn1});
+            this.deletedMessagesDataGridView.DataSource = this.удаленныеСообщенияBindingSource;
             this.deletedMessagesDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.deletedMessagesDataGridView.Location = new System.Drawing.Point(0, 0);
             this.deletedMessagesDataGridView.Margin = new System.Windows.Forms.Padding(4);
@@ -253,35 +308,53 @@
             this.deletedMessagesDataGridView.Size = new System.Drawing.Size(871, 770);
             this.deletedMessagesDataGridView.TabIndex = 1;
             // 
-            // _k_systemsDataSet
+            // удаленныеСообщенияBindingSource
             // 
-            this._k_systemsDataSet.DataSetName = "_k_systemsDataSet";
-            this._k_systemsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // сообщенияBindingSource
-            // 
-            this.сообщенияBindingSource.DataMember = "Сообщения";
-            this.сообщенияBindingSource.DataSource = this._k_systemsDataSet;
+            this.удаленныеСообщенияBindingSource.DataMember = "Сообщения для клиентов удалённые";
+            this.удаленныеСообщенияBindingSource.DataSource = this._k_systemsDataSet;
             // 
             // сообщенияTableAdapter
             // 
             this.сообщенияTableAdapter.ClearBeforeFill = true;
             // 
-            // темаDataGridViewTextBoxColumn
+            // сообщения_для_клиентов_удалённыеTableAdapter
             // 
-            this.темаDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.темаDataGridViewTextBoxColumn.DataPropertyName = "Тема";
-            this.темаDataGridViewTextBoxColumn.HeaderText = "Тема";
-            this.темаDataGridViewTextBoxColumn.Name = "темаDataGridViewTextBoxColumn";
-            this.темаDataGridViewTextBoxColumn.ReadOnly = true;
+            this.сообщения_для_клиентов_удалённыеTableAdapter.ClearBeforeFill = true;
             // 
-            // текстСообщенияDataGridViewTextBoxColumn
+            // типСообщенияDataGridViewTextBoxColumn
             // 
-            this.текстСообщенияDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.текстСообщенияDataGridViewTextBoxColumn.DataPropertyName = "Текст сообщения";
-            this.текстСообщенияDataGridViewTextBoxColumn.HeaderText = "Текст сообщения";
-            this.текстСообщенияDataGridViewTextBoxColumn.Name = "текстСообщенияDataGridViewTextBoxColumn";
-            this.текстСообщенияDataGridViewTextBoxColumn.ReadOnly = true;
+            this.типСообщенияDataGridViewTextBoxColumn.DataPropertyName = "Тип сообщения";
+            this.типСообщенияDataGridViewTextBoxColumn.HeaderText = "Тип сообщения";
+            this.типСообщенияDataGridViewTextBoxColumn.Name = "типСообщенияDataGridViewTextBoxColumn";
+            this.типСообщенияDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // темаDataGridViewTextBoxColumn1
+            // 
+            this.темаDataGridViewTextBoxColumn1.DataPropertyName = "Тема";
+            this.темаDataGridViewTextBoxColumn1.HeaderText = "Тема";
+            this.темаDataGridViewTextBoxColumn1.Name = "темаDataGridViewTextBoxColumn1";
+            this.темаDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // текстСообщенияDataGridViewTextBoxColumn1
+            // 
+            this.текстСообщенияDataGridViewTextBoxColumn1.DataPropertyName = "Текст сообщения";
+            this.текстСообщенияDataGridViewTextBoxColumn1.HeaderText = "Текст сообщения";
+            this.текстСообщенияDataGridViewTextBoxColumn1.Name = "текстСообщенияDataGridViewTextBoxColumn1";
+            this.текстСообщенияDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // темаDataGridViewTextBoxColumn2
+            // 
+            this.темаDataGridViewTextBoxColumn2.DataPropertyName = "Тема";
+            this.темаDataGridViewTextBoxColumn2.HeaderText = "Тема";
+            this.темаDataGridViewTextBoxColumn2.Name = "темаDataGridViewTextBoxColumn2";
+            this.темаDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // текстСообщенияDataGridViewTextBoxColumn2
+            // 
+            this.текстСообщенияDataGridViewTextBoxColumn2.DataPropertyName = "Текст сообщения";
+            this.текстСообщенияDataGridViewTextBoxColumn2.HeaderText = "Текст сообщения";
+            this.текстСообщенияDataGridViewTextBoxColumn2.Name = "текстСообщенияDataGridViewTextBoxColumn2";
+            this.текстСообщенияDataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // Почта
             // 
@@ -301,12 +374,14 @@
             this.WriteLetter.PerformLayout();
             this.EmailTabPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.inputMessagesDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.сообщенияBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._k_systemsDataSet)).EndInit();
             this.outputMessagesTabPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.outputMessagesDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.исходящиеСообщенияBindingSource)).EndInit();
             this.Basket.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.deletedMessagesDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._k_systemsDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.сообщенияBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.удаленныеСообщенияBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -332,5 +407,13 @@
         private _k_systemsDataSetTableAdapters.СообщенияTableAdapter сообщенияTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn темаDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn текстСообщенияDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource исходящиеСообщенияBindingSource;
+        private System.Windows.Forms.BindingSource удаленныеСообщенияBindingSource;
+        private _k_systemsDataSetTableAdapters.Сообщения_для_клиентов_удалённыеTableAdapter сообщения_для_клиентов_удалённыеTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn темаDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn текстСообщенияDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn типСообщенияDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn темаDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn текстСообщенияDataGridViewTextBoxColumn1;
     }
 }

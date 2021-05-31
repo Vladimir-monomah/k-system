@@ -80,7 +80,7 @@ namespace k_systems.Email
         /// <param name="addresseeUserId">Получатель письма. Null, если отправляется администратору</param>
         /// <param name="subject">Тема отправляемого сообщения</param>
         /// <param name="textMessage">Текст сообщения</param>
-        public static void SendEmail(int? addresserUserId, int? addresseeUserId, string subject, string textMessage)
+        public static void SendEmail(long? addresserUserId, int? addresseeUserId, string subject, string textMessage)
         {
             if (!addresserUserId.HasValue && !addresseeUserId.HasValue)
             {
@@ -91,7 +91,7 @@ namespace k_systems.Email
             var newMessage = EntityManager.MessageDataTable.NewСообщенияRow();
             if (addresserUserId.HasValue)
             {
-                newMessage.Отправитель = addresserUserId.Value;
+                newMessage.Отправитель = (int)addresserUserId.Value;
             }
 
             if (addresseeUserId.HasValue)

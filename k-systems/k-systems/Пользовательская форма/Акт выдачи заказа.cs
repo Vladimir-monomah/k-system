@@ -54,7 +54,7 @@ namespace k_systems.Пользовательская_форма
                     break;
 
                 case WorkStates.Working:
-                    this.Work.Checked = false;
+                    this.Work.Checked = true;
 
                     this.Work.Enabled = false;
                     this.Ready.Enabled = false;
@@ -62,7 +62,7 @@ namespace k_systems.Пользовательская_форма
                     break;
 
                 case WorkStates.Ready:
-                    this.Ready.Checked = false;
+                    this.Ready.Checked = true;
 
                     this.Work.Enabled = false;
                     this.Ready.Enabled = false;
@@ -70,7 +70,7 @@ namespace k_systems.Пользовательская_форма
                     break;
 
                 case WorkStates.Postponed:
-                    this.Postponed.Checked = false;
+                    this.Postponed.Checked = true;
 
                     this.Work.Enabled = false;
                     this.Ready.Enabled = false;

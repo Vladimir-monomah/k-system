@@ -40,13 +40,13 @@
             this.button47 = new System.Windows.Forms.Button();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.заказыСКлиентамиBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this._k_systemsDataSet = new k_systems._k_systemsDataSet();
             this.заказы_с_клиентамиTableAdapter = new k_systems._k_systemsDataSetTableAdapters.Заказы_с_клиентамиTableAdapter();
             this.отчётностьПоЗаказамBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.отчётность_по_заказамTableAdapter = new k_systems._k_systemsDataSetTableAdapters.Отчётность_по_заказамTableAdapter();
             this.Отчётность_по_заказамBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.заказыСКлиентамиBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._k_systemsDataSet)).BeginInit();
@@ -91,6 +91,7 @@
             this.onPeriodEndDateTimePicker.Name = "onPeriodEndDateTimePicker";
             this.onPeriodEndDateTimePicker.Size = new System.Drawing.Size(200, 22);
             this.onPeriodEndDateTimePicker.TabIndex = 4;
+            this.onPeriodEndDateTimePicker.Visible = false;
             // 
             // onPeriodBeginDateTimePicker
             // 
@@ -98,6 +99,7 @@
             this.onPeriodBeginDateTimePicker.Name = "onPeriodBeginDateTimePicker";
             this.onPeriodBeginDateTimePicker.Size = new System.Drawing.Size(200, 22);
             this.onPeriodBeginDateTimePicker.TabIndex = 4;
+            this.onPeriodBeginDateTimePicker.Visible = false;
             // 
             // onMonthDateTimePicker
             // 
@@ -105,6 +107,7 @@
             this.onMonthDateTimePicker.Name = "onMonthDateTimePicker";
             this.onMonthDateTimePicker.Size = new System.Drawing.Size(200, 22);
             this.onMonthDateTimePicker.TabIndex = 4;
+            this.onMonthDateTimePicker.Visible = false;
             // 
             // onPeriodRadioButton
             // 
@@ -116,6 +119,7 @@
             this.onPeriodRadioButton.TabStop = true;
             this.onPeriodRadioButton.Text = "За период";
             this.onPeriodRadioButton.UseVisualStyleBackColor = true;
+            this.onPeriodRadioButton.Visible = false;
             // 
             // onMonthRadioButton
             // 
@@ -127,6 +131,7 @@
             this.onMonthRadioButton.TabStop = true;
             this.onMonthRadioButton.Text = "На месяц";
             this.onMonthRadioButton.UseVisualStyleBackColor = true;
+            this.onMonthRadioButton.Visible = false;
             // 
             // button47
             // 
@@ -155,6 +160,18 @@
             this.label21.TabIndex = 0;
             this.label21.Text = "Клиенты";
             // 
+            // reportViewer1
+            // 
+            this.reportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "k_systems.Админка.Отчётность по заказам.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(389, 12);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(1080, 708);
+            this.reportViewer1.TabIndex = 6;
+            // 
             // заказыСКлиентамиBindingSource
             // 
             this.заказыСКлиентамиBindingSource.DataMember = "Заказы с клиентами";
@@ -182,18 +199,6 @@
             // 
             this.Отчётность_по_заказамBindingSource.DataMember = "Отчётность по заказам";
             this.Отчётность_по_заказамBindingSource.DataSource = this._k_systemsDataSet;
-            // 
-            // reportViewer1
-            // 
-            this.reportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "k_systems.Админка.Отчётность по заказам.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(389, 12);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(1080, 708);
-            this.reportViewer1.TabIndex = 6;
             // 
             // Отчётность_по_заказам
             // 

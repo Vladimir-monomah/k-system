@@ -253,8 +253,7 @@ namespace k_systems {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public Заказы_для_клиентаDataTable Заказы_для_клиента
-        {
+        public Заказы_для_клиентаDataTable Заказы_для_клиента {
             get {
                 return this.tableЗаказы_для_клиента;
             }
@@ -14618,16 +14617,19 @@ namespace k_systems._k_systemsDataSetTableAdapters {
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT [Номер заказа] AS [Номер_заказа], [Номер клиента] AS [Номер_клиента], ФИО," +
                 " [Вид работы] AS [Вид_работы], [Тип ремонта] AS [Тип_ремонта], Цена, [Статус зак" +
-                "аза] AS [Статус_заказа], Телефон\r\nFROM     [Заказы с клиентами]";
+                "аза] AS [Статус_заказа], Телефон\r\nFROM     [Заказы с клиентами]\r\nWhere ([Номер к" +
+                "лиента]=?)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Номер_клиента", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Номер_клиента", global::System.Data.DataRowVersion.Current, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(_k_systemsDataSet.Отчётность_по_заказамDataTable dataTable) {
+        public virtual int Fill(_k_systemsDataSet.Отчётность_по_заказамDataTable dataTable, int Номер_клиента) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Номер_клиента));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -14639,8 +14641,9 @@ namespace k_systems._k_systemsDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual _k_systemsDataSet.Отчётность_по_заказамDataTable GetData() {
+        public virtual _k_systemsDataSet.Отчётность_по_заказамDataTable GetData(int Номер_клиента) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Номер_клиента));
             _k_systemsDataSet.Отчётность_по_заказамDataTable dataTable = new _k_systemsDataSet.Отчётность_по_заказамDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

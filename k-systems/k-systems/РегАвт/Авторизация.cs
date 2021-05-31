@@ -134,19 +134,24 @@ namespace k_systems
             var user = this.FindUser(this.tbLogin.Text, this.tbPassword.Text);
             if (user != null)
             {
+                this.counter = 0;
+                this.tbLogin.Focus();
+                this.tbLogin.Clear();
+                this.tbPassword.Clear();
+
                 MessageBox.Show($"Привет, {user.Имя}!");
                 if (user.Является_администратором)
                 {
-                    var формаАдминистратора = new Администратор();
-                    this.Hide();
+                    var формаАдминистратора = new Администратор(this);
                     формаАдминистратора.Show();
                 }
                 else
                 {
-                    var открыть = new Клиент(user.Id);
-                    this.Hide();
+                    var открыть = new Клиент(user.Id, this);
                     открыть.Show();
                 }
+
+                this.Hide();
             }
             else
             {

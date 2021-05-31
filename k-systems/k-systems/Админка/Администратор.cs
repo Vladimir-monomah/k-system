@@ -21,20 +21,18 @@ namespace k_systems.Админка
         private string password = "ntvHA2s1y+ryOZizPQ1WHQ==";
 
         const string FilterNinAdministrator = "([Является администратором]=False)";
+        private readonly Авторизация авторизация;
 
-        public Администратор()
+        public Администратор(Авторизация авторизация)
         {
             this.InitializeComponent();
             this.Администратор_Load();
+            this.авторизация = авторизация;
         }
 
         private void Администратор_Load()
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "_k_systemsDataSet.Пользователи". При необходимости она может быть перемещена или удалена.
             this.пользователиTableAdapter.Fill(this._k_systemsDataSet.Пользователи);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "_k_systemsDataSet.Пользователи". При необходимости она может быть перемещена или удалена.
-            this.пользователиTableAdapter.Fill(this._k_systemsDataSet.Пользователи);
-
         }
 
         /// <summary>
@@ -45,13 +43,14 @@ namespace k_systems.Админка
         private void masterFilterTextBox_TextChanged(object sender, EventArgs e)
         {
             var findFields = new[] {"Фамилия", "Имя", "Отчество" };
-            var filterString = EntityManager.GetFilterStringByFields(findFields, this.masterFilterTextBox.Text).Trim();
+            var filterStringByFiels = EntityManager.GetFilterStringByFields(findFields, this.masterFilterTextBox.Text).Trim();
 
-            this.пользователиBindingSource.Filter = FilterNinAdministrator;
-            if (!string.IsNullOrEmpty(filterString))
+            if (!string.IsNullOrEmpty(filterStringByFiels))
             {
-                this.пользователиBindingSource.Filter += $"And ({filterString})";
+                filterStringByFiels = $"{FilterNinAdministrator} And ({filterStringByFiels})";
             }
+
+            this.пользователиBindingSource.Filter = filterStringByFiels;
         }
 
         private void Администратор_FormClosing(object sender, FormClosingEventArgs e)
@@ -93,14 +92,14 @@ namespace k_systems.Админка
         private void СhangeUser_Click(object sender, EventArgs e)
         {
             this.Hide();
-            var открыть = new Авторизация();
-            открыть.ShowDialog();
+            this.авторизация.Show();
         }
 
         private void NewClient_Click(object sender, EventArgs e)
         {
             var открыть = new Регистрация(this.password);
             открыть.ShowDialog();
+            this.пользователиTableAdapter.Fill(this._k_systemsDataSet.Пользователи);
         }
 
         private void AddService_Click(object sender, EventArgs e)
@@ -111,7 +110,6 @@ namespace k_systems.Админка
 
         private void btn_cancel_Click(object sender, EventArgs e)
         {
-            this.пользователиBindingSource.Filter = null;
             this.masterFilterTextBox.Text = "";
         }
 
