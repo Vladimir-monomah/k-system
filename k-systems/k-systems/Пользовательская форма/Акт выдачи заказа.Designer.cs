@@ -59,6 +59,7 @@
             this.btnPrint.TabIndex = 124;
             this.btnPrint.Text = "Печать";
             this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // panel
             // 
@@ -231,7 +232,7 @@
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(186, 21);
             this.label22.TabIndex = 3;
-            this.label22.Text = "Акт приёмки заказа";
+            this.label22.Text = "Акт выдачии заказа";
             // 
             // Заказ_для_клиента
             // 

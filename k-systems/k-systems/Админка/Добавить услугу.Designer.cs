@@ -42,7 +42,7 @@
             // TypeRepair
             // 
             this.TypeRepair.Location = new System.Drawing.Point(181, 101);
-            this.TypeRepair.MaxLength = 30;
+            this.TypeRepair.MaxLength = 100;
             this.TypeRepair.Multiline = true;
             this.TypeRepair.Name = "TypeRepair";
             this.TypeRepair.Size = new System.Drawing.Size(344, 30);
@@ -61,7 +61,7 @@
             // TypeService
             // 
             this.TypeService.Location = new System.Drawing.Point(181, 33);
-            this.TypeService.MaxLength = 30;
+            this.TypeService.MaxLength = 100;
             this.TypeService.Multiline = true;
             this.TypeService.Name = "TypeService";
             this.TypeService.Size = new System.Drawing.Size(344, 30);

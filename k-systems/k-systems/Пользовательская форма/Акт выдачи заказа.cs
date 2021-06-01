@@ -1,14 +1,13 @@
 ﻿using k_systems.Константы;
+using Microsoft.Office.Interop.Word;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using static k_systems._k_systemsDataSet;
+using Word = Microsoft.Office.Interop.Word;
 
 namespace k_systems.Пользовательская_форма
 {
@@ -116,6 +115,50 @@ namespace k_systems.Пользовательская_форма
             }
 
             this.EnableCheckingEvents();
+        }
+
+        /// <summary>
+        /// Печать акта приёмки заказа
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            var templateFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "акт выдачи оборудования.dotx");
+            if (!File.Exists(templateFile))
+            {
+                throw new Exception("Не найден файл " + templateFile);
+            }
+            var oWord = new Word.Application();
+            _Document oDoc = null;
+            var newTemplateFile = Path.Combine(
+                    AppDomain.CurrentDomain.BaseDirectory,
+                    $"Акты выдачи\\акт_выдачи_оборудования_{DateTime.Now:dd.MM.yyyy_HH.mm.ss}_{this.textBoxFIO.Text}.docx");
+
+            try
+            {
+                oDoc = oWord.Documents.Add(templateFile);
+                this.SetTemplate(oDoc);
+
+                oDoc.SaveAs2(FileName: newTemplateFile);
+            }
+            finally
+            {
+                oDoc?.Close();
+                oWord.Quit();
+            }
+            MessageBox.Show("Сохранение прошло успешно", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Process.Start(newTemplateFile);
+        }
+
+        private void SetTemplate(_Document oDoc)
+        {
+            var tableInfo = oDoc.Tables[1];
+            tableInfo.Cell(3, 2).Range.Text = this.textBoxFIO.Text;
+            tableInfo.Cell(4, 2).Range.Text = this.tbPhone.Text;
+            tableInfo.Cell(5, 2).Range.Text = this.tbTypeWork.Text;
+            tableInfo.Cell(6, 2).Range.Text = this.tbKindWork.Text;
+            tableInfo.Cell(7, 2).Range.Text = this.tbPrice.Text;
         }
     }
 }

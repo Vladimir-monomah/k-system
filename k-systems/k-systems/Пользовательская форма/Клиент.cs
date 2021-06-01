@@ -68,10 +68,21 @@ namespace k_systems.Пользовательская_форма
             this.авторизация.Show();
         }
 
-        private void почтаToolStripMenuItem_Click(object sender, EventArgs e)
+        private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var открыть = new О_программе();
+            открыть.ShowDialog();
+        }
+
+        private void emailToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var открыть = new Почта(this.idClient);
             открыть.ShowDialog();
+        }
+
+        private void помощьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(Application.StartupPath + @"\Справка.chm");
         }
     }
 }

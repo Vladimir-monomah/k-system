@@ -85,7 +85,7 @@
             // addOrderButton
             // 
             this.addOrderButton.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.addOrderButton.Location = new System.Drawing.Point(192, 402);
+            this.addOrderButton.Location = new System.Drawing.Point(454, 399);
             this.addOrderButton.Margin = new System.Windows.Forms.Padding(4);
             this.addOrderButton.Name = "addOrderButton";
             this.addOrderButton.Size = new System.Drawing.Size(240, 64);
@@ -115,7 +115,7 @@
             this.dressTypeComboBox.Location = new System.Drawing.Point(277, 223);
             this.dressTypeComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.dressTypeComboBox.Name = "dressTypeComboBox";
-            this.dressTypeComboBox.Size = new System.Drawing.Size(273, 32);
+            this.dressTypeComboBox.Size = new System.Drawing.Size(714, 32);
             this.dressTypeComboBox.TabIndex = 14;
             this.dressTypeComboBox.ValueMember = "Идентификатор";
             this.dressTypeComboBox.SelectedValueChanged += new System.EventHandler(this.orderPriceComboBox_SelectedValueChanged);
@@ -151,7 +151,7 @@
             this.workKindComboBox.Location = new System.Drawing.Point(277, 159);
             this.workKindComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.workKindComboBox.Name = "workKindComboBox";
-            this.workKindComboBox.Size = new System.Drawing.Size(273, 32);
+            this.workKindComboBox.Size = new System.Drawing.Size(714, 32);
             this.workKindComboBox.TabIndex = 12;
             this.workKindComboBox.ValueMember = "Идентификатор";
             this.workKindComboBox.SelectedValueChanged += new System.EventHandler(this.workKindComboBox_SelectedValueChanged);
@@ -247,7 +247,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(620, 476);
+            this.ClientSize = new System.Drawing.Size(1027, 476);
             this.Controls.Add(this.Phone);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Work);
