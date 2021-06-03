@@ -20,7 +20,6 @@ namespace k_systems.Админка
     {
         private string password = "ntvHA2s1y+ryOZizPQ1WHQ==";
 
-        const string FilterNinAdministrator = "([Является администратором]=False)";
         private readonly Авторизация авторизация;
 
         public Администратор(Авторизация авторизация)
@@ -32,7 +31,8 @@ namespace k_systems.Админка
 
         private void Администратор_Load()
         {
-            this.пользователиTableAdapter.Fill(this._k_systemsDataSet.Пользователи);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "_k_systemsDataSet.Заказы_с_клиентами". При необходимости она может быть перемещена или удалена.
+            this.заказы_с_клиентамиTableAdapter.Fill(this._k_systemsDataSet.Заказы_с_клиентами);
         }
 
         /// <summary>
@@ -42,15 +42,15 @@ namespace k_systems.Админка
         /// <param name="e"></param>
         private void masterFilterTextBox_TextChanged(object sender, EventArgs e)
         {
-            var findFields = new[] {"Фамилия", "Имя", "Отчество" };
+            var findFields = new[] {"ФИО" };
             var filterStringByFiels = EntityManager.GetFilterStringByFields(findFields, this.masterFilterTextBox.Text).Trim();
 
             if (!string.IsNullOrEmpty(filterStringByFiels))
             {
-                filterStringByFiels = $"{FilterNinAdministrator} And ({filterStringByFiels})";
+                filterStringByFiels = $"({filterStringByFiels})";
             }
 
-            this.пользователиBindingSource.Filter = filterStringByFiels;
+            this.заказыСКлиентамиBindingSource.Filter = filterStringByFiels;
         }
 
         private void Администратор_FormClosing(object sender, FormClosingEventArgs e)
@@ -97,9 +97,8 @@ namespace k_systems.Админка
 
         private void NewClient_Click(object sender, EventArgs e)
         {
-            var открыть = new Регистрация(this.password);
+            var открыть = new Клиенты(this.password);
             открыть.ShowDialog();
-            this.пользователиTableAdapter.Fill(this._k_systemsDataSet.Пользователи);
         }
 
         private void AddService_Click(object sender, EventArgs e)
@@ -118,13 +117,13 @@ namespace k_systems.Админка
             //int ind = this.dataGridView.SelectedCells[0].RowIndex;
             //this.dataGridView.Rows.RemoveAt(ind);
 
-            var idUser= ((ПользователиRow)((DataRowView)this.dataGridView.CurrentRow?.DataBoundItem)?.Row)?.Id;
+            var idUser= ((Заказы_с_клиентамиRow)((DataRowView)this.dataGridView.CurrentRow?.DataBoundItem)?.Row)?.Номер_заказа;
             if (!idUser.HasValue)
             {
                 return;
             }
 
-            var deleteUser = MessageBox.Show("Вы действительно хотите удалить данного пользователя? ", "Информация",
+            var deleteUser = MessageBox.Show("Вы действительно хотите удалить данный заказ клиента? ", "Информация",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (deleteUser != DialogResult.Yes)
             {
@@ -136,7 +135,7 @@ namespace k_systems.Админка
                 connection.Open();
                 using(var sqlCommand = connection.CreateCommand())
                 {
-                    sqlCommand.CommandText = $"DELETE FROM Пользователи WHERE Id={idUser.Value}";
+                    sqlCommand.CommandText = $"DELETE FROM [Заказы с клиентами] WHERE [Номер заказа]={idUser.Value}";
                     sqlCommand.ExecuteNonQuery();
                 }
             }
@@ -167,7 +166,7 @@ namespace k_systems.Админка
 
         private void RestoreDB_Click(object sender, EventArgs e)
         {
-            var dataBasePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Библиотека.mdb";
+            var dataBasePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\k-systems.mdb";
             var openDialog = new OpenFileDialog
             {
                 Filter = "AccessDB files|*.mdb"
@@ -179,8 +178,8 @@ namespace k_systems.Админка
                     File.Copy(openDialog.FileName, dataBasePath, true);
                     MessageBox.Show("Восстановление прошло успешно!", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                this.пользователиTableAdapter.Adapter.Fill(this._k_systemsDataSet.Пользователи);
-                this.пользователиTableAdapter.Adapter.Update(this._k_systemsDataSet.Пользователи);
+                this.заказы_с_клиентамиTableAdapter.Adapter.Fill(this._k_systemsDataSet.Заказы_с_клиентами);
+                this.заказы_с_клиентамиTableAdapter.Adapter.Update(this._k_systemsDataSet.Заказы_с_клиентами);
             }
             catch (Exception exception)
             {
@@ -198,6 +197,11 @@ namespace k_systems.Админка
         {
             var открыть = new Отчётность_по_заказам();
             открыть.ShowDialog();
+        }
+
+        private void Администратор_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

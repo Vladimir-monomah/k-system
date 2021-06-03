@@ -33,14 +33,6 @@
             this.masterFilterTextBox = new System.Windows.Forms.TextBox();
             this.labelSortingCustomers = new System.Windows.Forms.Label();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.фамилияDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.имяDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.отчествоDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.логинDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.парольDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.пользователиBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this._k_systemsDataSet = new k_systems._k_systemsDataSet();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.btn_cancel = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -59,11 +51,19 @@
             this.RestoreDB = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.СhangeUser = new System.Windows.Forms.ToolStripMenuItem();
-            this.пользователиTableAdapter = new k_systems._k_systemsDataSetTableAdapters.ПользователиTableAdapter();
+            this._k_systemsDataSet = new k_systems._k_systemsDataSet();
+            this.заказыСКлиентамиBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.заказы_с_клиентамиTableAdapter = new k_systems._k_systemsDataSetTableAdapters.Заказы_с_клиентамиTableAdapter();
+            this.фИОDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.видРаботыDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.типРемонтаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ценаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.статусЗаказаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.пользователиBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._k_systemsDataSet)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this._k_systemsDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.заказыСКлиентамиBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // masterFilterTextBox
@@ -99,77 +99,19 @@
             this.dataGridView.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.фамилияDataGridViewTextBoxColumn,
-            this.имяDataGridViewTextBoxColumn,
-            this.отчествоDataGridViewTextBoxColumn,
-            this.emailDataGridViewTextBoxColumn,
-            this.логинDataGridViewTextBoxColumn,
-            this.парольDataGridViewTextBoxColumn});
-            this.dataGridView.DataSource = this.пользователиBindingSource;
+            this.фИОDataGridViewTextBoxColumn,
+            this.видРаботыDataGridViewTextBoxColumn,
+            this.типРемонтаDataGridViewTextBoxColumn,
+            this.ценаDataGridViewTextBoxColumn,
+            this.статусЗаказаDataGridViewTextBoxColumn,
+            this.dataGridViewTextBoxColumn1});
+            this.dataGridView.DataSource = this.заказыСКлиентамиBindingSource;
             this.dataGridView.Location = new System.Drawing.Point(13, 162);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowTemplate.Height = 24;
             this.dataGridView.Size = new System.Drawing.Size(1621, 539);
             this.dataGridView.TabIndex = 27;
             this.dataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellEndEdit);
-            // 
-            // фамилияDataGridViewTextBoxColumn
-            // 
-            this.фамилияDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.фамилияDataGridViewTextBoxColumn.DataPropertyName = "Фамилия";
-            this.фамилияDataGridViewTextBoxColumn.HeaderText = "Фамилия";
-            this.фамилияDataGridViewTextBoxColumn.Name = "фамилияDataGridViewTextBoxColumn";
-            this.фамилияDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // имяDataGridViewTextBoxColumn
-            // 
-            this.имяDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.имяDataGridViewTextBoxColumn.DataPropertyName = "Имя";
-            this.имяDataGridViewTextBoxColumn.HeaderText = "Имя";
-            this.имяDataGridViewTextBoxColumn.Name = "имяDataGridViewTextBoxColumn";
-            this.имяDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // отчествоDataGridViewTextBoxColumn
-            // 
-            this.отчествоDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.отчествоDataGridViewTextBoxColumn.DataPropertyName = "Отчество";
-            this.отчествоDataGridViewTextBoxColumn.HeaderText = "Отчество";
-            this.отчествоDataGridViewTextBoxColumn.Name = "отчествоDataGridViewTextBoxColumn";
-            this.отчествоDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "E-mail";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "E-mail";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // логинDataGridViewTextBoxColumn
-            // 
-            this.логинDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.логинDataGridViewTextBoxColumn.DataPropertyName = "логин";
-            this.логинDataGridViewTextBoxColumn.HeaderText = "логин";
-            this.логинDataGridViewTextBoxColumn.Name = "логинDataGridViewTextBoxColumn";
-            this.логинDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // парольDataGridViewTextBoxColumn
-            // 
-            this.парольDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.парольDataGridViewTextBoxColumn.DataPropertyName = "пароль";
-            this.парольDataGridViewTextBoxColumn.HeaderText = "пароль";
-            this.парольDataGridViewTextBoxColumn.Name = "парольDataGridViewTextBoxColumn";
-            this.парольDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // пользователиBindingSource
-            // 
-            this.пользователиBindingSource.DataMember = "Пользователи";
-            this.пользователиBindingSource.DataSource = this._k_systemsDataSet;
-            // 
-            // _k_systemsDataSet
-            // 
-            this._k_systemsDataSet.DataSetName = "_k_systemsDataSet";
-            this._k_systemsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // buttonCancel
             // 
@@ -321,9 +263,67 @@
             this.СhangeUser.Text = "Смена пользователя";
             this.СhangeUser.Click += new System.EventHandler(this.СhangeUser_Click);
             // 
-            // пользователиTableAdapter
+            // _k_systemsDataSet
             // 
-            this.пользователиTableAdapter.ClearBeforeFill = true;
+            this._k_systemsDataSet.DataSetName = "_k_systemsDataSet";
+            this._k_systemsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // заказыСКлиентамиBindingSource
+            // 
+            this.заказыСКлиентамиBindingSource.DataMember = "Заказы с клиентами";
+            this.заказыСКлиентамиBindingSource.DataSource = this._k_systemsDataSet;
+            // 
+            // заказы_с_клиентамиTableAdapter
+            // 
+            this.заказы_с_клиентамиTableAdapter.ClearBeforeFill = true;
+            // 
+            // фИОDataGridViewTextBoxColumn
+            // 
+            this.фИОDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.фИОDataGridViewTextBoxColumn.DataPropertyName = "ФИО";
+            this.фИОDataGridViewTextBoxColumn.HeaderText = "ФИО";
+            this.фИОDataGridViewTextBoxColumn.Name = "фИОDataGridViewTextBoxColumn";
+            this.фИОDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // видРаботыDataGridViewTextBoxColumn
+            // 
+            this.видРаботыDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.видРаботыDataGridViewTextBoxColumn.DataPropertyName = "Вид работы";
+            this.видРаботыDataGridViewTextBoxColumn.HeaderText = "Вид работы";
+            this.видРаботыDataGridViewTextBoxColumn.Name = "видРаботыDataGridViewTextBoxColumn";
+            this.видРаботыDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // типРемонтаDataGridViewTextBoxColumn
+            // 
+            this.типРемонтаDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.типРемонтаDataGridViewTextBoxColumn.DataPropertyName = "Тип ремонта";
+            this.типРемонтаDataGridViewTextBoxColumn.HeaderText = "Тип ремонта";
+            this.типРемонтаDataGridViewTextBoxColumn.Name = "типРемонтаDataGridViewTextBoxColumn";
+            this.типРемонтаDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // ценаDataGridViewTextBoxColumn
+            // 
+            this.ценаDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ценаDataGridViewTextBoxColumn.DataPropertyName = "Цена";
+            this.ценаDataGridViewTextBoxColumn.HeaderText = "Цена";
+            this.ценаDataGridViewTextBoxColumn.Name = "ценаDataGridViewTextBoxColumn";
+            this.ценаDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // статусЗаказаDataGridViewTextBoxColumn
+            // 
+            this.статусЗаказаDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.статусЗаказаDataGridViewTextBoxColumn.DataPropertyName = "Статус заказа";
+            this.статусЗаказаDataGridViewTextBoxColumn.HeaderText = "Статус заказа";
+            this.статусЗаказаDataGridViewTextBoxColumn.Name = "статусЗаказаDataGridViewTextBoxColumn";
+            this.статусЗаказаDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Телефон";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Телефон";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // Администратор
             // 
@@ -346,11 +346,12 @@
             this.Text = "Мастер";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Администратор_FormClosing);
+            this.Load += new System.EventHandler(this.Администратор_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.пользователиBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._k_systemsDataSet)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this._k_systemsDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.заказыСКлиентамиBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -381,13 +382,13 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem СhangeUser;
         private _k_systemsDataSet _k_systemsDataSet;
-        private System.Windows.Forms.BindingSource пользователиBindingSource;
-        private _k_systemsDataSetTableAdapters.ПользователиTableAdapter пользователиTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn фамилияDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn имяDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn отчествоDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn логинDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn парольDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource заказыСКлиентамиBindingSource;
+        private _k_systemsDataSetTableAdapters.Заказы_с_клиентамиTableAdapter заказы_с_клиентамиTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn фИОDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn видРаботыDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn типРемонтаDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ценаDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn статусЗаказаDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
     }
 }

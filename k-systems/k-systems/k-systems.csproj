@@ -130,6 +130,12 @@
     <Compile Include="Админка\Карточка клиентов.Designer.cs">
       <DependentUpon>Карточка клиентов.cs</DependentUpon>
     </Compile>
+    <Compile Include="Админка\Клиенты.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Админка\Клиенты.Designer.cs">
+      <DependentUpon>Клиенты.cs</DependentUpon>
+    </Compile>
     <Compile Include="Админка\Отчётность по заказам.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -224,6 +230,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Админка\Акт приёмки заказа.resx">
       <DependentUpon>Акт приёмки заказа.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Админка\Клиенты.resx">
+      <DependentUpon>Клиенты.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Админка\Отчётность по заказам.rdlc" />
     <EmbeddedResource Include="Админка\Добавить заказ.resx">
