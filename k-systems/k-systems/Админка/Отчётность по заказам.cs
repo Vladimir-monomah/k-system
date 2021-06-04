@@ -52,40 +52,40 @@ namespace k_systems.Админка
                 return;
             }
 
-            //if (this.onMonthRadioButton.Checked)
-            //{
-            //    var choosedDate = DateTime.ParseExact(
-            //        this.onMonthDateTimePicker.Value.ToString("dd.MM.yyyy"),
-            //        "dd.MM.yyyy",
-            //        CultureInfo.InvariantCulture);
-            //    dateBegin = choosedDate.AddDays(1 - choosedDate.Day);
-            //    dateEnd = choosedDate.AddDays(
-            //        DateTime.DaysInMonth(choosedDate.Year, choosedDate.Month) - choosedDate.Day)
-            //        .AddHours(23)
-            //        .AddMinutes(59)
-            //        .AddSeconds(59)
-            //        .AddMilliseconds(999);
-            //}
-            //else if (this.onPeriodRadioButton.Checked)
-            //{
-            //    dateBegin = DateTime.ParseExact(
-            //        this.onPeriodBeginDateTimePicker.Value.ToString("dd.MM.yyyy"),
-            //        "dd.MM.yyyy",
-            //        CultureInfo.InvariantCulture);
-            //    dateEnd = DateTime.ParseExact(
-            //            this.onPeriodEndDateTimePicker.Value.ToString("dd.MM.yyyy"),
-            //            "dd.MM.yyyy",
-            //            CultureInfo.InvariantCulture)
-            //        .AddHours(23)
-            //        .AddMinutes(59)
-            //        .AddSeconds(59)
-            //        .AddMilliseconds(999);
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Выберите период формирования отчёта!");
-            //    return;
-            //}
+            if (this.onMonthRadioButton.Checked)
+            {
+                var choosedDate = DateTime.ParseExact(
+                    this.onMonthDateTimePicker.Value.ToString("dd.MM.yyyy"),
+                    "dd.MM.yyyy",
+                    CultureInfo.InvariantCulture);
+                dateBegin = choosedDate.AddDays(1 - choosedDate.Day);
+                dateEnd = choosedDate.AddDays(
+                    DateTime.DaysInMonth(choosedDate.Year, choosedDate.Month) - choosedDate.Day)
+                    .AddHours(23)
+                    .AddMinutes(59)
+                    .AddSeconds(59)
+                    .AddMilliseconds(999);
+            }
+            else if (this.onPeriodRadioButton.Checked)
+            {
+                dateBegin = DateTime.ParseExact(
+                    this.onPeriodBeginDateTimePicker.Value.ToString("dd.MM.yyyy"),
+                    "dd.MM.yyyy",
+                    CultureInfo.InvariantCulture);
+                dateEnd = DateTime.ParseExact(
+                        this.onPeriodEndDateTimePicker.Value.ToString("dd.MM.yyyy"),
+                        "dd.MM.yyyy",
+                        CultureInfo.InvariantCulture)
+                    .AddHours(23)
+                    .AddMinutes(59)
+                    .AddSeconds(59)
+                    .AddMilliseconds(999);
+            }
+            else
+            {
+                MessageBox.Show("Выберите период формирования отчёта!");
+                return;
+            }
             try
             {
                 this.отчётность_по_заказамTableAdapter.Fill(this._k_systemsDataSet.Отчётность_по_заказам, this.заказы.Номер_клиента);

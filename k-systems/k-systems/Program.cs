@@ -18,7 +18,7 @@ namespace k_systems
             Application.EnableVisualStyles();
             Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Загрузочный_файл());
+            Application.Run(new Авторизация());
         }
     }
 }

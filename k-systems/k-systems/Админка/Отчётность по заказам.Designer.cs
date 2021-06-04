@@ -91,7 +91,6 @@
             this.onPeriodEndDateTimePicker.Name = "onPeriodEndDateTimePicker";
             this.onPeriodEndDateTimePicker.Size = new System.Drawing.Size(200, 22);
             this.onPeriodEndDateTimePicker.TabIndex = 4;
-            this.onPeriodEndDateTimePicker.Visible = false;
             // 
             // onPeriodBeginDateTimePicker
             // 
@@ -99,7 +98,6 @@
             this.onPeriodBeginDateTimePicker.Name = "onPeriodBeginDateTimePicker";
             this.onPeriodBeginDateTimePicker.Size = new System.Drawing.Size(200, 22);
             this.onPeriodBeginDateTimePicker.TabIndex = 4;
-            this.onPeriodBeginDateTimePicker.Visible = false;
             // 
             // onMonthDateTimePicker
             // 
@@ -107,7 +105,6 @@
             this.onMonthDateTimePicker.Name = "onMonthDateTimePicker";
             this.onMonthDateTimePicker.Size = new System.Drawing.Size(200, 22);
             this.onMonthDateTimePicker.TabIndex = 4;
-            this.onMonthDateTimePicker.Visible = false;
             // 
             // onPeriodRadioButton
             // 
@@ -119,7 +116,6 @@
             this.onPeriodRadioButton.TabStop = true;
             this.onPeriodRadioButton.Text = "За период";
             this.onPeriodRadioButton.UseVisualStyleBackColor = true;
-            this.onPeriodRadioButton.Visible = false;
             // 
             // onMonthRadioButton
             // 
@@ -131,7 +127,6 @@
             this.onMonthRadioButton.TabStop = true;
             this.onMonthRadioButton.Text = "На месяц";
             this.onMonthRadioButton.UseVisualStyleBackColor = true;
-            this.onMonthRadioButton.Visible = false;
             // 
             // button47
             // 

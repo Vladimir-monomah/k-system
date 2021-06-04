@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Акт_приёмки_заказа));
             this.panel = new System.Windows.Forms.Panel();
+            this.tbPhone = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.Postponed = new System.Windows.Forms.CheckBox();
             this.Work = new System.Windows.Forms.CheckBox();
             this.Ready = new System.Windows.Forms.CheckBox();
@@ -45,13 +47,14 @@
             this.label22 = new System.Windows.Forms.Label();
             this.btnPrint = new System.Windows.Forms.Button();
             this.Save = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tbPhone = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.OrderDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel
             // 
+            this.panel.Controls.Add(this.OrderDateTimePicker);
             this.panel.Controls.Add(this.tbPhone);
             this.panel.Controls.Add(this.label2);
             this.panel.Controls.Add(this.Postponed);
@@ -59,6 +62,7 @@
             this.panel.Controls.Add(this.Ready);
             this.panel.Controls.Add(this.label1);
             this.panel.Controls.Add(this.tbPrice);
+            this.panel.Controls.Add(this.label6);
             this.panel.Controls.Add(this.label5);
             this.panel.Controls.Add(this.tbKindWork);
             this.panel.Controls.Add(this.label4);
@@ -72,6 +76,26 @@
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(919, 339);
             this.panel.TabIndex = 125;
+            // 
+            // tbPhone
+            // 
+            this.tbPhone.Location = new System.Drawing.Point(213, 138);
+            this.tbPhone.MaxLength = 11;
+            this.tbPhone.Multiline = true;
+            this.tbPhone.Name = "tbPhone";
+            this.tbPhone.ReadOnly = true;
+            this.tbPhone.Size = new System.Drawing.Size(276, 29);
+            this.tbPhone.TabIndex = 134;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(17, 138);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(79, 21);
+            this.label2.TabIndex = 133;
+            this.label2.Text = "Телефон";
             // 
             // Postponed
             // 
@@ -230,25 +254,22 @@
             this.Save.UseVisualStyleBackColor = true;
             this.Save.Click += new System.EventHandler(this.Save_Click);
             // 
-            // label2
+            // label6
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(17, 138);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 21);
-            this.label2.TabIndex = 133;
-            this.label2.Text = "Телефон";
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Location = new System.Drawing.Point(17, 272);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(104, 21);
+            this.label6.TabIndex = 127;
+            this.label6.Text = "Дата заказа";
             // 
-            // tbPhone
+            // OrderDateTimePicker
             // 
-            this.tbPhone.Location = new System.Drawing.Point(213, 138);
-            this.tbPhone.MaxLength = 11;
-            this.tbPhone.Multiline = true;
-            this.tbPhone.Name = "tbPhone";
-            this.tbPhone.ReadOnly = true;
-            this.tbPhone.Size = new System.Drawing.Size(276, 29);
-            this.tbPhone.TabIndex = 134;
+            this.OrderDateTimePicker.Location = new System.Drawing.Point(209, 272);
+            this.OrderDateTimePicker.Name = "OrderDateTimePicker";
+            this.OrderDateTimePicker.Size = new System.Drawing.Size(274, 22);
+            this.OrderDateTimePicker.TabIndex = 135;
             // 
             // Акт_приёмки_заказа
             // 
@@ -291,5 +312,7 @@
         private System.Windows.Forms.Button Save;
         private System.Windows.Forms.TextBox tbPhone;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DateTimePicker OrderDateTimePicker;
     }
 }

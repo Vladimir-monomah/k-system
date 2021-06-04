@@ -31,6 +31,8 @@ namespace k_systems.Админка
             this.tbTypeWork.Text = заказы.Вид_работы;
             this.tbKindWork.Text = заказы.Тип_ремонта;
             this.tbPrice.Text = Convert.ToInt32(заказы.Цена).ToString();
+            this.OrderDateTimePicker.Enabled = false;
+            this.OrderDateTimePicker.Value = заказы.Дата_заказа;
 
             // Инициализируем статус заказа
             this.SetOrderState(заказы.Статус_заказа);
@@ -206,6 +208,7 @@ namespace k_systems.Админка
             tableInfo.Cell(5, 2).Range.Text = this.tbTypeWork.Text;
             tableInfo.Cell(6, 2).Range.Text = this.tbKindWork.Text;
             tableInfo.Cell(7, 2).Range.Text = this.tbPrice.Text;
+            tableInfo.Cell(8, 2).Range.Text = this.OrderDateTimePicker.Value.ToString("dd.MM.yyyy");
         }
     }
 }

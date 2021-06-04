@@ -1213,6 +1213,8 @@ namespace k_systems {
             
             private global::System.Data.DataColumn columnТелефон;
             
+            private global::System.Data.DataColumn columnДата_заказа;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public ЗаказыDataTable() {
@@ -1304,6 +1306,14 @@ namespace k_systems {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Дата_заказаColumn {
+                get {
+                    return this.columnДата_заказа;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1339,7 +1349,7 @@ namespace k_systems {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ЗаказыRow AddЗаказыRow(ПользователиRow parentПользователиRowByПользователиЗаказы, Вид_работRow parentВид_работRowByВид_работЗаказы, decimal Цена, Тип_ремонтаRow parentТип_ремонтаRowByТип_одеждыЗаказы, string Статус_заказа, string Телефон) {
+            public ЗаказыRow AddЗаказыRow(ПользователиRow parentПользователиRowByПользователиЗаказы, Вид_работRow parentВид_работRowByВид_работЗаказы, decimal Цена, Тип_ремонтаRow parentТип_ремонтаRowByТип_одеждыЗаказы, string Статус_заказа, string Телефон, System.DateTime Дата_заказа) {
                 ЗаказыRow rowЗаказыRow = ((ЗаказыRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1348,7 +1358,8 @@ namespace k_systems {
                         Цена,
                         null,
                         Статус_заказа,
-                        Телефон};
+                        Телефон,
+                        Дата_заказа};
                 if ((parentПользователиRowByПользователиЗаказы != null)) {
                     columnValuesArray[1] = parentПользователиRowByПользователиЗаказы[7];
                 }
@@ -1394,6 +1405,7 @@ namespace k_systems {
                 this.columnТип_ремонта = base.Columns["Тип ремонта"];
                 this.columnСтатус_заказа = base.Columns["Статус заказа"];
                 this.columnТелефон = base.Columns["Телефон"];
+                this.columnДата_заказа = base.Columns["Дата заказа"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1413,6 +1425,8 @@ namespace k_systems {
                 base.Columns.Add(this.columnСтатус_заказа);
                 this.columnТелефон = new global::System.Data.DataColumn("Телефон", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnТелефон);
+                this.columnДата_заказа = new global::System.Data.DataColumn("Дата заказа", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnДата_заказа);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnИдентификатор}, true));
                 this.columnИдентификатор.AutoIncrement = true;
@@ -3094,6 +3108,8 @@ namespace k_systems {
             
             private global::System.Data.DataColumn columnТелефон;
             
+            private global::System.Data.DataColumn columnДата_заказа;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public Заказы_с_клиентамиDataTable() {
@@ -3193,6 +3209,14 @@ namespace k_systems {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Дата_заказаColumn {
+                get {
+                    return this.columnДата_заказа;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3228,7 +3252,7 @@ namespace k_systems {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public Заказы_с_клиентамиRow AddЗаказы_с_клиентамиRow(string ФИО, string Вид_работы, string Тип_ремонта, decimal Цена, string Статус_заказа, string Телефон) {
+            public Заказы_с_клиентамиRow AddЗаказы_с_клиентамиRow(string ФИО, string Вид_работы, string Тип_ремонта, decimal Цена, string Статус_заказа, string Телефон, System.DateTime Дата_заказа) {
                 Заказы_с_клиентамиRow rowЗаказы_с_клиентамиRow = ((Заказы_с_клиентамиRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -3238,7 +3262,8 @@ namespace k_systems {
                         Тип_ремонта,
                         Цена,
                         Статус_заказа,
-                        Телефон};
+                        Телефон,
+                        Дата_заказа};
                 rowЗаказы_с_клиентамиRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowЗаказы_с_клиентамиRow);
                 return rowЗаказы_с_клиентамиRow;
@@ -3269,6 +3294,7 @@ namespace k_systems {
                 this.columnЦена = base.Columns["Цена"];
                 this.columnСтатус_заказа = base.Columns["Статус заказа"];
                 this.columnТелефон = base.Columns["Телефон"];
+                this.columnДата_заказа = base.Columns["Дата заказа"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3290,6 +3316,8 @@ namespace k_systems {
                 base.Columns.Add(this.columnСтатус_заказа);
                 this.columnТелефон = new global::System.Data.DataColumn("Телефон", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnТелефон);
+                this.columnДата_заказа = new global::System.Data.DataColumn("Дата заказа", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnДата_заказа);
                 this.columnНомер_заказа.AutoIncrement = true;
                 this.columnНомер_заказа.AutoIncrementSeed = -1;
                 this.columnНомер_заказа.AutoIncrementStep = -1;
@@ -3449,6 +3477,8 @@ namespace k_systems {
             
             private global::System.Data.DataColumn columnТелефон;
             
+            private global::System.Data.DataColumn columnДата_заказа;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public Заказы_для_клиентаDataTable() {
@@ -3540,6 +3570,14 @@ namespace k_systems {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Дата_заказаColumn {
+                get {
+                    return this.columnДата_заказа;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3575,7 +3613,7 @@ namespace k_systems {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public Заказы_для_клиентаRow AddЗаказы_для_клиентаRow(int Номер_клиента, string Вид_работы, string Тип_ремонта, decimal Цена, string Статус_заказа, string Телефон) {
+            public Заказы_для_клиентаRow AddЗаказы_для_клиентаRow(int Номер_клиента, string Вид_работы, string Тип_ремонта, decimal Цена, string Статус_заказа, string Телефон, System.DateTime Дата_заказа) {
                 Заказы_для_клиентаRow rowЗаказы_для_клиентаRow = ((Заказы_для_клиентаRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -3584,7 +3622,8 @@ namespace k_systems {
                         Тип_ремонта,
                         Цена,
                         Статус_заказа,
-                        Телефон};
+                        Телефон,
+                        Дата_заказа};
                 rowЗаказы_для_клиентаRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowЗаказы_для_клиентаRow);
                 return rowЗаказы_для_клиентаRow;
@@ -3614,6 +3653,7 @@ namespace k_systems {
                 this.columnЦена = base.Columns["Цена"];
                 this.columnСтатус_заказа = base.Columns["Статус заказа"];
                 this.columnТелефон = base.Columns["Телефон"];
+                this.columnДата_заказа = base.Columns["Дата заказа"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3633,6 +3673,8 @@ namespace k_systems {
                 base.Columns.Add(this.columnСтатус_заказа);
                 this.columnТелефон = new global::System.Data.DataColumn("Телефон", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnТелефон);
+                this.columnДата_заказа = new global::System.Data.DataColumn("Дата заказа", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnДата_заказа);
                 this.columnНомер_заказа.AutoIncrement = true;
                 this.columnНомер_заказа.AutoIncrementSeed = -1;
                 this.columnНомер_заказа.AutoIncrementStep = -1;
@@ -6183,6 +6225,8 @@ namespace k_systems {
             
             private global::System.Data.DataColumn columnТелефон;
             
+            private global::System.Data.DataColumn columnДата_заказа;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public Отчётность_по_заказамDataTable() {
@@ -6282,6 +6326,14 @@ namespace k_systems {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Дата_заказаColumn {
+                get {
+                    return this.columnДата_заказа;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -6317,7 +6369,7 @@ namespace k_systems {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public Отчётность_по_заказамRow AddОтчётность_по_заказамRow(string ФИО, string Вид_работы, string Тип_ремонта, decimal Цена, string Статус_заказа, string Телефон) {
+            public Отчётность_по_заказамRow AddОтчётность_по_заказамRow(string ФИО, string Вид_работы, string Тип_ремонта, decimal Цена, string Статус_заказа, string Телефон, System.DateTime Дата_заказа) {
                 Отчётность_по_заказамRow rowОтчётность_по_заказамRow = ((Отчётность_по_заказамRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -6327,7 +6379,8 @@ namespace k_systems {
                         Тип_ремонта,
                         Цена,
                         Статус_заказа,
-                        Телефон};
+                        Телефон,
+                        Дата_заказа};
                 rowОтчётность_по_заказамRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowОтчётность_по_заказамRow);
                 return rowОтчётность_по_заказамRow;
@@ -6358,6 +6411,7 @@ namespace k_systems {
                 this.columnЦена = base.Columns["Цена"];
                 this.columnСтатус_заказа = base.Columns["Статус_заказа"];
                 this.columnТелефон = base.Columns["Телефон"];
+                this.columnДата_заказа = base.Columns["Дата_заказа"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6399,6 +6453,12 @@ namespace k_systems {
                 base.Columns.Add(this.columnСтатус_заказа);
                 this.columnТелефон = new global::System.Data.DataColumn("Телефон", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnТелефон);
+                this.columnДата_заказа = new global::System.Data.DataColumn("Дата_заказа", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                this.columnДата_заказа.ExtendedProperties.Add("Generator_ColumnPropNameInRow", "Дата_заказа");
+                this.columnДата_заказа.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "Дата_заказаColumn");
+                this.columnДата_заказа.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columnДата_заказа");
+                this.columnДата_заказа.ExtendedProperties.Add("Generator_UserColumnName", "Дата_заказа");
+                base.Columns.Add(this.columnДата_заказа);
                 this.columnНомер_заказа.AutoIncrement = true;
                 this.columnНомер_заказа.AutoIncrementSeed = -1;
                 this.columnНомер_заказа.AutoIncrementStep = -1;
@@ -7089,6 +7149,22 @@ namespace k_systems {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime Дата_заказа {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableЗаказы.Дата_заказаColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Дата заказа\' в таблице \'Заказы\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableЗаказы.Дата_заказаColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public Вид_работRow Вид_работRow {
                 get {
                     return ((Вид_работRow)(this.GetParentRow(this.Table.ParentRelations["Вид работЗаказы"])));
@@ -7190,6 +7266,18 @@ namespace k_systems {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetТелефонNull() {
                 this[this.tableЗаказы.ТелефонColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsДата_заказаNull() {
+                return this.IsNull(this.tableЗаказы.Дата_заказаColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetДата_заказаNull() {
+                this[this.tableЗаказы.Дата_заказаColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -7987,6 +8075,22 @@ namespace k_systems {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime Дата_заказа {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableЗаказы_с_клиентами.Дата_заказаColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Дата заказа\' в таблице \'Заказы с клиентами\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableЗаказы_с_клиентами.Дата_заказаColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsНомер_заказаNull() {
                 return this.IsNull(this.tableЗаказы_с_клиентами.Номер_заказаColumn);
             }
@@ -8079,6 +8183,18 @@ namespace k_systems {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetТелефонNull() {
                 this[this.tableЗаказы_с_клиентами.ТелефонColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsДата_заказаNull() {
+                return this.IsNull(this.tableЗаказы_с_клиентами.Дата_заказаColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetДата_заказаNull() {
+                this[this.tableЗаказы_с_клиентами.Дата_заказаColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -8212,6 +8328,22 @@ namespace k_systems {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime Дата_заказа {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableЗаказы_для_клиента.Дата_заказаColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Дата заказа\' в таблице \'Заказы для клиента\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableЗаказы_для_клиента.Дата_заказаColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsНомер_заказаNull() {
                 return this.IsNull(this.tableЗаказы_для_клиента.Номер_заказаColumn);
             }
@@ -8292,6 +8424,18 @@ namespace k_systems {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetТелефонNull() {
                 this[this.tableЗаказы_для_клиента.ТелефонColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsДата_заказаNull() {
+                return this.IsNull(this.tableЗаказы_для_клиента.Дата_заказаColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetДата_заказаNull() {
+                this[this.tableЗаказы_для_клиента.Дата_заказаColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -9878,6 +10022,23 @@ namespace k_systems {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime Дата_заказа {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableОтчётность_по_заказам.Дата_заказаColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Дата_заказа\' в таблице \'Отчётность по заказам\' равно DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableОтчётность_по_заказам.Дата_заказаColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsНомер_заказаNull() {
                 return this.IsNull(this.tableОтчётность_по_заказам.Номер_заказаColumn);
             }
@@ -9970,6 +10131,18 @@ namespace k_systems {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetТелефонNull() {
                 this[this.tableОтчётность_по_заказам.ТелефонColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsДата_заказаNull() {
+                return this.IsNull(this.tableОтчётность_по_заказам.Дата_заказаColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetДата_заказаNull() {
+                this[this.tableОтчётность_по_заказам.Дата_заказаColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -11223,10 +11396,11 @@ namespace k_systems._k_systemsDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("Тип ремонта", "Тип ремонта");
             tableMapping.ColumnMappings.Add("Статус заказа", "Статус заказа");
             tableMapping.ColumnMappings.Add("Телефон", "Телефон");
+            tableMapping.ColumnMappings.Add("Дата заказа", "Дата заказа");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `Заказы` WHERE ((`Идентификатор` = ?) AND ((? = 1 AND `Номер клиента` IS NULL) OR (`Номер клиента` = ?)) AND ((? = 1 AND `Вид работы` IS NULL) OR (`Вид работы` = ?)) AND ((? = 1 AND `Цена` IS NULL) OR (`Цена` = ?)) AND ((? = 1 AND `Тип ремонта` IS NULL) OR (`Тип ремонта` = ?)) AND ((? = 1 AND `Статус заказа` IS NULL) OR (`Статус заказа` = ?)) AND ((? = 1 AND `Телефон` IS NULL) OR (`Телефон` = ?)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `Заказы` WHERE ((`Идентификатор` = ?) AND ((? = 1 AND `Номер клиента` IS NULL) OR (`Номер клиента` = ?)) AND ((? = 1 AND `Вид работы` IS NULL) OR (`Вид работы` = ?)) AND ((? = 1 AND `Цена` IS NULL) OR (`Цена` = ?)) AND ((? = 1 AND `Тип ремонта` IS NULL) OR (`Тип ремонта` = ?)) AND ((? = 1 AND `Статус заказа` IS NULL) OR (`Статус заказа` = ?)) AND ((? = 1 AND `Телефон` IS NULL) OR (`Телефон` = ?)) AND ((? = 1 AND `Дата заказа` IS NULL) OR (`Дата заказа` = ?)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Идентификатор", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Идентификатор", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Номер_клиента", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Номер клиента", global::System.Data.DataRowVersion.Original, true, null));
@@ -11241,10 +11415,12 @@ namespace k_systems._k_systemsDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Статус_заказа", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Статус заказа", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Телефон", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Телефон", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Телефон", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Телефон", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Дата_заказа", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Дата заказа", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Дата_заказа", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Дата заказа", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO `Заказы` (`Номер клиента`, `Вид работы`, `Цена`, `Тип ремонта`, `Стат" +
-                "ус заказа`, `Телефон`) VALUES (?, ?, ?, ?, ?, ?)";
+                "ус заказа`, `Телефон`, `Дата заказа`) VALUES (?, ?, ?, ?, ?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Номер_клиента", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Номер клиента", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Вид_работы", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Вид работы", global::System.Data.DataRowVersion.Current, false, null));
@@ -11252,9 +11428,10 @@ namespace k_systems._k_systemsDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Тип_ремонта", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Тип ремонта", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Статус_заказа", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Статус заказа", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Телефон", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Телефон", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Дата_заказа", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Дата заказа", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `Заказы` SET `Номер клиента` = ?, `Вид работы` = ?, `Цена` = ?, `Тип ремонта` = ?, `Статус заказа` = ?, `Телефон` = ? WHERE ((`Идентификатор` = ?) AND ((? = 1 AND `Номер клиента` IS NULL) OR (`Номер клиента` = ?)) AND ((? = 1 AND `Вид работы` IS NULL) OR (`Вид работы` = ?)) AND ((? = 1 AND `Цена` IS NULL) OR (`Цена` = ?)) AND ((? = 1 AND `Тип ремонта` IS NULL) OR (`Тип ремонта` = ?)) AND ((? = 1 AND `Статус заказа` IS NULL) OR (`Статус заказа` = ?)) AND ((? = 1 AND `Телефон` IS NULL) OR (`Телефон` = ?)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `Заказы` SET `Номер клиента` = ?, `Вид работы` = ?, `Цена` = ?, `Тип ремонта` = ?, `Статус заказа` = ?, `Телефон` = ?, `Дата заказа` = ? WHERE ((`Идентификатор` = ?) AND ((? = 1 AND `Номер клиента` IS NULL) OR (`Номер клиента` = ?)) AND ((? = 1 AND `Вид работы` IS NULL) OR (`Вид работы` = ?)) AND ((? = 1 AND `Цена` IS NULL) OR (`Цена` = ?)) AND ((? = 1 AND `Тип ремонта` IS NULL) OR (`Тип ремонта` = ?)) AND ((? = 1 AND `Статус заказа` IS NULL) OR (`Статус заказа` = ?)) AND ((? = 1 AND `Телефон` IS NULL) OR (`Телефон` = ?)) AND ((? = 1 AND `Дата заказа` IS NULL) OR (`Дата заказа` = ?)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Номер_клиента", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Номер клиента", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Вид_работы", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Вид работы", global::System.Data.DataRowVersion.Current, false, null));
@@ -11262,6 +11439,7 @@ namespace k_systems._k_systemsDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Тип_ремонта", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Тип ремонта", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Статус_заказа", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Статус заказа", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Телефон", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Телефон", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Дата_заказа", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Дата заказа", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Идентификатор", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Идентификатор", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Номер_клиента", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Номер клиента", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Номер_клиента", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Номер клиента", global::System.Data.DataRowVersion.Original, false, null));
@@ -11275,6 +11453,8 @@ namespace k_systems._k_systemsDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Статус_заказа", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Статус заказа", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Телефон", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Телефон", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Телефон", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Телефон", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Дата_заказа", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Дата заказа", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Дата_заказа", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Дата заказа", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11291,7 +11471,7 @@ namespace k_systems._k_systemsDataSetTableAdapters {
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Идентификатор, [Номер клиента], [Вид работы], Цена, [Тип ремонта], [Статус" +
-                " заказа], Телефон FROM Заказы";
+                " заказа], Телефон, [Дата заказа] FROM Заказы";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -11352,7 +11532,7 @@ namespace k_systems._k_systemsDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Идентификатор, global::System.Nullable<int> Original_Номер_клиента, global::System.Nullable<int> Original_Вид_работы, global::System.Nullable<decimal> Original_Цена, global::System.Nullable<int> Original_Тип_ремонта, string Original_Статус_заказа, string Original_Телефон) {
+        public virtual int Delete(int Original_Идентификатор, global::System.Nullable<int> Original_Номер_клиента, global::System.Nullable<int> Original_Вид_работы, global::System.Nullable<decimal> Original_Цена, global::System.Nullable<int> Original_Тип_ремонта, string Original_Статус_заказа, string Original_Телефон, global::System.Nullable<global::System.DateTime> Original_Дата_заказа) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Идентификатор));
             if ((Original_Номер_клиента.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -11402,6 +11582,14 @@ namespace k_systems._k_systemsDataSetTableAdapters {
                 this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_Телефон));
             }
+            if ((Original_Дата_заказа.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((System.DateTime)(Original_Дата_заказа.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -11422,7 +11610,7 @@ namespace k_systems._k_systemsDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<int> Номер_клиента, global::System.Nullable<int> Вид_работы, global::System.Nullable<decimal> Цена, global::System.Nullable<int> Тип_ремонта, string Статус_заказа, string Телефон) {
+        public virtual int Insert(global::System.Nullable<int> Номер_клиента, global::System.Nullable<int> Вид_работы, global::System.Nullable<decimal> Цена, global::System.Nullable<int> Тип_ремонта, string Статус_заказа, string Телефон, global::System.Nullable<global::System.DateTime> Дата_заказа) {
             if ((Номер_клиента.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Номер_клиента.Value));
             }
@@ -11459,6 +11647,12 @@ namespace k_systems._k_systemsDataSetTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Телефон));
             }
+            if ((Дата_заказа.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((System.DateTime)(Дата_заказа.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -11479,7 +11673,7 @@ namespace k_systems._k_systemsDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> Номер_клиента, global::System.Nullable<int> Вид_работы, global::System.Nullable<decimal> Цена, global::System.Nullable<int> Тип_ремонта, string Статус_заказа, string Телефон, int Original_Идентификатор, global::System.Nullable<int> Original_Номер_клиента, global::System.Nullable<int> Original_Вид_работы, global::System.Nullable<decimal> Original_Цена, global::System.Nullable<int> Original_Тип_ремонта, string Original_Статус_заказа, string Original_Телефон) {
+        public virtual int Update(global::System.Nullable<int> Номер_клиента, global::System.Nullable<int> Вид_работы, global::System.Nullable<decimal> Цена, global::System.Nullable<int> Тип_ремонта, string Статус_заказа, string Телефон, global::System.Nullable<global::System.DateTime> Дата_заказа, int Original_Идентификатор, global::System.Nullable<int> Original_Номер_клиента, global::System.Nullable<int> Original_Вид_работы, global::System.Nullable<decimal> Original_Цена, global::System.Nullable<int> Original_Тип_ремонта, string Original_Статус_заказа, string Original_Телефон, global::System.Nullable<global::System.DateTime> Original_Дата_заказа) {
             if ((Номер_клиента.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Номер_клиента.Value));
             }
@@ -11516,54 +11710,68 @@ namespace k_systems._k_systemsDataSetTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Телефон));
             }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_Идентификатор));
-            if ((Original_Номер_клиента.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_Номер_клиента.Value));
+            if ((Дата_заказа.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(Дата_заказа.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_Идентификатор));
+            if ((Original_Номер_клиента.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_Номер_клиента.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             if ((Original_Вид_работы.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_Вид_работы.Value));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_Вид_работы.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             if ((Original_Цена.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((decimal)(Original_Цена.Value));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((decimal)(Original_Цена.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             if ((Original_Тип_ремонта.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_Тип_ремонта.Value));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Original_Тип_ремонта.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
             if ((Original_Статус_заказа == null)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_Статус_заказа));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_Статус_заказа));
             }
             if ((Original_Телефон == null)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_Телефон));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_Телефон));
+            }
+            if ((Original_Дата_заказа.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((System.DateTime)(Original_Дата_заказа.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -13216,6 +13424,7 @@ namespace k_systems._k_systemsDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("Цена", "Цена");
             tableMapping.ColumnMappings.Add("Статус заказа", "Статус заказа");
             tableMapping.ColumnMappings.Add("Телефон", "Телефон");
+            tableMapping.ColumnMappings.Add("Дата заказа", "Дата заказа");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -13233,7 +13442,7 @@ namespace k_systems._k_systemsDataSetTableAdapters {
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT [Номер заказа], [Номер клиента], ФИО, [Вид работы], [Тип ремонта], Цена, [" +
-                "Статус заказа], Телефон FROM [Заказы с клиентами]";
+                "Статус заказа], Телефон, [Дата заказа] FROM [Заказы с клиентами]";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -13390,6 +13599,7 @@ namespace k_systems._k_systemsDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("Цена", "Цена");
             tableMapping.ColumnMappings.Add("Статус заказа", "Статус заказа");
             tableMapping.ColumnMappings.Add("Телефон", "Телефон");
+            tableMapping.ColumnMappings.Add("Дата заказа", "Дата заказа");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -13407,7 +13617,7 @@ namespace k_systems._k_systemsDataSetTableAdapters {
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT [Номер заказа], [Номер клиента], [Вид работы], [Тип ремонта], Цена, [Стату" +
-                "с заказа], Телефон FROM [Заказы для клиента]";
+                "с заказа], Телефон, [Дата заказа] FROM [Заказы для клиента]";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -15215,6 +15425,7 @@ namespace k_systems._k_systemsDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("Цена", "Цена");
             tableMapping.ColumnMappings.Add("Статус_заказа", "Статус_заказа");
             tableMapping.ColumnMappings.Add("Телефон", "Телефон");
+            tableMapping.ColumnMappings.Add("Дата_заказа", "Дата_заказа");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -15231,10 +15442,9 @@ namespace k_systems._k_systemsDataSetTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT [Номер заказа] AS [Номер_заказа], [Номер клиента] AS [Номер_клиента], ФИО," +
-                " [Вид работы] AS [Вид_работы], [Тип ремонта] AS [Тип_ремонта], Цена, [Статус зак" +
-                "аза] AS [Статус_заказа], Телефон\r\nFROM     [Заказы с клиентами]\r\nWhere ([Номер к" +
-                "лиента]=?)";
+            this._commandCollection[0].CommandText = @"SELECT [Номер заказа] AS [Номер_заказа], [Номер клиента] AS [Номер_клиента], ФИО, [Вид работы] AS [Вид_работы], [Тип ремонта] AS [Тип_ремонта], Цена, [Статус заказа] AS [Статус_заказа], Телефон, [Дата заказа] AS [Дата_заказа]
+FROM     [Заказы с клиентами]
+Where ([Номер клиента]=?)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Номер_клиента", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Номер_клиента", global::System.Data.DataRowVersion.Current, false, null));
         }

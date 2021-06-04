@@ -50,6 +50,8 @@
             this.Work = new System.Windows.Forms.CheckBox();
             this.Phone = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.OrderDateTimePicker = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.priceNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.типРемонтаBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._k_systemsDataSet)).BeginInit();
@@ -85,7 +87,7 @@
             // addOrderButton
             // 
             this.addOrderButton.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.addOrderButton.Location = new System.Drawing.Point(454, 399);
+            this.addOrderButton.Location = new System.Drawing.Point(452, 481);
             this.addOrderButton.Margin = new System.Windows.Forms.Padding(4);
             this.addOrderButton.Name = "addOrderButton";
             this.addOrderButton.Size = new System.Drawing.Size(240, 64);
@@ -207,7 +209,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(58, 335);
+            this.label1.Location = new System.Drawing.Point(67, 412);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(185, 29);
@@ -217,7 +219,7 @@
             // Work
             // 
             this.Work.AutoSize = true;
-            this.Work.Location = new System.Drawing.Point(277, 335);
+            this.Work.Location = new System.Drawing.Point(286, 412);
             this.Work.Name = "Work";
             this.Work.Size = new System.Drawing.Size(90, 21);
             this.Work.TabIndex = 22;
@@ -243,16 +245,37 @@
             this.label2.TabIndex = 39;
             this.label2.Text = "Телефон";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(82, 351);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(161, 29);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "Дата заказа";
+            // 
+            // OrderDateTimePicker
+            // 
+            this.OrderDateTimePicker.Location = new System.Drawing.Point(276, 358);
+            this.OrderDateTimePicker.Name = "OrderDateTimePicker";
+            this.OrderDateTimePicker.Size = new System.Drawing.Size(274, 22);
+            this.OrderDateTimePicker.TabIndex = 119;
+            this.OrderDateTimePicker.ValueChanged += new System.EventHandler(this.OrderDateTimePicker_ValueChanged);
+            // 
             // Заказ
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1027, 476);
+            this.ClientSize = new System.Drawing.Size(1027, 558);
+            this.Controls.Add(this.OrderDateTimePicker);
             this.Controls.Add(this.Phone);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Work);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.priceNumericUpDown);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.priceLabel);
             this.Controls.Add(this.addOrderButton);
             this.Controls.Add(this.dressTypeLabel);
@@ -301,5 +324,7 @@
         private System.Windows.Forms.CheckBox Work;
         private System.Windows.Forms.MaskedTextBox Phone;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DateTimePicker OrderDateTimePicker;
     }
 }

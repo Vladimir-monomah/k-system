@@ -50,7 +50,11 @@ namespace k_systems.Админка
             newOrder.Цена = this.priceNumericUpDown.Value;
             newOrder.Статус_заказа = orderState;
             newOrder.Телефон = this.Phone.Text;
-
+            newOrder.Дата_заказа=this.OrderDateTimePicker.Value
+                .AddHours(-this.OrderDateTimePicker.Value.Hour)
+                    .AddMinutes(-this.OrderDateTimePicker.Value.Minute)
+                    .AddSeconds(-this.OrderDateTimePicker.Value.Second)
+                    .AddMilliseconds(-this.OrderDateTimePicker.Value.Millisecond);
             EntityManager.OrderDataTable.AddЗаказыRow(newOrder);
             EntityManager.UpdateOrders();
 
@@ -114,6 +118,19 @@ namespace k_systems.Админка
         {
             char c = e.KeyChar;
             e.Handled = !(char.IsDigit(c) || c == '.' || c == ',' || c == '\b');
+        }
+
+        private void OrderDateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            var dateTimePicker = (DateTimePicker)sender;
+            if (dateTimePicker.Enabled
+                && (dateTimePicker.Value < DateTime.Now.Date
+                    || dateTimePicker.Value > DateTime.Now.Date.AddDays(1).AddMilliseconds(-1)))
+            {
+                MessageBox.Show("Нельзя выбрать предыдующую или последующую даты", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dateTimePicker.Value = DateTime.Now.Date;
+                return;
+            }
         }
     }
 }
