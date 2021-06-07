@@ -84,5 +84,11 @@ namespace k_systems.Пользовательская_форма
         {
             System.Diagnostics.Process.Start(Application.StartupPath + @"\Справка.chm");
         }
+
+        private void добавитьЗаказToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var открыть = new Добавить_заказ();
+            открыть.ShowDialog();
+        }
     }
 }

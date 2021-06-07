@@ -72,6 +72,7 @@ namespace k_systems.Админка
         {
             var открыть = new Добавить_заказ();
             открыть.ShowDialog();
+            this.заказы_с_клиентамиTableAdapter.Fill(this._k_systemsDataSet.Заказы_с_клиентами);
         }
 
         private void dataGridView_CellEndEdit(object sender, DataGridViewCellEventArgs e)

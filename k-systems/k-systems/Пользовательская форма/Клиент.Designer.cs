@@ -35,6 +35,7 @@
             this.сменаПользователяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справочникиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.заказыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.добавитьЗаказToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.почтаToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.emailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -90,7 +91,8 @@
             // справочникиToolStripMenuItem
             // 
             this.справочникиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.заказыToolStripMenuItem});
+            this.заказыToolStripMenuItem,
+            this.добавитьЗаказToolStripMenuItem});
             this.справочникиToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("справочникиToolStripMenuItem.Image")));
             this.справочникиToolStripMenuItem.Name = "справочникиToolStripMenuItem";
             this.справочникиToolStripMenuItem.Size = new System.Drawing.Size(135, 24);
@@ -101,9 +103,17 @@
             this.заказыToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("заказыToolStripMenuItem.Image")));
             this.заказыToolStripMenuItem.Name = "заказыToolStripMenuItem";
             this.заказыToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D1)));
-            this.заказыToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
-            this.заказыToolStripMenuItem.Text = "Заказы";
+            this.заказыToolStripMenuItem.Size = new System.Drawing.Size(263, 26);
+            this.заказыToolStripMenuItem.Text = "Просмотр заказов";
             this.заказыToolStripMenuItem.Click += new System.EventHandler(this.заказыToolStripMenuItem_Click);
+            // 
+            // добавитьЗаказToolStripMenuItem
+            // 
+            this.добавитьЗаказToolStripMenuItem.Name = "добавитьЗаказToolStripMenuItem";
+            this.добавитьЗаказToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D2)));
+            this.добавитьЗаказToolStripMenuItem.Size = new System.Drawing.Size(263, 26);
+            this.добавитьЗаказToolStripMenuItem.Text = "Добавить заказ";
+            this.добавитьЗаказToolStripMenuItem.Click += new System.EventHandler(this.добавитьЗаказToolStripMenuItem_Click);
             // 
             // почтаToolStripMenuItem1
             // 
@@ -118,7 +128,7 @@
             // 
             this.emailToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("emailToolStripMenuItem.Image")));
             this.emailToolStripMenuItem.Name = "emailToolStripMenuItem";
-            this.emailToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D2)));
+            this.emailToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D3)));
             this.emailToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
             this.emailToolStripMenuItem.Text = "Email";
             this.emailToolStripMenuItem.Click += new System.EventHandler(this.emailToolStripMenuItem_Click);
@@ -288,5 +298,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ценаDataGridViewTextBoxColumn;
         private System.Windows.Forms.ToolStripMenuItem почтаToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem emailToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem добавитьЗаказToolStripMenuItem;
     }
 }
