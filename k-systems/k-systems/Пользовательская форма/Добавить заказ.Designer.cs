@@ -42,6 +42,7 @@
             this.addOrderButton = new System.Windows.Forms.Button();
             this.orderSearchLabel = new System.Windows.Forms.Label();
             this.заказы_с_клиентамиTableAdapter = new k_systems._k_systemsDataSetTableAdapters.Заказы_с_клиентамиTableAdapter();
+            this.buttonCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.заказыСКлиентамиBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._k_systemsDataSet)).BeginInit();
@@ -129,10 +130,10 @@
             this.addOrderButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.addOrderButton.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.addOrderButton.Location = new System.Drawing.Point(62, 82);
+            this.addOrderButton.Location = new System.Drawing.Point(13, 82);
             this.addOrderButton.Margin = new System.Windows.Forms.Padding(4);
             this.addOrderButton.Name = "addOrderButton";
-            this.addOrderButton.Size = new System.Drawing.Size(756, 42);
+            this.addOrderButton.Size = new System.Drawing.Size(551, 42);
             this.addOrderButton.TabIndex = 15;
             this.addOrderButton.Text = "Добавить новый заказ";
             this.addOrderButton.UseVisualStyleBackColor = true;
@@ -152,11 +153,23 @@
             // 
             this.заказы_с_клиентамиTableAdapter.ClearBeforeFill = true;
             // 
+            // buttonCancel
+            // 
+            this.buttonCancel.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold);
+            this.buttonCancel.Location = new System.Drawing.Point(571, 83);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(296, 41);
+            this.buttonCancel.TabIndex = 33;
+            this.buttonCancel.Text = "Удалить";
+            this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
+            // 
             // Добавить_заказ
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(879, 799);
+            this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.dataGridViewOrder);
             this.Controls.Add(this.orderFilterTextBox);
             this.Controls.Add(this.addOrderButton);
@@ -190,5 +203,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn видРаботыDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn типРемонтаDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ценаDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button buttonCancel;
     }
 }

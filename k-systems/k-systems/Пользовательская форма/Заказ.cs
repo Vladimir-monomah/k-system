@@ -1,4 +1,5 @@
-﻿using System;
+﻿using k_systems.Константы;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,8 +13,11 @@ namespace k_systems.Пользовательская_форма
 {
     public partial class Заказ : Form
     {
-        public Заказ()
+        private long idClient;
+
+        public Заказ(long idClient)
         {
+            this.idClient = idClient;
             InitializeComponent();
         }
 
@@ -36,6 +40,7 @@ namespace k_systems.Пользовательская_форма
         {
             var newOrder = EntityManager.OrderDataTable.NewЗаказыRow();
 
+            newOrder.Номер_клиента = Convert.ToInt32(this.idClient);
             newOrder.Вид_работы = (int)this.workKindComboBox.SelectedValue;
             newOrder.Тип_ремонта = (int)this.dressTypeComboBox.SelectedValue;
             newOrder.Цена = this.priceNumericUpDown.Value;
@@ -45,6 +50,7 @@ namespace k_systems.Пользовательская_форма
                     .AddMinutes(-this.OrderDateTimePicker.Value.Minute)
                     .AddSeconds(-this.OrderDateTimePicker.Value.Second)
                     .AddMilliseconds(-this.OrderDateTimePicker.Value.Millisecond);
+            newOrder.Статус_заказа = WorkStates.Waiting;
             EntityManager.OrderDataTable.AddЗаказыRow(newOrder);
             EntityManager.UpdateOrders();
 
@@ -103,10 +109,9 @@ namespace k_systems.Пользовательская_форма
         {
             var dateTimePicker = (DateTimePicker)sender;
             if (dateTimePicker.Enabled
-                && (dateTimePicker.Value < DateTime.Now.Date
-                    || dateTimePicker.Value > DateTime.Now.Date.AddDays(1).AddMilliseconds(-1)))
+                && (dateTimePicker.Value < DateTime.Now.Date))
             {
-                MessageBox.Show("Нельзя выбрать предыдующую или последующую даты", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Нельзя выбрать предыдующую дату", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 dateTimePicker.Value = DateTime.Now.Date;
                 return;
             }

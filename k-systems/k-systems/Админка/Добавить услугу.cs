@@ -65,13 +65,13 @@ namespace k_systems.Админка
             var TypeService = this.TypeService.Text;
             var adapter = new Вид_работTableAdapter();
             adapter.Fill(EntityManager.TypeService);
+            Вид_работRow newService = null;
             foreach (var works in EntityManager.TypeService)
             {
                 if (works.Наименование == TypeService)
                 {
-                    MessageBox.Show("Вид услуги " +
-                        "с таким названием уже существует!", "Информация", MessageBoxButtons.OK);
-                    return;
+                    newService = works;
+                    break;
                 }
             }
 
@@ -88,19 +88,25 @@ namespace k_systems.Админка
                 }
             }
 
-            var newService = EntityManager.TypeService.NewВид_работRow();
+            if (newService == null)
+            {
+                newService = EntityManager.TypeService.NewВид_работRow();
+                newService.Наименование = TypeService;
+                EntityManager.TypeService.AddВид_работRow(newService);
+
+                newService = EntityManager.FilterTypeService(
+                        $"Наименование = '{newService.Наименование}'")
+                    .First();
+
+            }
+
             var newRepair = EntityManager.TypeRepair.NewТип_ремонтаRow();
             var newPrice = EntityManager.WorkPrices.NewЦены_работRow();
-            newService.Наименование = TypeService;
+
             newRepair.Наименование = TypeRepair;
-            EntityManager.TypeService.AddВид_работRow(newService);
             EntityManager.TypeRepair.AddТип_ремонтаRow(newRepair);
             EntityManager.UpdateTypeService();
             EntityManager.UpdateTypeRepair();
-
-            newService = EntityManager.FilterTypeService(
-                    $"Наименование = '{newService.Наименование}'")
-                .First();
 
             newRepair = EntityManager.FilterTypeRepair(
                     $"Наименование = '{newRepair.Наименование}'")

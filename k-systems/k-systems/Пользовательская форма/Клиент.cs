@@ -1,5 +1,4 @@
-﻿using k_systems.Админка;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -88,7 +87,7 @@ namespace k_systems.Пользовательская_форма
 
         private void добавитьЗаказToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var открыть = new Добавить_заказ();
+            var открыть = new Добавить_заказ(idClient);
             открыть.ShowDialog();
         }
     }
