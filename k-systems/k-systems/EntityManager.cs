@@ -15,7 +15,6 @@ namespace k_systems
         static _k_systemsDataSet _K_Systems = new _k_systemsDataSet();
 
         private static ПользователиTableAdapter пользователиTableAdapter = new ПользователиTableAdapter();
-        private static КлиентTableAdapter клиентTableAdapter = new КлиентTableAdapter();
         private static ЗаказыTableAdapter заказыTableAdapter = new ЗаказыTableAdapter();
         private static Цены_работTableAdapter ценыРаботTableAdapter = new Цены_работTableAdapter();
         private static Вид_работTableAdapter вид_РаботTableAdapter = new Вид_работTableAdapter();
@@ -41,14 +40,6 @@ namespace k_systems
             get
             {
                 return _K_Systems.Пользователи;
-            }
-        }
-
-        public static КлиентDataTable ClientDataTable
-        {
-            get
-            {
-                return _K_Systems.Клиент;
             }
         }
 
@@ -103,11 +94,6 @@ namespace k_systems
         public static void UpdateUsers()
         {
             пользователиTableAdapter.Adapter.Update(UserDataTable);
-        }
-
-        public static void UpdateClient()
-        {
-            клиентTableAdapter.Adapter.Update(ClientDataTable);
         }
 
         public static void UpdateOrders()
@@ -165,32 +151,6 @@ namespace k_systems
             FillFilteredTable(пользователиTableAdapter.Adapter, filterUserCommand, UserDataTable);
 
             return UserDataTable;
-        }
-
-        /// <summary>
-        /// Возвращает отфильтрованную таблицу клиентов по условию <paramref name="condition"/>
-        /// </summary>
-        /// <param name="condition"></param>
-        /// <returns></returns>
-        public static КлиентDataTable FilterClient(string condition = null)
-        {
-            var whereCondition = string.Empty;
-            if (!string.IsNullOrEmpty(condition))
-            {
-                whereCondition = $"WHERE {condition}";
-            }
-
-            var filterUserCommand = new OleDbCommand()
-            {
-                Connection = клиентTableAdapter.Connection,
-                CommandText = "SELECT Id, Фамилия, Имя, Отчество, логин, пароль, " +
-                $"[E-mail] FROM Пользователи {whereCondition}",
-                CommandType = CommandType.Text
-            };
-
-            FillFilteredTable(клиентTableAdapter.Adapter, filterUserCommand,ClientDataTable);
-
-            return ClientDataTable;
         }
 
         /// <summary>

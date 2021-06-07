@@ -118,8 +118,8 @@ namespace k_systems.Админка
             //int ind = this.dataGridView.SelectedCells[0].RowIndex;
             //this.dataGridView.Rows.RemoveAt(ind);
 
-            var idUser= ((Заказы_с_клиентамиRow)((DataRowView)this.dataGridView.CurrentRow?.DataBoundItem)?.Row)?.Номер_заказа;
-            if (!idUser.HasValue)
+            var orderId = ((Заказы_с_клиентамиRow)((DataRowView)this.dataGridView.CurrentRow?.DataBoundItem)?.Row)?.Номер_заказа;
+            if (!orderId.HasValue)
             {
                 return;
             }
@@ -131,12 +131,12 @@ namespace k_systems.Админка
                 return;
             }
 
-            using(var connection=new OleDbConnection(Settings.Default.k_systemsConnectionString))
+            using (var connection = new OleDbConnection(Settings.Default.k_systemsConnectionString))
             {
                 connection.Open();
-                using(var sqlCommand = connection.CreateCommand())
+                using (var sqlCommand = connection.CreateCommand())
                 {
-                    sqlCommand.CommandText = $"DELETE FROM [Заказы с клиентами] WHERE [Номер заказа]={idUser.Value}";
+                    sqlCommand.CommandText = $"DELETE FROM [Заказы] WHERE [Идентификатор]={orderId.Value}";
                     sqlCommand.ExecuteNonQuery();
                 }
             }

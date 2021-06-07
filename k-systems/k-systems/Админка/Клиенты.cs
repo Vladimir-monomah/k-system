@@ -21,6 +21,7 @@ namespace k_systems.Админка
         {
             this.password = password;
             InitializeComponent();
+            пользователиBindingSource.Filter = "[Является администратором] = false";
         }
 
         /// <summary>
@@ -99,16 +100,16 @@ namespace k_systems.Админка
                 return;
             }
 
-            var newUser = EntityManager.ClientDataTable.NewКлиентRow();
+            var newUser = EntityManager.UserDataTable.NewПользователиRow();
             newUser.Фамилия = this.textBoxSername.Text;
             newUser.Имя = this.textBoxName.Text;
             newUser.Отчество = this.textBoxPatronomic.Text;
             newUser._E_mail = this.textBoxEmail.Text;
             newUser.логин = this.textBoxLogin.Text;
             newUser.пароль = Encrypt(this.textBoxPassword.Text, this.password);
-            EntityManager.ClientDataTable.AddКлиентRow(newUser);
-            EntityManager.UpdateClient();
-            this.клиентTableAdapter.Fill(this._k_systemsDataSet.Клиент);
+            EntityManager.UserDataTable.AddПользователиRow(newUser);
+            EntityManager.UpdateUsers();
+            this.пользователиTableAdapter.Fill(this._k_systemsDataSet.Пользователи);
 
             MessageBox.Show("Добавление клиента прошло успешно!", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
@@ -122,9 +123,8 @@ namespace k_systems.Админка
 
         private void Клиенты_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "_k_systemsDataSet.Клиент". При необходимости она может быть перемещена или удалена.
-            this.клиентTableAdapter.Fill(this._k_systemsDataSet.Клиент);
-
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "_k_systemsDataSet.Пользователи". При необходимости она может быть перемещена или удалена.
+            this.пользователиTableAdapter.Fill(this._k_systemsDataSet.Пользователи);
         }
     }
 }

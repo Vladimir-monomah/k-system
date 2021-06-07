@@ -45,8 +45,8 @@
             this.labelSername = new System.Windows.Forms.Label();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this._k_systemsDataSet = new k_systems._k_systemsDataSet();
-            this.клиентBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.клиентTableAdapter = new k_systems._k_systemsDataSetTableAdapters.КлиентTableAdapter();
+            this.пользователиBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.пользователиTableAdapter = new k_systems._k_systemsDataSetTableAdapters.ПользователиTableAdapter();
             this.фамилияDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.имяDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.отчествоDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,7 +55,7 @@
             this.парольDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._k_systemsDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.клиентBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.пользователиBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxEmail
@@ -200,7 +200,7 @@
             this.emailDataGridViewTextBoxColumn,
             this.логинDataGridViewTextBoxColumn,
             this.парольDataGridViewTextBoxColumn});
-            this.dataGridView.DataSource = this.клиентBindingSource;
+            this.dataGridView.DataSource = this.пользователиBindingSource;
             this.dataGridView.Location = new System.Drawing.Point(423, 12);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowTemplate.Height = 24;
@@ -212,14 +212,14 @@
             this._k_systemsDataSet.DataSetName = "_k_systemsDataSet";
             this._k_systemsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // клиентBindingSource
+            // пользователиBindingSource
             // 
-            this.клиентBindingSource.DataMember = "Клиент";
-            this.клиентBindingSource.DataSource = this._k_systemsDataSet;
+            this.пользователиBindingSource.DataMember = "Пользователи";
+            this.пользователиBindingSource.DataSource = this._k_systemsDataSet;
             // 
-            // клиентTableAdapter
+            // пользователиTableAdapter
             // 
-            this.клиентTableAdapter.ClearBeforeFill = true;
+            this.пользователиTableAdapter.ClearBeforeFill = true;
             // 
             // фамилияDataGridViewTextBoxColumn
             // 
@@ -297,7 +297,7 @@
             this.Load += new System.EventHandler(this.Клиенты_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._k_systemsDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.клиентBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.пользователиBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -320,8 +320,8 @@
         private System.Windows.Forms.Label labelSername;
         private System.Windows.Forms.DataGridView dataGridView;
         private _k_systemsDataSet _k_systemsDataSet;
-        private System.Windows.Forms.BindingSource клиентBindingSource;
-        private _k_systemsDataSetTableAdapters.КлиентTableAdapter клиентTableAdapter;
+        private System.Windows.Forms.BindingSource пользователиBindingSource;
+        private _k_systemsDataSetTableAdapters.ПользователиTableAdapter пользователиTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn фамилияDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn имяDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn отчествоDataGridViewTextBoxColumn;
